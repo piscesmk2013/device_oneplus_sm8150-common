@@ -190,5 +190,8 @@ sys.fflag.override.settings_seamless_transfer=true
 # Google Assistant
 ro.opa.eligible_device=true
 
+# Verity
+ro.apk_verity.mode=2
+
 # Zygote
 zygote.critical_window.minute=10
