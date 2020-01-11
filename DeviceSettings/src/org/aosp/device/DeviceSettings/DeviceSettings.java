@@ -63,6 +63,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_WIDECOLOR_SWITCH = "widecolor";
     public static final String KEY_NATURAL_SWITCH = "natural";
     public static final String KEY_VIVID_SWITCH = "vivid";
+    private static final String KEY_ENABLE_DOLBY_ATMOS = "enable_dolby_atmos";
 
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
@@ -72,6 +73,8 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mTopKeyPref;
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
+    private static TwoStatePreference mEnableDolbyAtmos;
+
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -102,6 +105,9 @@ public class DeviceSettings extends PreferenceFragment
         mAutoHBMSwitch = (TwoStatePreference) findPreference(KEY_AUTO_HBM_SWITCH);
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
         mAutoHBMSwitch.setOnPreferenceChangeListener(this);
+
+        mEnableDolbyAtmos = (TwoStatePreference) findPreference(KEY_ENABLE_DOLBY_ATMOS);
+        mEnableDolbyAtmos.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -111,7 +117,23 @@ public class DeviceSettings extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-       if (preference == mAutoHBMSwitch) {
+        if (preference == mEnableDolbyAtmos) {
+            boolean enabled = (Boolean) newValue;
+            Intent daxService = new Intent();
+            ComponentName name = new ComponentName("com.dolby.daxservice", "com.dolby.daxservice.DaxService");
+            daxService.setComponent(name);
+            if (enabled) {
+                // enable service component and start service
+                this.getContext().getPackageManager().setComponentEnabledSetting(name,
+                        PackageManager.COMPONENT_ENABLED_STATE_DEFAULT, 0);
+                this.getContext().startService(daxService);
+            } else {
+                // disable service component and stop service
+                this.getContext().stopService(daxService);
+                this.getContext().getPackageManager().setComponentEnabledSetting(name,
+                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);
+            }
+        } else if (preference == mAutoHBMSwitch) {
             Boolean enabled = (Boolean) newValue;
             SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             prefChange.putBoolean(KEY_AUTO_HBM_SWITCH, enabled).commit();
