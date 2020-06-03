@@ -67,3 +67,13 @@ sh_binary {
     src: "init.qcom.sh",
     vendor: true,
 }
+
+cc_library_static {
+    name: "libinit_oneplus-sm8150",
+    recovery_available: true,
+    srcs: ["init_oneplus-sm8150.cpp"],
+    include_dirs: [
+        "system/core/base/include",
+        "system/core/init"
+    ]
+}
