@@ -370,6 +370,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.sys.oneplus.support=11.13.1
 
+# Perf
+PRODUCT_PACKAGES += \
+    libqti-perfd-client
+
 # OnePlus Apps
 PRODUCT_PACKAGES += \
     OnePlusCameraOverlay \
