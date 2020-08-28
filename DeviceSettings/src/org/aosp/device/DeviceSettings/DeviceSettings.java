@@ -47,6 +47,7 @@ import org.aosp.device.DeviceSettings.ModeSwitch.HBMModeSwitch;
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_CATEGORY_CAMERA = "camera";
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
@@ -57,11 +58,20 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_NATURAL_SWITCH = "natural";
     public static final String KEY_VIVID_SWITCH = "vivid";
 
+    private static final String KEY_ALWAYS_CAMERA_DIALOG = "always_on_camera_dialog";
+
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
+
+    private static final boolean sHasPopupCamera =
+            Build.DEVICE.equals("OnePlus7Pro") ||
+            Build.DEVICE.equals("OnePlus7TPro") ||
+            Build.DEVICE.equals("guacamole") ||
+            Build.DEVICE.equals("hotdog");
 
     private TwoStatePreference mDCModeSwitch;
     private TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
+    private SwitchPreference mAlwaysCameraSwitch;
     private SwitchPreference mMuteMediaSwitch;
 
     private boolean mInternalHbmStart = false;
@@ -127,6 +137,17 @@ public class DeviceSettings extends PreferenceFragment
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
         mAutoHBMSwitch.setOnPreferenceChangeListener(this);
 
+        PreferenceCategory mCameraCategory = findPreference(KEY_CATEGORY_CAMERA);
+        if (sHasPopupCamera) {
+            mAlwaysCameraSwitch = findPreference(KEY_ALWAYS_CAMERA_DIALOG);
+            boolean enabled = Settings.System.getInt(getContext().getContentResolver(),
+                    KEY_SETTINGS_PREFIX + KEY_ALWAYS_CAMERA_DIALOG, 0) == 1;
+            mAlwaysCameraSwitch.setChecked(enabled);
+            mAlwaysCameraSwitch.setOnPreferenceChangeListener(this);
+        } else {
+            mCameraCategory.setVisible(false);
+        }
+
         // Registering observers
         IntentFilter filter = new IntentFilter();
         filter.addAction(HBMModeSwitch.ACTION_HBM_SERVICE_CHANGED);
@@ -143,7 +164,12 @@ public class DeviceSettings extends PreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final ContentResolver resolver = getContext().getContentResolver();
-        if (preference == mHBMModeSwitch) {
+        if (preference == mAlwaysCameraSwitch) {
+            boolean enabled = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    KEY_SETTINGS_PREFIX + KEY_ALWAYS_CAMERA_DIALOG,
+                    enabled ? 1 : 0);
+        } else if (preference == mHBMModeSwitch) {
             mInternalHbmStart = true;
             Boolean enabled = (Boolean) newValue;
             HBMModeSwitch.setEnabled(enabled, getContext());            

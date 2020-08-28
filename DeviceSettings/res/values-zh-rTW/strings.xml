@@ -58,4 +58,8 @@
     <string name="vib_strength_title_head">強度</string>
     <string name="vib_strength_summary_head">自定義振動強度</string>
     <string name="vibration_warning">將強度設置得太高可能會導致永久性硬件損壞</string>
+    <string name="camera_title">相機</string>
+    <string name="always_on_camera_dialog_title">前置攝像頭開啟時詢問</string>
+    <string name="always_on_camera_dialog_summary_on">每次開啟都詢問</string>
+    <string name="always_on_camera_dialog_summary_off">只在螢幕關閉時詢問</string>
 </resources>
