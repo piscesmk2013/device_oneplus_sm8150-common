@@ -56,6 +56,10 @@ function blob_fixup() {
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
         sed -i -e 's|xml version=\"2.0\"|xml version=\"1.0\"|g' "${2}"
         ;;
+
+    vendor/lib/libgf_ud_hal.so|vendor/lib64/libgf_ud_hal.so)
+        sed -i "s|vendor.boot.verifiedbootstate|vendor.boot.fingerprintbstate|g" "${2}"
+        ;;
     esac
 }
 

@@ -51,6 +51,9 @@ vendor.display.enable_rotator_ui=1
 # HWUI
 debug.hwui.renderer=skiavk
 
+# Fingerprint
+vendor.boot.fingerprintbstate=orange
+
 # IO Prefetcher
 vendor.iop.enable_uxe=0
 
