@@ -67,6 +67,9 @@
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
+    <!-- Display has physical cutout -->
+    <bool name="config_physicalDisplayCutout">true</bool>
+
     <!-- Shows the required view for in-display fingerprint -->
     <bool name="config_supportsInDisplayFingerprint">true</bool>
     
