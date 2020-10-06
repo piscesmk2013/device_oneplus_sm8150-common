@@ -497,7 +497,7 @@
     <bool name="config_pinnerHomeApp">true</bool>
 
     <!-- Should the pinner service pin the Camera application? -->
-    <bool name="config_pinnerCameraApp">true</bool>
+    <bool name="config_pinnerCameraApp">false</bool>
     
     <!-- SQLite -->
     <string name="db_default_journal_mode">MEMORY</string>
