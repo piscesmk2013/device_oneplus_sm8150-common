@@ -28,6 +28,9 @@ PRODUCT_PACKAGES += \
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Flatten APEXs for performance
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 # Atrace
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
