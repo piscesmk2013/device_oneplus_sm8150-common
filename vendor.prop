@@ -208,3 +208,5 @@ sys.fflag.override.settings_seamless_transfer=true
 # Google Assistant
 ro.opa.eligible_device=true
 
+# Zygote
+zygote.critical_window.minute=10
