@@ -81,8 +81,8 @@
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
 
-    <!-- Does the device have a notification/battery LED? -->
-    <bool name="config_deviceHasLED">false</bool>
+    <!-- Does the device have a notification led -->
+    <bool name="config_hasNotificationLed">false</bool>
 
     <!-- Defines custom Vendor sensor for pocket detection. -->
     <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
