@@ -30,4 +30,7 @@
 
     <!-- Device specific doze package -->
     <string name="config_customDozePackage">org.lineageos.settings.doze/org.lineageos.settings.doze.DozeSettingsActivity</string>
+
+    <!-- Disable Settings COlor Mode -->
+    <bool name="config_show_color_mode">false</bool>
 </resources>
