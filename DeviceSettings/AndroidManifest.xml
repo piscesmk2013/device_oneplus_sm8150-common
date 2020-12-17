@@ -105,22 +105,6 @@
         <!-- Auto HBM service -->
         <service android:name="org.aosp.device.DeviceSettings.AutoHBMService" />
 
-        <!-- Refresh rate tile -->
-        <service
-            android:name="org.aosp.device.DeviceSettings.RefreshRateTileService"
-            android:icon="@drawable/ic_refresh_tile_60"
-            android:label="@string/tile_refresh_rate"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-
-        <service android:name="org.aosp.device.DeviceSettings.FPSInfoService"
-                android:exported="false">
-        </service>
-
         <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"

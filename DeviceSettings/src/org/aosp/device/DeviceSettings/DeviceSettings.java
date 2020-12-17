@@ -61,8 +61,6 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_NIGHT_SWITCH = "night";
     public static final String KEY_WIDECOLOR_SWITCH = "widecolor";
-
-    private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
     public static final String KEY_AUTO_REFRESH_RATE = "auto_refresh_rate";
     public static final String KEY_FPS_INFO = "fps_info";
@@ -75,9 +73,6 @@ public class DeviceSettings extends PreferenceFragment
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
     private static TwoStatePreference mDCModeSwitch;
-    private static TwoStatePreference mRefreshRate;
-    private static SwitchPreference mAutoRefreshRate;
-    private static SwitchPreference mFpsInfo;
     private ListPreference mTopKeyPref;
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
@@ -111,45 +106,16 @@ public class DeviceSettings extends PreferenceFragment
         mAutoHBMSwitch = (TwoStatePreference) findPreference(KEY_AUTO_HBM_SWITCH);
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
         mAutoHBMSwitch.setOnPreferenceChangeListener(this);
-
-        if (getResources().getBoolean(R.bool.config_deviceHasHighRefreshRate)) {
-            mAutoRefreshRate = (SwitchPreference) findPreference(KEY_AUTO_REFRESH_RATE);
-            mAutoRefreshRate.setChecked(AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-            mAutoRefreshRate.setOnPreferenceChangeListener(new AutoRefreshRateSwitch(getContext()));
-
-            mRefreshRate = (TwoStatePreference) findPreference(KEY_REFRESH_RATE);
-            mRefreshRate.setEnabled(!AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-            mRefreshRate.setChecked(RefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-            mRefreshRate.setOnPreferenceChangeListener(new RefreshRateSwitch(getContext()));
-
-            mFpsInfo = (SwitchPreference) findPreference(KEY_FPS_INFO);
-            mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
-            mFpsInfo.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference((Preference) findPreference(KEY_CATEGORY_REFRESH));
-        }
-
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mAutoRefreshRate) {
-              mRefreshRate.setEnabled(!AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
-        }
         return super.onPreferenceTreeClick(preference);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mFpsInfo) {
-            boolean enabled = (Boolean) newValue;
-            Intent fpsinfo = new Intent(this.getContext(), org.aosp.device.DeviceSettings.FPSInfoService.class);
-            if (enabled) {
-                this.getContext().startService(fpsinfo);
-            } else {
-                this.getContext().stopService(fpsinfo);
-            }
-        } else if (preference == mAutoHBMSwitch) {
+       if (preference == mAutoHBMSwitch) {
             Boolean enabled = (Boolean) newValue;
             SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             prefChange.putBoolean(KEY_AUTO_HBM_SWITCH, enabled).commit();
