@@ -12,3 +12,6 @@ allow system_app sysfs_aod:file rw_file_perms;
 
 # Allow system_app to read, open and get attributes of sysfs_graphics
 allow system_app sysfs_graphics:file { getattr open read };
+
+# Allow DeviceSettings to set color mode prop
+set_prop(system_app, powerctl_prop)

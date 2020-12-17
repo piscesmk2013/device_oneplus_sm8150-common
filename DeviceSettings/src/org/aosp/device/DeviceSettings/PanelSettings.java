@@ -39,6 +39,7 @@ import android.widget.RadioGroup;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import android.os.SystemProperties;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -137,6 +138,7 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
             Utils.writeValue(SRGBModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, true);
+            SystemProperties.set("vendor.display.color_mode", "18");
         } else if (checkedId == R.id.dci_mode) {
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
@@ -146,6 +148,7 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
             Utils.writeValue(DCIModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, true);
+            SystemProperties.set("vendor.display.color_mode", "16");
         } else if (checkedId == R.id.night_mode) {
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
@@ -155,6 +158,7 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
             Utils.writeValue(NightModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, true);
+            SystemProperties.set("vendor.display.color_mode", "3");
         } else if (checkedId == R.id.off_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
@@ -164,6 +168,7 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
             Utils.writeValue(WideColorModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
+            SystemProperties.set("vendor.display.color_mode", "0");
         } else if (checkedId == R.id.wide_color_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
@@ -173,6 +178,7 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
             Utils.writeValue(WideColorModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, true);
+            SystemProperties.set("vendor.display.color_mode", "17");
         }
         edit.commit();
     }
