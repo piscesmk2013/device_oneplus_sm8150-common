@@ -410,13 +410,7 @@ PRODUCT_PACKAGES += \
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     wfd
-
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
-
+    
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
