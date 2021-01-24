@@ -48,6 +48,9 @@ TARGET_KERNEL_CLANG_VERSION := r450784b
 TARGET_KERNEL_CONFIG := gulch_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
 
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msmnile
