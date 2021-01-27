@@ -739,63 +739,65 @@ vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 
-# Graphics - from OnePlus7TOxygen_13.W.22_OTA_0210_all_2101121639_9a48c7dc03e64c06
+# Graphics - from LA.UM.9.1.r1-08300-SMxxx0.0
 -vendor/app/com.qualcomm.qti.gpudrivers.msmnile.api30/com.qualcomm.qti.gpudrivers.msmnile.api30.apk;PRESIGNED|48806ee3413a591ab35a262b3c0f88fd8ea85fbf
 vendor/lib/egl/eglSubDriverAndroid.so|70f2c481e24a42c9e899719a7de11fc45f31eb80
 vendor/lib/egl/libEGL_adreno.so|a1ebde8802bddd24745983dbd5a81a520afaf5c3
 vendor/lib/egl/libGLESv1_CM_adreno.so|b94ba8188a14dd262abac1b8d667bce3319cf344
-vendor/lib/egl/libGLESv2_adreno.so|ac3716a060ece26fc345c4a3ce773970905b321f
-vendor/lib/egl/libq3dtools_adreno.so|2ac81ee05dd4afb34ef6e56342ee1757f2db1409
-vendor/lib/egl/libq3dtools_esx.so|3d683dcf2892cdd6dd00b38717454abb45204e7a
-vendor/lib/hw/vulkan.adreno.so|040b1bfaa025c0eae3a69df306f0567ea6fe1960
-vendor/lib/libadreno_utils.so|543ab6ed489bd668546ff0b2beb1bfde87518ee5
+vendor/lib/egl/libGLESv2_adreno.so|33942813afd98708f1bedc553c0b09ca4c6ae15e
+vendor/lib/egl/libq3dtools_adreno.so|fa4ad58fe986911110d70eb5e2705e0d5bc8a7dc
+vendor/lib/egl/libq3dtools_esx.so|18f10c765857740d9c60abb1bb0d44b198a827e8
+vendor/lib/hw/vulkan.adreno.so|bcfe9a8559d48d80cd29e3a55486a3b52ae1665d
+vendor/lib/libadreno_utils.so|476a1199e2e52828a342faea1d42caa0048eb92e
 vendor/lib/libC2D2.so|267be7bd6768fa3b9bed2b9a42062cb5a77ca59b
 vendor/lib/libc2d30_bltlib.so|950c705e6dbc02b646a0129e66e94e192f5cd87f
-vendor/lib/libCB.so|95f6759048bca3a9144bedd4da34ae3726d9acfe
-vendor/lib/libgpudataproducer.so|f7b97ea883a0c0e269a08f9c59508c670a9fc5ea
-vendor/lib/libgsl.so|054ed225b52e7846221246c1f3dd4332738a582e
+vendor/lib/libCB.so|618874e0bc8400bd5e2d960b8f988315ef21412a
+vendor/lib/libgpudataproducer.so|3467fbfa9c2bbfcd9b9e1f5dfc7b4503b80cae8e
+vendor/lib/libgsl.so|9c26b46fa2c8e3771e6523d8792fc86edb1e534e
 vendor/lib/libhdr_tm.so|e8697773d1868876f36e98dc68500919668c9acb
-vendor/lib/libllvm-glnext.so|e3b7d7d4a29dc6fa92eca0c2904290a1259b31d5
-vendor/lib/libllvm-qcom.so|fd077b004c53191aba2fa8a82f9a4301ba0e8c13
-vendor/lib/libOpenCL.so|594490738cf3729baa2a745c4f7cbc073d806ede
-vendor/lib/libVkLayer_q3dtools.so|5866382a9e0a9a8a71125e8427d6aa4e190a66e4
-vendor/lib/libadreno_app_profiles.so|db41a59bb7867420c0b19cb2bccd5c7c6bd1000b
+vendor/lib/libllvm-glnext.so|d5257695ce12a9c9b101c886097c99d954d9895d
+vendor/lib/libllvm-qcom.so|7bce5d845b41511b1a428cd713a571e6647399b9
+vendor/lib/libOpenCL.so|a3ae44b36d5f967acaee523152e32a9995adb04e
+vendor/lib/libVkLayer_q3dtools.so|ee2f36503566d5a59d2bcfd696daeac5d0e41a78
+vendor/lib/libadreno_app_profiles.so|c1e66d74987660feba176509f0faccc9f193308d
 vendor/lib/libqseed3.so|4bd5267c3a360de23a65cdb8b3996191851e9648
-vendor/lib/libsdm-color.so|1c853c2d0409b9061331b3613ee7768cc829773a
+vendor/lib/libsdm-color.so|18b633ea3bb1211afb7a4b3db84d99d1b3c146f5
 vendor/lib/libsdm-diag.so|d173de1d03f266e8e38d81eb9e08b78d4c180c70
 vendor/lib/libtinyxml2_1.so|f00b8f6218271d57fd1fb67b192db956e42e66fb
 vendor/lib64/egl/eglSubDriverAndroid.so|e61711cfb952e9abb9e64d4da2e62fa16879af13
 vendor/lib64/egl/libEGL_adreno.so|8f3435dbecb22fd3217698ebbd9b002ad2420576
 vendor/lib64/egl/libGLESv1_CM_adreno.so|e2e8a079e680bf92f686fb79146651c158f6e130
-vendor/lib64/egl/libGLESv2_adreno.so|d3ded1363c6a5c1380eccb75ded05ad3018c8126
-vendor/lib64/egl/libq3dtools_adreno.so|046be35d03cbea2c73a1339eefa1bffc87ab6ebc
-vendor/lib64/egl/libq3dtools_esx.so|6d6fa0679a4904d4aaa7e6030b7765acb8134e32
-vendor/lib64/hw/vulkan.adreno.so|dbe08047ec51224d63645180673eb7db1db2a004
-vendor/lib64/libVkLayer_q3dtools.so|ee5f04c4847dcdf9816bde46380746f9bc0580ed
-vendor/lib64/libadreno_app_profiles.so|a886185ce566287c0c5eb55397f51204cedf9de1
-vendor/lib64/libadreno_utils.so|5f443c3d118d534d59139c56658f58962cdf93c5
+vendor/lib64/egl/libGLESv2_adreno.so|0a3c49c4244723599b78c5fbc92b52afbb860398
+vendor/lib64/egl/libq3dtools_adreno.so|d8c8f25332d218a2dbd7cc5052e384b59d07c5a1
+vendor/lib64/egl/libq3dtools_esx.so|593950cdcbacb2b513a4531b715eef8fe31e46bc
+vendor/lib64/hw/vulkan.adreno.so|31b75ee903e7f4e34d222863444e420eac54f353
+vendor/lib64/libVkLayer_q3dtools.so|a0d262b4a959b4ab7bcabc4858a14ac5db1cd033
+vendor/lib64/libadreno_app_profiles.so|a862e64ee97036c6754b806e4c7ea42df0115f8c
+vendor/lib64/libadreno_utils.so|b9c451dea962544c7ab5d4f87c18e8b84311b86e
 vendor/lib64/libC2D2.so|6fb775e393ce7161b30e3a71fa0f320e86374425
 vendor/lib64/libc2d30_bltlib.so|aa37c84cf6cc1e1ac670b433c97d0bf41308f9ca
-vendor/lib64/libCB.so|cd781270af2833a4568e854375b0fa27dda232c6
-vendor/lib64/libgpudataproducer.so|35e572b0f91c74a1d1da0b87b109c4215c3271e8
-vendor/lib64/libgsl.so|d2d2d524882db9500260a8cd9883e9e9446318ac
+vendor/lib64/libCB.so|cd31f016cfd30d8504d30496023677e54304f63c
+vendor/lib64/libgpudataproducer.so|cc439ebe3e2b6374f9991db701d77a967031816a
+vendor/lib64/libgsl.so|a1945d563de95c966f5aad71cd40f538525c68f4
 vendor/lib64/libhdr_tm.so|e4638c3bf21685b84650c5858bafe384ab2118ff
-vendor/lib64/libllvm-glnext.so|6bf88dd28b9f967c63382610f5064b25bf25d89d
-vendor/lib64/libllvm-qcom.so|05d5103b81aefcc12ddf5de841ddf0df2ae88ad1
-vendor/lib64/libOpenCL.so|8c8489db818c4089459574090d6111db4e0802d0
+vendor/lib64/libllvm-glnext.so|bd2d7c63fd03b3ddd86ed8342fcec47994c9ec7f
+vendor/lib64/libllvm-qcom.so|0a8f97f37c6027d896aef5654513989d9e7e60ca
+vendor/lib64/libOpenCL.so|c97710459d67df24ae4c57aa3cf7fd53e6f5447e
 vendor/lib64/libqseed3.so|1395834daf3c6cd07acbdbc44110decb3be362c2
-vendor/lib64/libsdm-color.so|9a5a5f27481ef8c29624dc18819442ec2764726e
+vendor/lib64/libsdm-color.so|811942ec009988723efb07d7797a07298ed0efb0
 vendor/lib64/libsdm-diag.so|55dafc05ba68666f10412a534f7122d7f45bf403
 vendor/lib64/libtinyxml2_1.so|92101861d95cbdf9625d192d0b2295baa5960b68
 
-# Graphics firmware - from OnePlus7TOxygen_13.W.22_OTA_0210_all_2101121639_9a48c7dc03e64c06
+# Graphics firmware - from LA.UM.9.1.r1-08300-SMxxx0.0
 vendor/firmware/a612_rgmu.bin|cb8705d5bc417e53863ed16ab0bed2fc1489646f
 vendor/firmware/a630_gmu.bin|32bb4acc7767c47ddb487ed7cb998d465ee462f2
 vendor/firmware/a630_sqe.fw|e25094f97b44244775cc38a9d909fba6bd4cf76b
 vendor/firmware/a640_gmu.bin|fb1eab0dd5f313abf31441e2209c9398da7df98b
 vendor/firmware/a640_zap.b00|7afc31984d7eeacdd0fc78118ad8fa46c9b3e4ee
-vendor/firmware/a640_zap.b01|c01a09dc3d4f52e6267ddc3e620e7f120da05069
 vendor/firmware/a640_zap.b02|27d26ca0ae982c065fb7ab58be73bf3ca2e8bdf3
+
+# Graphics firmware - from OnePlus7TOxygen_13.W.22_OTA_0210_all_2101121639_9a48c7dc03e64c06
+vendor/firmware/a640_zap.b01|c01a09dc3d4f52e6267ddc3e620e7f120da05069
 vendor/firmware/a640_zap.elf|a4086939d5f7822ee5b6d3185ead6042ddde854d
 vendor/firmware/a640_zap.mdt|106b74701cba008e1557656f8b7fbe6d897dd49b
 
@@ -1020,13 +1022,15 @@ vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
 vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
-# NFC
+# NFC-edited - from OnePlus7TOxygen_14.O.20_OTA_020_all_2010111858_f4889b82a7ac4fd1
 -app/NxpNfcNci/NxpNfcNci.apk|3ee559a8d5e83fdb0e49c82a6ae8674811ecbb37
+framework/com.nxp.nfc.jar|9299477fdb0c87845d71c135eedd4ca1d3e6097c
+lib64/libnxpnfc-nci.so|ecbd274d2bb19552137b437360049b88395ebba0
+
+# NFC
 -app/NxpSecureElement/NxpSecureElement.apk
 etc/nfcee_access.xml
 etc/permissions/com.nxp.nfc.xml
-framework/com.nxp.nfc.jar|9299477fdb0c87845d71c135eedd4ca1d3e6097c
-lib64/libnxpnfc-nci.so|ecbd274d2bb19552137b437360049b88395ebba0
 lib64/libnxpnfc_nci_jni.so
 vendor/bin/hw/android.hardware.nfc@1.2-service
 vendor/bin/hw/android.hardware.secure_element@1.1-service
@@ -1498,10 +1502,11 @@ vendor/etc/thermal-engine.conf
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
 
-# Time services
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
-vendor/lib64/libtime_genoff.so
+# Time Services - from LA.UM.9.1.r1-08300-SMxxx0.0
+-vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
+vendor/bin/time_daemon|66fe5b9d033a6479fc65357514883f7cc46f0537
+vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
+vendor/lib64/libtime_genoff.so|3f57de1aeb7aa113a0a579cebed85ab4405b9b49
 
 # Touchscreen firmware
 vendor/firmware/tp/FW_18821_SY761.bin
@@ -1574,7 +1579,7 @@ vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
-# WiFi Display - from OnePlus7TOxygen_13.W.22_OTA_0210_all_2101121639_9a48c7dc03e64c06
+# WiFi Display - from LA.UM.9.1.r1-08300-SMxxx0.0
 vendor/bin/wfdhdcphalservice|c7a2d70190d8a90a8ed326af0add5cf7c99d1ab6
 vendor/bin/wfdvndservice|f61f0c364444e750920f57cb1f1cda3a21b0dbbd
 vendor/bin/wifidisplayhalservice|414bb43e7f93d67d62ee7111ced4e55e065f6d8c
@@ -1584,37 +1589,37 @@ vendor/etc/init/wfdvndservice.rc|42e28fb8e0bf00620d7b9939b5bd3164ca671033
 vendor/etc/seccomp_policy/wfdhdcphalservice.policy|a489ab323be4be2df3de9f84a6b5e6cef924f4c4
 vendor/etc/seccomp_policy/wfdvndservice.policy|b46f0c22a1f9b65c6750205e161c0a3f84ac716b
 vendor/etc/seccomp_policy/wifidisplayhalservice.policy|f113f27e0e301a18baf0ade08c23071a27c7dc52
-vendor/etc/wfdconfig.xml|7400b6f617476e7f52a7052bbf499f5c8fa29c26
+vendor/etc/wfdconfig.xml|9e13371f7ae509cc0bbb3f2ace93c5ea5d87bf0f
 vendor/lib/libFileMux_proprietary.so|e59edd4604a7c73147118161cab5b7ac6bb16c82
 vendor/lib/libOmxVideoDSMode.so|ce0471a087e72632ec37adc6b7ba9d81773f42cb
-vendor/lib/libmiracast.so|f0b7eeafd263d8016eb4ae7aaeb0a04bbd1df269
-vendor/lib/libmmrtpdecoder_proprietary.so|9232f505ea8f0c1e9f81a049c583fba32a450d73
-vendor/lib/libmmrtpencoder_proprietary.so|bb345cb90834bfec208ae38359b2601e98ff115b
+vendor/lib/libmiracast.so|1288361d66810432d73139c3b4b15e65f7447813
+vendor/lib/libmmrtpdecoder_proprietary.so|4e9d5b404ba2455b3e8663f0a91f5b02be18c5fd
+vendor/lib/libmmrtpencoder_proprietary.so|2386d7e84428c7511e896cdaa7f3eed1e68752a3
 vendor/lib/libwfdcodecv4l2_proprietary.so|2dcd875133040d048e48ed92e4dae3b38f2aca1a
 vendor/lib/libwfdcommonutils_proprietary.so|4b71ff7e1994b493cfee47445928f565a169a7e1
-vendor/lib/libwfdconfigutils_proprietary.so|1844d3b80f3a86605d566597bda285448be360c7
-vendor/lib/libwfddisplayconfig_proprietary.so|fd73dda05415d2316eb46fb97635939a03107815
-vendor/lib/libwfdhdcpcp.so|4f91fb5c898dbb00af556bfff3dceefd6651e0af
+vendor/lib/libwfdconfigutils_proprietary.so|c416af04c0b2228a4571f423afdce1c779c16aa4
+vendor/lib/libwfddisplayconfig_proprietary.so|2c8d94e73cc76697c1973c4bfdb03cc8aff50cba
+vendor/lib/libwfdhdcpcp.so|7f0aefaf7efe250aff192b4b309be08b8e799d0d
 vendor/lib/libwfdhdcpservice_proprietary.so|d7cfbfdbd3240b2dd1fd3f2f7fa3559910a25093
 vendor/lib/libwfdmminterface_proprietary.so|3eb3455633d5814a5d7cddb0d95f9d45b7c05db2
 vendor/lib/libwfdmmservice_proprietary.so|d98b728661708e1c63819b42bb4d9a01fa94ec6b
-vendor/lib/libwfdmmsrc_proprietary.so|8dabf26714a1e972802a5f89766b464450771266
+vendor/lib/libwfdmmsrc_proprietary.so|3411134629a8a62bfafc6b7d49afe9727214f28e
 vendor/lib/libwfdmodulehdcpsession.so|18d206f80b684ce4cfb7d1b8b71f04ff7b7a5d63
 vendor/lib/libwfdrtsp_proprietary.so|180c0e00c549cf56ef71ad5ac0ae123f2e5d9bc1
 vendor/lib/libwfdsessionmodule.so|a583043506f9a136f88a6dc3bd6aa2263101635d
-vendor/lib/libwfdsourcesession_proprietary.so|d22cda23dc76cbdcc191d8127596a256ca59f331
-vendor/lib/libwfdsourcesm_proprietary.so|5bf73a17c861687cdba5ef036a32f1ddaaaf54f7
+vendor/lib/libwfdsourcesession_proprietary.so|a5ae7ba96abc36bfcd265d6a08e6422de1f5328a
+vendor/lib/libwfdsourcesm_proprietary.so|254276c4a90a9875bbd7508332123d4e2e39ec3a
 vendor/lib/libwfduibcinterface_proprietary.so|78da77406a29d342803d108ca25aa55df5ec333c
 vendor/lib/libwfduibcsink_proprietary.so|1fca8e9556d209377c1860b4d829bb71450cfce0
-vendor/lib/libwfduibcsinkinterface_proprietary.so|1717c2be7d12dce0fca3989d504c49511f3b51a6
-vendor/lib/libwfduibcsrc_proprietary.so|b78df6ab7acb850f2adb875ccecb1a3c3539f4d2
-vendor/lib/libwfduibcsrcinterface_proprietary.so|1bf0052f3c737b058c4a4715499711e11e27456d
+vendor/lib/libwfduibcsinkinterface_proprietary.so|cb154f66d3d1e27e8acf54af5276d6ef8ccf742a
+vendor/lib/libwfduibcsrc_proprietary.so|31477ada138fd206281318252acba38ed4158eb9
+vendor/lib/libwfduibcsrcinterface_proprietary.so|31eb42e69b21bed4e33f4fd5c900170e6a093c4e
 vendor/lib/libwfdutils_proprietary.so|d5c542093152f08af97a77b0bd58e07e01b20825
-vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so|859280dcb00fedbcf2778bbd860bbde445e7e846
+vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so|f57e16d475a6a33489302326212691b825b7584a
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|fdba1b3c11ace4b0415be4e5944cdb288cd35f58
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|044c6cfd4bc603e4aa372ab1a3d287a8d8e5fc48
-vendor/lib64/libmiracast.so|ef21ecfc8215d1bb1ac03e0de4c73b725eabd203
-vendor/lib64/libwfddisplayconfig_proprietary.so|2e627e1b54424569dc6d9632ddcedb5ec63f17d1
-vendor/lib64/libwfdhdcpcp.so|43d345f7d5af66b413754ee4a205f6e7359b5724
-vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so|e34fca057b717343ee782826816baf230d684f89
+vendor/lib64/libmiracast.so|44d81d228be14e819754532f59a884d890cf6d4e
+vendor/lib64/libwfddisplayconfig_proprietary.so|470c34029b6a32cb129b348f987928a12bb06483
+vendor/lib64/libwfdhdcpcp.so|ba43f54ee4e34562b31c9595d2ad0639033e8fdc
+vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so|d5bcbbe476c1e591c59ff249fea68defeebd4368
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|8c6a5c79f8f15db6f8f4123cba7079c98ba10b95
