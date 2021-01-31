@@ -1050,6 +1050,10 @@ vendor/lib64/vendor.nxp.nxpese@1.0.so
 vendor/lib64/vendor.nxp.nxpnfc@1.0.so
 vendor/lib64/vendor.nxp.eventprocessor@1.0.so
 
+# OpFeature
+vendor/bin/opf-service
+vendor/etc/init/init.opf.rc
+
 # Perf
 -vendor/app/pasrservice/pasrservice.apk
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
