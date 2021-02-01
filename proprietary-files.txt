@@ -214,6 +214,7 @@ vendor/lib/libarcsoft_dualcam_refocus_preview.so
 vendor/lib/libarcsoft_dualcam_refocus_right.so
 vendor/lib/libarcsoft_dualcam_refocus_uw.so
 vendor/lib/libarcsoft_hdrplus_hvx_stub.so
+vendor/lib/libarcsoft_portrait_distortion_correction.so
 vendor/lib/libarcsoft_super_night_raw.so
 vendor/lib/libcamera_nn_stub.so
 vendor/lib/libcamxfdalgov7.so
@@ -309,6 +310,7 @@ vendor/lib64/libarcsoft_hdrplus_hvx_stub.so
 vendor/lib64/libarcsoft_high_dynamic_range.so
 vendor/lib64/libarcsoft_high_dynamic_range_couple.so
 vendor/lib64/libarcsoft_piczoom.so
+vendor/lib64/libarcsoft_portrait_distortion_correction.so
 vendor/lib64/libarcsoft_smart_denoise.so
 vendor/lib64/libarcsoft_super_night_raw.so
 vendor/lib64/libcamera_nn_stub.so
@@ -1049,6 +1051,9 @@ vendor/lib64/ls_client.so
 vendor/lib64/vendor.nxp.nxpese@1.0.so
 vendor/lib64/vendor.nxp.nxpnfc@1.0.so
 vendor/lib64/vendor.nxp.eventprocessor@1.0.so
+
+# OpCamera
+-priv-app/OnePlusCameraService/OnePlusCameraService.apk
 
 # OpFeature
 vendor/bin/opf-service
