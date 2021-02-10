@@ -881,31 +881,31 @@ vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
-# Listen
-vendor/lib/hw/sound_trigger.primary.msmnile.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libcapiv2svacnn.so
-vendor/lib/libcapiv2vop.so
-vendor/lib/libgcs-calwrapper.so
-vendor/lib/libgcs-ipc.so
-vendor/lib/libgcs-osal.so
-vendor/lib/libgcs.so
-vendor/lib/liblistenjni.so
-vendor/lib/liblistensoundmodel2.so
-vendor/lib/libmulawdec.so
-vendor/lib/libsmwrapper.so
-vendor/lib/libjnihelper.so
-vendor/lib64/hw/sound_trigger.primary.msmnile.so
-vendor/lib64/libcapiv2svacnn.so
-vendor/lib64/libcapiv2vop.so
-vendor/lib64/libgcs-calwrapper.so
-vendor/lib64/libgcs-ipc.so
-vendor/lib64/libgcs-osal.so
-vendor/lib64/libgcs.so
-vendor/lib64/liblistenjni.so
-vendor/lib64/liblistensoundmodel2.so
-vendor/lib64/libmulawdec.so
-vendor/lib64/libjnihelper.so
+# Listen - from OnePlus7_11_RKQ1.201022.002_2101230052_release-keys
+vendor/lib/hw/sound_trigger.primary.msmnile.so|9c9cab0833b699ae37e9830bed4a7c6bcfd60350
+vendor/lib/libadpcmdec.so|491fedbdcf9a395340ce4142c277156c0056bcf8
+vendor/lib/libcapiv2svacnn.so|52d15faf916fee38f2ea47c496b562dec4b7f069
+vendor/lib/libcapiv2vop.so|ffde544a5b8b4db988e92308568a84caad80518e
+vendor/lib/libgcs-calwrapper.so|add1a884b96057164966b67084ef8c2b4d88510e
+vendor/lib/libgcs-ipc.so|98b9061ad73f9387546e8e35eca80cb5bd1ab5eb
+vendor/lib/libgcs-osal.so|0e762ecaf6b0d59e5322323b0fef17e8c76d0b4a
+vendor/lib/libgcs.so|f5b600f244e85f178b649fae507f482183a4977c
+vendor/lib/liblistenjni.so|c9c518788381c50af3cfc097f0ce9aef6a696179
+vendor/lib/liblistensoundmodel2.so|2aef0a61f0e054288689a6fdfb28d92afcd6e8c7
+vendor/lib/libmulawdec.so|53257dee0befc2a353ceb84a906a680a33d745f1
+vendor/lib/libsmwrapper.so|296a368db4ce5dd45dfd3fbbc601df65c10d64d0
+vendor/lib/libjnihelper.so|ef2c1ecf3a0e02125d78af8a16aea074d4337034
+vendor/lib64/hw/sound_trigger.primary.msmnile.so|85137a3502d6dac301165701d93ba0aa5fa6e647
+vendor/lib64/libcapiv2svacnn.so|fcab5f58d3fad2603b58e51a2875c2f3a35d33d4
+vendor/lib64/libcapiv2vop.so|23a80adfacbfe48b8b4b57d74b3f4f847447ddf5
+vendor/lib64/libgcs-calwrapper.so|1b161079a6d2c187ad20673ecb99f44774a4633b
+vendor/lib64/libgcs-ipc.so|bc0f53a4f0d1d3fed7ea2a86f1c83071cbe4e125
+vendor/lib64/libgcs-osal.so|0ffb98f6dc0a10f0a59bb42a4daf55b77ff3ccca
+vendor/lib64/libgcs.so|ffe390a2124a935dd643370d0c2b7d1ba3e78efd
+vendor/lib64/liblistenjni.so|98081f0ea5e7426b0ff2cb7d8b4793c9e20ff5a5
+vendor/lib64/liblistensoundmodel2.so|732b5d1bb92bb98dfe2ddb4bf3a04fcc0eabfb96
+vendor/lib64/libmulawdec.so|8a114d91458cee68b32186afe1a4b6315c0ffcd9
+vendor/lib64/libjnihelper.so|fb8690fbb5b8fbb97ded1bd8d4f87285ec74cf41
 
 # Machine learning
 vendor/lib/libnpu.so
