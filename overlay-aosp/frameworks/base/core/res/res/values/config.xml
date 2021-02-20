@@ -44,4 +44,7 @@
 
     <!-- Does the device have a notification/battery LED? -->
     <bool name="config_deviceHasLED">false</bool>
+
+    <!-- Face unlock -->
+    <bool name="config_faceAuthOnlyOnSecurityView">true</bool>
 </resources>
