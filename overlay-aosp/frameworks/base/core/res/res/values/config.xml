@@ -2,7 +2,7 @@
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
                    2017-2019 The LineageOS Project
-                   2020      StatiXOS
+                   2020 The PixelExperience Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@
 
     <bool name="config_hideFodCircleGoingToSleep">true</bool>
 
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
     <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/battery/fastchg_status</string>
 
     <!-- Whether device ignores the RSSNR signal implementation -->

@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2021 The PixelExperience Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,9 +22,9 @@ set -e
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-ANDROID_ROOT="${MY_DIR}/../../.."
+AOSP_ROOT="${MY_DIR}/../../.."
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${AOSP_ROOT}/tools/extract-utils/extract_utils.sh"
 
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
@@ -32,7 +33,7 @@ fi
 source "${HELPER}"
 
 # Initialize the helper for common
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${AOSP_ROOT}" true
 
 # Copyright headers and guards
 write_headers "guacamole guacamoleb guacamoleg hotdog hotdogb"
@@ -46,7 +47,7 @@ write_footers
 if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device
     INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
+    setup_vendor "${DEVICE}" "${VENDOR}" "${AOSP_ROOT}" false
 
     # Copyright headers and guards
     write_headers

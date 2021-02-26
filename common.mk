@@ -507,7 +507,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
+    android.hardware.usb@1.0-service
 
 # VNDK
 PRODUCT_COPY_FILES += \
