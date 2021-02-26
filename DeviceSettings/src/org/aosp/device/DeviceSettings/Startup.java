@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
@@ -47,10 +48,30 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("vendor.display.color_mode", "18");
+            restore(SRGBModeSwitch.getFile(), enabled);
+        }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
         restore(HBMModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
         restore(DCModeSwitch.getFile(), enabled);
-        Utils.enableService(context);
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("vendor.display.color_mode", "16");
+            restore(DCIModeSwitch.getFile(), enabled);
+        }
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("vendor.display.color_mode", "3");
+            restore(NightModeSwitch.getFile(), enabled);
+        }
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("vendor.display.color_mode", "17");
+            restore(WideColorModeSwitch.getFile(), enabled);
+        }
+		Utils.enableService(context);
     }
 }
