@@ -1,0 +1,2 @@
+# Allow platform apps to access dms hal
+hal_client_domain(platform_app, hal_dms)

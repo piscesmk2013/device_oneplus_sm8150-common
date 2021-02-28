@@ -1,3 +1,6 @@
+# Allow system apps access to fod hal
+hal_client_domain(system_app, hal_fingerprint)
+
 # Allow system_app to read and write to sysfs_vibrator
 allow system_app sysfs_vibrator:file rw_file_perms;
 
