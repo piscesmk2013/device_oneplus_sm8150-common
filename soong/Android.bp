@@ -13,6 +13,7 @@ bootstrap_go_package {
         "fod.go",
         "sensors.go",
         "main.go",
+        "dummy.go",
     ],
     pluginFor: ["soong_build"],
 }
