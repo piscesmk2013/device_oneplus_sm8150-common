@@ -87,4 +87,7 @@
 
     <!-- Face unlock -->
     <bool name="config_faceAuthOnlyOnSecurityView">true</bool>
+
+    <!-- Defines custom Vendor sensor for pocket detection. -->
+    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
 </resources>
