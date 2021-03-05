@@ -83,4 +83,7 @@
 
     <!-- Does the device have a notification/battery LED? -->
     <bool name="config_deviceHasLED">false</bool>
+
+    <!-- Defines custom Vendor sensor for pocket detection. -->
+    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
 </resources>
