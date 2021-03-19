@@ -23,9 +23,11 @@ vendor.sys.memplus.    u:object_r:vendor_memplus_prop:s0
 
 # NFC
 persist.vendor.nfc.        u:object_r:vendor_nfc_prop:s0
+persist.nfc.               u:object_r:vendor_nfc_prop:s0
 persist.vendor.oem.nfc.    u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.notify_tp    u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.            u:object_r:vendor_nfc_prop:s0
+persist.factoryota.reboot  u:object_r:vendor_nfc_prop:s0
 
 # Panel color mode
 persist.vendor.display.color_mode  u:object_r:powerctl_prop:s0
