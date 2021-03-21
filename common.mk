@@ -412,7 +412,8 @@ PRODUCT_BOOT_JARS += \
     oneplus-fwk.oneplus_msmnile
 
 # Power
-$(call inherit-product, vendor/qcom/opensource/power/power-vendor-product.mk)
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti
 
 # Protobuf
 PRODUCT_PACKAGES += \
