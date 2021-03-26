@@ -99,10 +99,8 @@ on post-fs-data
     mkdir /data/vendor/tloc 0700 system drmrpc
     mkdir /data/vendor/nnhal 0700 system system
 
-on early-boot
-    start vendor.sensors
-
 on boot
+    start vendor.sensors
     # overlay_oneplus overlay overlay /product/app lowerdir=/oneplus/app:/product/app,context=u:object_r:system_file:s0
     # overlay_oneplus overlay overlay /product/priv-app lowerdir=/oneplus/priv-app:/product/priv-app,context=u:object_r:system_file:s0
     # overlay_oneplus overlay overlay /product/etc lowerdir=/oneplus/etc:/product/etc,context=u:object_r:system_file:s0
