@@ -367,4 +367,10 @@
     <string name="db_default_sync_mode">OFF</string>
     <string name="db_wal_sync_mode">OFF</string>
 
+    <!-- Applications which are disabled unless matching a particular SKU. -->
+    <string-array name="config_disableApksUnlessMatchedSku_apk_list" translatable="false">
+        <item>com.qualcomm.qti.performancemode</item>
+        <item>com.qualcomm.qti.workloadclassifier</item>
+    </string-array>
+
 </resources>
