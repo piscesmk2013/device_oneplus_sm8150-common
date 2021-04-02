@@ -1,5 +1,5 @@
-# Allow system_app to write sysfs_livedisplay_tuneable
-allow system_app sysfs_livedisplay_tuneable:file write;
+# Allow system_app to read and write to sysfs_vibrator
+allow system_app sysfs_vibrator:file rw_file_perms;
 
 # Allow system_app to access zram sysfs nodes
 allow system_app sysfs_zram:dir { search r_file_perms };
