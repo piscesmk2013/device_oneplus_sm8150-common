@@ -12,3 +12,6 @@ allow system_app vendor_sysfs_graphics:file { getattr open read };
 
 # Allow DeviceSettings to set color mode prop
 set_prop(system_app, powerctl_prop)
+
+# Allow system_app to access zram sysfs nodes
+allow system_app sysfs_zram:dir { search r_file_perms };
