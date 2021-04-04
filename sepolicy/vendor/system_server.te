@@ -1,0 +1,1 @@
+allow system_server { proc_sensor proc_ultrasound proc_touchpanel }:dir search;
