@@ -347,6 +347,8 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/etc/Oppo_QC_LTM_Commercial_SM8250_2020_01_15.pfm
 
 # Display (HDR)
+vendor/etc/hdr_config.cfg
+vendor/etc/sdr_config.cfg
 vendor/lib64/libhdr_tm.so
 
 # Display (SDM) - from NX627J - RKQ1.200826.002
