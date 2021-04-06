@@ -138,12 +138,12 @@ TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # HIDL
-DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
-ODM_MANIFEST_FILES := $(VENDOR_PATH)/manifest-qva.xml
+DEVICE_MATRIX_FILE += $(VENDOR_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest.xml
+ODM_MANIFEST_FILES += $(VENDOR_PATH)/manifest-qva.xml
 
 ODM_MANIFEST_SKUS += 3
-ODM_MANIFEST_3_FILES := $(VENDOR_PATH)/manifest_3.xml
+ODM_MANIFEST_3_FILES += $(VENDOR_PATH)/manifest_3.xml
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
