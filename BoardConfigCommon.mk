@@ -143,7 +143,9 @@ DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest.xml
 ODM_MANIFEST_FILES += $(VENDOR_PATH)/manifest-qva.xml
 
 ODM_MANIFEST_SKUS += 3
-ODM_MANIFEST_3_FILES += $(VENDOR_PATH)/manifest_3.xml
+ODM_MANIFEST_3_FILES := \
+    $(VENDOR_PATH)/manifest-qva.xml \
+    $(VENDOR_PATH)/manifest_3.xml
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
