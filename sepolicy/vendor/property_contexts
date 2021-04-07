@@ -30,6 +30,9 @@ vendor.oem.nfc.            u:object_r:vendor_nfc_prop:s0
 persist.factoryota.reboot  u:object_r:vendor_nfc_prop:s0
 ro.nfc.port                u:object_r:vendor_nfc_prop:s0
 
+# Panel color mode
+persist.vendor.display.color_mode  u:object_r:powerctl_prop:s0
+
 # OEM dump
 persist.vendor.enable.powerkey.dump    u:object_r:vendor_oem_dump_prop:s0
 persist.vendor.oem.defaultdump         u:object_r:vendor_oem_dump_prop:s0
