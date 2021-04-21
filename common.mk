@@ -456,7 +456,8 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    WifiOverlay
+    WifiOverlay \
+    ConnectivityOverlay
 
 # WiFi Display
 PRODUCT_PACKAGES += \
