@@ -48,18 +48,18 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-        if (enabled) {
-            SystemProperties.set("persist.vendor.display.color_mode", "18");
-            restore(SRGBModeSwitch.getFile(), enabled);
-        }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
         restore(HBMModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
         restore(DCModeSwitch.getFile(), enabled);
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("persist.vendor.display.color_mode", "20");
+            restore(SRGBModeSwitch.getFile(), enabled);
+        }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
         if (enabled) {
-            SystemProperties.set("persist.vendor.display.color_mode", "16");
+            SystemProperties.set("persist.vendor.display.color_mode", "21");
             restore(DCIModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
@@ -71,6 +71,16 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             SystemProperties.set("persist.vendor.display.color_mode", "17");
             restore(WideColorModeSwitch.getFile(), enabled);
+        }
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("persist.vendor.display.color_mode", "18");
+        restore(NaturalModeSwitch.getFile(), enabled);
+        }
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
+        if (enabled) {
+            SystemProperties.set("persist.vendor.display.color_mode", "16");
+        restore(VividModeSwitch.getFile(), enabled);
         }
 	Utils.enableService(context);
     }

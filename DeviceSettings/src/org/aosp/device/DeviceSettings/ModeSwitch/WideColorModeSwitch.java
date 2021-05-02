@@ -47,7 +47,7 @@ public class WideColorModeSwitch implements OnPreferenceChangeListener {
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(getFile(), enabled ? "1" : "0");
-	    SystemProperties.set("persist.vendor.display.color_mode", "17");
+        SystemProperties.set("persist.vendor.display.color_mode", "17");
         return true;
     }
 }

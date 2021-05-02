@@ -26,7 +26,7 @@ import androidx.preference.PreferenceManager;
 
 public class DCIModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode";
+    private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_customer_p3_mode";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -47,7 +47,7 @@ public class DCIModeSwitch implements OnPreferenceChangeListener {
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(getFile(), enabled ? "1" : "0");
-	    SystemProperties.set("persist.vendor.display.color_mode", "16");
+        SystemProperties.set("persist.vendor.display.color_mode", "21");
         return true;
     }
 }
