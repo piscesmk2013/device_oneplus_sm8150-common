@@ -65,6 +65,10 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
         int checkedButtonId = R.id.off_mode;
         if (NightModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.night_mode;
+        } else if (NaturalModeSwitch.isCurrentlyEnabled(getContext())) {
+            checkedButtonId = R.id.natural_mode;
+        } else if (VividModeSwitch.isCurrentlyEnabled(getContext())) {
+            checkedButtonId = R.id.vivid_mode;
         } else if (DCIModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.dci_mode;
         } else if (SRGBModeSwitch.isCurrentlyEnabled(getContext())) {
@@ -130,6 +134,10 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor edit = sharedPrefs.edit();
         if (checkedId == R.id.srgb_mode) {
+            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+            Utils.writeValue(VividModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
             Utils.writeValue(NightModeSwitch.getFile(), "0");
@@ -138,8 +146,12 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
             Utils.writeValue(SRGBModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, true);
-            SystemProperties.set("persist.vendor.display.color_mode", "18");
+            SystemProperties.set("persist.vendor.display.color_mode", "20");
         } else if (checkedId == R.id.dci_mode) {
+            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+            Utils.writeValue(VividModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
             Utils.writeValue(NightModeSwitch.getFile(), "0");
@@ -148,8 +160,54 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
             Utils.writeValue(DCIModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, true);
+            SystemProperties.set("persist.vendor.display.color_mode", "21");
+        } else if (checkedId == R.id.natural_mode) {
+            Utils.writeValue(VividModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
+            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
+            Utils.writeValue(DCIModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
+            Utils.writeValue(NightModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            Utils.writeValue(NaturalModeSwitch.getFile(), "1");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, true);
+            SystemProperties.set("persist.vendor.display.color_mode", "18");
+        } else if (checkedId == R.id.vivid_mode) {
+            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
+            Utils.writeValue(DCIModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
+            Utils.writeValue(NightModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            Utils.writeValue(VividModeSwitch.getFile(), "1");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, true);
             SystemProperties.set("persist.vendor.display.color_mode", "16");
+        } else if (checkedId == R.id.wide_color_mode) {
+            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+            Utils.writeValue(VividModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
+            Utils.writeValue(DCIModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
+            Utils.writeValue(NightModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+            Utils.writeValue(WideColorModeSwitch.getFile(), "1");
+            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, true);
+            SystemProperties.set("persist.vendor.display.color_mode", "17");
         } else if (checkedId == R.id.night_mode) {
+            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+            Utils.writeValue(VividModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
@@ -160,16 +218,10 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, true);
             SystemProperties.set("persist.vendor.display.color_mode", "3");
         } else if (checkedId == R.id.off_mode) {
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
-            SystemProperties.set("persist.vendor.display.color_mode", "0");
-        } else if (checkedId == R.id.wide_color_mode) {
+            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
+            Utils.writeValue(VividModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
             Utils.writeValue(NightModeSwitch.getFile(), "0");

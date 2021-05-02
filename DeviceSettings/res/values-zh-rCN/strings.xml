@@ -18,16 +18,16 @@
     <string name="device_summary">调整一加特定设备设置</string>
     <string name="display_title">显示</string>
     <string name="srgb_mode_summary"></string>
-    <string name="srgb_mode_title">sRGB 模式</string>
+    <string name="srgb_mode_title">sRGB</string>
     <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">高亮度模式</string>
     <string name="auto_hbm_summary"></string>
     <string name="auto_hbm_title">自动高亮度模式</string>
     <string name="auto_hbm_threshold_title">自动高亮度模式阈值 (lux)</string>
     <string name="auto_hbm_threshold_summary"></string>
-    <string name="wide_color_mode_title">广色域模式</string>
+    <string name="wide_color_mode_title">AMOLED 广色域模式</string>
     <string name="dci_mode_summary"></string>
-    <string name="dci_mode_title">DCI-P3 广色域模式</string>
+    <string name="dci_mode_title">DCI-P3</string>
     <string name="Night_mode_summary"></string>
     <string name="Night_mode_title">夜间模式</string>
     <string name="panel_category_title">面板模式</string>
@@ -37,6 +37,8 @@
     <string name="dc_mode_summary"></string>
     <string name="dc_mode_title">DC调光</string>
     <string name="tile_hbm_mode">高亮度模式</string>
+    <string name="natural_mode_title">自然</string>
+    <string name="vivid_mode_title">生动</string>
     <string name="display_modes_category_title">显示模式</string>
     <string name="display_modes_category_summary">更改分辨率和刷新率</string>
     <!-- Notification slider -->
