@@ -1,0 +1,4 @@
+# IFAA
+attribute hal_ifaa;
+attribute hal_ifaa_client;
+attribute hal_ifaa_server;

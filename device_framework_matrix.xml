@@ -242,6 +242,16 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.ifaa</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IOneplusIfaa</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::IOneplusIfaa/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.oplus.hardware.ims</name>
         <version>1.0</version>
         <interface>

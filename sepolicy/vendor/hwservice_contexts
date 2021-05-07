@@ -1,0 +1,2 @@
+# IFAA
+vendor.oneplus.hardware.ifaa::IOneplusIfaa                            u:object_r:hal_ifaa_hwservice:s0
