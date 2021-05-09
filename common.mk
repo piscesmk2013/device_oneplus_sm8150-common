@@ -159,6 +159,11 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/com.oneplus.camera.service.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.camera.service.xml \
+    $(LOCAL_PATH)/configs/opcam-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/opcam-hiddenapi-package-allowlist.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-opcam.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-opcam.xml
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     ftm_power_config.sh \

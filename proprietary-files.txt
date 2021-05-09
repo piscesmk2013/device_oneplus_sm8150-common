@@ -78,6 +78,20 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
 # Camera
+-priv-app/OnePlusCameraService/OnePlusCameraService.apk
+-system_ext/priv-app/OnePlusCamera/OnePlusCamera.apk|e092341e63ff21a7e5f0efd824e774dd1d37e031
+system_ext/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so
+system_ext/framework/vendor.oneplus.hardware.camera-V1.0-java.jar
+system_ext/framework/vendor.oneplus.hardware.CameraMDMHIDL-V1.0-java.jar
+system_ext/lib/vendor.oneplus.hardware.camera@1.0-adapter-helper.so
+system_ext/lib/vendor.oneplus.hardware.camera@1.0.so
+system_ext/lib/vendor.oneplus.hardware.CameraMDMHIDL@1.0-adapter-helper.so
+system_ext/lib/vendor.oneplus.hardware.CameraMDMHIDL@1.0.so
+system_ext/lib/vendor.qti.hardware.camera.device@1.0.so
+system_ext/lib64/vendor.oneplus.hardware.camera@1.0-adapter-helper.so
+system_ext/lib64/vendor.oneplus.hardware.camera@1.0.so
+system_ext/lib64/vendor.oneplus.hardware.CameraMDMHIDL@1.0-adapter-helper.so
+system_ext/lib64/vendor.oneplus.hardware.CameraMDMHIDL@1.0.so
 vendor/bin/hw/vendor.oneplus.hardware.camera@1.0-service
 vendor/bin/hw/vendor.oneplus.hardware.CameraMDMHIDL@1.0-service
 vendor/bin/vl53l1_daemon_main

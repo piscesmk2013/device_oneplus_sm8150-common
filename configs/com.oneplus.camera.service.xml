@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.oneplus.camera.service">
+        <permission name="android.permission.FORCE_STOP_PACKAGES" />
+    </privapp-permissions>
+</permissions>
+

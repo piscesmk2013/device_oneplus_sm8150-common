@@ -61,7 +61,11 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
+persist.camera.assert.panic=true
+persist.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera
 persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
+ro.com.google.lens.oem_camera_package=com.oneplus.camera
+ro.opcamera.support=true
 ro.vendor.camera.res.fmq.size=1048576
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.factorymode,com.oneplus.camera,com.oneplus.healthcheck
 log.tag.CHIUSECASE=ERROR
