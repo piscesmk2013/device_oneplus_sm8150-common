@@ -1,2 +1,5 @@
 # Type define oneplus camera domain
 type oneplus_camera_app, domain, coredomain;
+
+# Allow camera to check battery status
+allow oneplus_camera_app vendor_sysfs_battery_supply:dir { search };
