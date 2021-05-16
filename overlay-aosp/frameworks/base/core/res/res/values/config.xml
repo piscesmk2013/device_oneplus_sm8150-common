@@ -70,9 +70,6 @@
     <!-- Shows the required view for in-display fingerprint -->
     <bool name="config_supportsInDisplayFingerprint">true</bool>
 
-    <!-- FOD icon dim-->
-    <bool name="config_targetUsesInKernelDimming">true</bool>
-
     <bool name="config_hideFodCircleGoingToSleep">true</bool>
     
     <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
