@@ -49,7 +49,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     private SwitchPreference mAlwaysOnDisplayPreference;
 
     private SwitchPreference mPickUpPreference;
-    private SwitchPreference mRaiseToWakePreference;
 
     private Handler mHandler = new Handler();
 
@@ -79,17 +78,11 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPickUpPreference.setEnabled(dozeEnabled);
         mPickUpPreference.setOnPreferenceChangeListener(this);
 
-        mRaiseToWakePreference = (SwitchPreference) findPreference(Utils.GESTURE_RAISE_TO_WAKE_KEY);
-        mRaiseToWakePreference.setEnabled(dozeEnabled);
-        mRaiseToWakePreference.setOnPreferenceChangeListener(this);
-
         // Hide AOD if not supported and set all its dependents otherwise
         if (!Utils.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
         } else {
             pickupSensorCategory.setDependency(Utils.ALWAYS_ON_DISPLAY);
-
-            mPickUpPreference.setDependency(Utils.GESTURE_RAISE_TO_WAKE_KEY);
         }
     }
 
@@ -128,10 +121,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             Utils.enableAlwaysOn(getActivity(), (Boolean) newValue);
         }
 
-	if (Utils.GESTURE_RAISE_TO_WAKE_KEY.equals(preference.getKey())) {
-	    Utils.setPickUp(getActivity(), (Boolean) newValue);
-        }
-
         mHandler.post(() -> Utils.checkDozeService(getActivity()));
 
         return true;
@@ -152,7 +141,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mAlwaysOnDisplayPreference.setEnabled(isChecked);
 
         mPickUpPreference.setEnabled(isChecked);
-        mRaiseToWakePreference.setEnabled(isChecked);
     }
 
     @Override
