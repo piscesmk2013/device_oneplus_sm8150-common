@@ -1,4 +1,5 @@
 vendor.nxp.nxpnfc::INxpNfc                                            u:object_r:hal_nxpnfc_hwservice:s0
+vendor.dolby.hardware.dms::IDms                                       u:object_r:hal_dms_hwservice:s0
 vendor.oneplus.camera.CameraMDMHIDL::IOnePlusCameraMDM                u:object_r:hal_cameraHIDL_hwservice:s0
 vendor.oneplus.fingerprint.extension::IVendorFingerprintExtensions    u:object_r:hal_fingerprint_hwservice:s0
 vendor.oneplus.hardware.camera::IOnePlusCameraProvider                u:object_r:hal_cameraHIDL_hwservice:s0
