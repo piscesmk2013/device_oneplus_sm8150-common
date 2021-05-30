@@ -92,8 +92,8 @@
             android:summary="@string/enable_dolby_summary"
             android:title="@string/enable_dolby_title"
             android:icon="@drawable/ic_dolby"
-            android:defaultValue="true"
-            android:persistent="true" />
+            android:defaultValue="false"
+            android:persistent="false" />
 
         <Preference
             android:key="audio_dolby_atmos"

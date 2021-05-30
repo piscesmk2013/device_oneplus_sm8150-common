@@ -26,7 +26,11 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
 
+import org.aosp.device.DeviceSettings.DolbySwitch;
+
 public class Startup extends BroadcastReceiver {
+
+    private static final String ONE_TIME_DOLBY = "dolby_init_disabled";
 
     private void restore(String file, boolean enabled) {
         if (file == null) {
@@ -75,12 +79,20 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
         if (enabled) {
             SystemProperties.set("persist.vendor.display.color_mode", "18");
-        restore(NaturalModeSwitch.getFile(), enabled);
+            restore(NaturalModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
         if (enabled) {
             SystemProperties.set("persist.vendor.display.color_mode", "16");
-        restore(VividModeSwitch.getFile(), enabled);
+            restore(VividModeSwitch.getFile(), enabled);
+        }
+        // handling dolby
+        enabled = sharedPrefs.getBoolean(ONE_TIME_DOLBY, false);
+        if (!enabled) {
+            // we want to disable it by default, only once.
+            DolbySwitch dolbySwitch = new DolbySwitch(context);
+            dolbySwitch.setEnabled(false);
+            sharedPrefs.edit().putBoolean(ONE_TIME_DOLBY, true).apply();
         }
 	Utils.enableService(context);
     }
