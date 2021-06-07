@@ -165,6 +165,9 @@ ro.camera.notify_nfc=1
 # PASR
 vendor.power.pasr.enabled=true
 
+# OnePlus
+vendor.product.manufacturer=OPD
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.scroll.preobtain.enable=false
