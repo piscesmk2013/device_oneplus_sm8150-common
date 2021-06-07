@@ -181,6 +181,11 @@ debug.stagefright.omx_default_rank=0
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
 
+# OnePlus
+ro.vendor.product.manufacturer.db=OP_PHONE
+ro.vendor.product.device.db=OP_DEVICE
+vendor.product.manufacturer=OPD
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
