@@ -1,6 +1,10 @@
 # Allow priv_app to read files in vendor_sysfs_battery_supply
 r_dir_file(priv_app, vendor_sysfs_battery_supply)
 
+# Address priv_app denial on op7 series
+allow priv_app hal_ifaa_hwservice:hwservice_manager find;
+binder_call(priv_app, hal_ifaa_default)
+
 allow priv_app oem_service:service_manager { find };
 
 allow priv_app hal_cameraHIDL_hwservice:hwservice_manager { find };
