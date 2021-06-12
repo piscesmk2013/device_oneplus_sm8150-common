@@ -940,6 +940,8 @@ vendor/lib64/vendor.qti.hardware.soter@1.0.so|1154dffcf41bd1a2257b93ebb4b20e0a89
 
 # Thermal engine
 vendor/bin/thermal-engine
+vendor/etc/init/init_thermal-engine.rc
+vendor/etc/thermal-engine.conf
 vendor/lib64/libthermalclient.so
 
 # Time services - from LA.UM.9.1.r1-09600-SMxxx0.0
