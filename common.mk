@@ -152,6 +152,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
+    libcamera2ndk_vendor \
     libxml2 \
     vendor.oneplus.hardware.camera@1.0.vendor:64 \
     vendor.qti.hardware.camera.device@1.0.vendor:64
