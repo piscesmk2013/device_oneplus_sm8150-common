@@ -354,6 +354,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     oneplus-fwk.oneplus_msmnile
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.sys.oneplus.support=11.13.1
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
