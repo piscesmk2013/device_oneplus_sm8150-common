@@ -195,6 +195,8 @@ void vendor_load_properties() {
 
     property_override("vendor.boot.prj_version", std::to_string(prj_version).c_str());
     property_override_dual("vendor.rf.version", "vendor.boot.rf_version", std::to_string(rf_version).c_str());
+    property_override_dual("ro.odm.build.type", "ro.product.build.type", "user");
+    property_override_dual("ro.system.build.type", "ro.system_ext.build.type", "user");
 
   // dalvikvm props
   load_dalvikvm_properties();
