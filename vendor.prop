@@ -159,6 +159,8 @@ debug.stagefright.omx_default_rank=0
 ro.camera.notify_nfc=1
 
 # OnePlus
+ro.vendor.build.real.device=true
+ro.vendor.build.release_type=release
 vendor.product.manufacturer=OPD
 
 # Perf

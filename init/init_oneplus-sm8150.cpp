@@ -193,6 +193,8 @@ void vendor_load_properties() {
       break;
     }
 
+    property_override("ro.build.real_device", "true");
+    property_override("ro.build.release_type", "release");
     property_override("vendor.boot.prj_version", std::to_string(prj_version).c_str());
     property_override_dual("vendor.rf.version", "vendor.boot.rf_version", std::to_string(rf_version).c_str());
     property_override_dual("ro.odm.build.type", "ro.product.build.type", "user");
