@@ -178,6 +178,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qti.chg_policy.sh \
     init.qti.dcvs.sh \
+    init.qti.qcv.rc \
     init.qti.qcv.sh \
     init.qti.ufs.rc \
     init.recovery.qcom.rc \
