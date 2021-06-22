@@ -51,3 +51,5 @@ get_prop(hal_sensors_default, vendor_sensors_prop)
 
 # Allow hal_sensors_default to get vendor_sensors_als_prop
 get_prop(hal_sensors_default, vendor_sensors_als_prop)
+
+allow hal_sensors_default vendor_diag_device:chr_file { ioctl read write getattr open };
