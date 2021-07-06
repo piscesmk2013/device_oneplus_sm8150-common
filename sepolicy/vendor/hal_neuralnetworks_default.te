@@ -2,3 +2,5 @@ allow vendor_hal_neuralnetworks_default default_prop:file { map };
 
 r_dir_file(vendor_hal_neuralnetworks_default, public_adsprpcd_file)
 
+get_prop(vendor_hal_neuralnetworks_default, vendor_adsprpc_prop)
+
