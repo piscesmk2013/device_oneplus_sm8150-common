@@ -1,0 +1,2 @@
+allow hal_wifi_default vendor_tombstone_data_file:dir { read write open add_name remove_name search };
+allow hal_wifi_default vendor_tombstone_data_file:file { create getattr unlink };
