@@ -12,4 +12,5 @@ allow init op2_file:file { ioctl read write create getattr setattr lock append m
 allow init vendor_nfc_prop:file { map read relabelto write };
 allow init vendor_qcom_wlan_prop:file { map read relabelto write };
 
-allow init vendor_param_prop:file { map read relabelto write }; 
+allow init vendor_param_prop:file { map read relabelto write };
+allow init adsprpcd_file:file mounton; 
