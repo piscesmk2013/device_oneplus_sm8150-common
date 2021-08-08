@@ -34,7 +34,7 @@ constexpr int SCREENSHOT_INTERVAL = 1;
 void updateScreenBuffer() {
     static time_t lastScreenUpdate = 0;
     static sp<GraphicBuffer> outBuffer = new GraphicBuffer(
-            10, 10, android::PIXEL_FORMAT_RGB_888,
+            35, 35, android::PIXEL_FORMAT_RGB_888,
             GraphicBuffer::USAGE_SW_READ_OFTEN | GraphicBuffer::USAGE_SW_WRITE_OFTEN);
 
     struct timespec now;
@@ -46,8 +46,8 @@ void updateScreenBuffer() {
         ScreenshotClient::capture(SurfaceComposerClient::getInternalDisplayToken(),
                                   android::ui::Dataspace::V0_SRGB,
                                   android::ui::PixelFormat::RGBA_8888,
-                                  Rect(ALS_POS_X, ALS_POS_Y, ALS_POS_X + 10, ALS_POS_Y + 10),
-                                  10, 10, true, android::ui::ROTATION_0, &outBuffer);
+                                  Rect(ALS_POS_X, ALS_POS_Y, ALS_POS_X + 25, ALS_POS_Y + 25),
+                                  35, 35, true, android::ui::ROTATION_0, &outBuffer);
         lastScreenUpdate = now.tv_sec;
 
         uint8_t *out;
