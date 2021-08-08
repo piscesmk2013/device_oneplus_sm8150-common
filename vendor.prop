@@ -86,6 +86,7 @@ debug.force_no_blanking=true
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
 persist.vendor.audio_fx.current=dolby
+ro.audio.monitorRotation=true
 ro.vendor.dolby.dax.version=DAX3_3.5.1.28_r1
 
 # DPM
