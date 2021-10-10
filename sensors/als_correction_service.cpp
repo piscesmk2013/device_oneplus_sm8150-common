@@ -29,7 +29,6 @@ using android::ScreenshotClient;
 using android::sp;
 using android::SurfaceComposerClient;
 
-constexpr int ALS_RADIUS = 64;
 constexpr int SCREENSHOT_INTERVAL = 1;
 
 void updateScreenBuffer() {
@@ -40,38 +39,33 @@ void updateScreenBuffer() {
 
     struct timespec now;
     clock_gettime(CLOCK_MONOTONIC, &now);
+    SetProperty("vendor.sensors.als_correction.updated", "0");
+    sp<android::IScreenCaptureListener> captureListener;
+    android::gui::ScreenCaptureResults captureResults;
 
     if (now.tv_sec - lastScreenUpdate >= SCREENSHOT_INTERVAL) {
         // Update Screenshot at most every second
-        ScreenshotClient::capture(
-                SurfaceComposerClient::getInternalDisplayToken(),
-                android::ui::Dataspace::DISPLAY_P3_LINEAR, android::ui::PixelFormat::RGBA_8888,
-                Rect(ALS_POS_X - ALS_RADIUS, ALS_POS_Y - ALS_RADIUS, ALS_POS_X + ALS_RADIUS,
-                     ALS_POS_Y + ALS_RADIUS),
-                ALS_RADIUS * 2, ALS_RADIUS * 2, true, android::ui::ROTATION_0, &outBuffer);
+        android::DisplayCaptureArgs captureArgs;
+        captureArgs.displayToken = SurfaceComposerClient::getInternalDisplayToken();
+        captureArgs.pixelFormat = android::ui::PixelFormat::RGBA_8888;
+        captureArgs.sourceCrop = Rect(ALS_POS_X - 10, ALS_POS_Y - 10, ALS_POS_X + 10, ALS_POS_Y + 10);
+        captureArgs.width = 10;
+        captureArgs.height = 10;
+        captureArgs.useIdentityTransform = true;
+        ScreenshotClient::captureDisplay(
+                captureArgs, captureListener);
+        captureListener->onScreenCaptureCompleted(captureResults);
         lastScreenUpdate = now.tv_sec;
-    }
+        outBuffer = captureResults.buffer;
 
-    uint8_t *out;
-    auto resultWidth = outBuffer->getWidth();
-    auto resultHeight = outBuffer->getHeight();
-    auto stride = outBuffer->getStride();
-
-    outBuffer->lock(GraphicBuffer::USAGE_SW_READ_OFTEN, reinterpret_cast<void **>(&out));
-    // we can sum this directly on linear light
-    uint32_t rsum = 0, gsum = 0, bsum = 0;
-    for (int y = 0; y < resultHeight; y++) {
-        for (int x = 0; x < resultWidth; x++) {
-            rsum += out[y * (stride * 4) + x * 4];
-            gsum += out[y * (stride * 4) + x * 4 + 1];
-            bsum += out[y * (stride * 4) + x * 4 + 2];
-        }
+        uint8_t *out;
+        outBuffer->lock(GraphicBuffer::USAGE_SW_READ_OFTEN, reinterpret_cast<void **>(&out));
+        SetProperty("vendor.sensors.als_correction.r", std::to_string(static_cast<uint8_t>(out[0])));
+        SetProperty("vendor.sensors.als_correction.g", std::to_string(static_cast<uint8_t>(out[1])));
+        SetProperty("vendor.sensors.als_correction.b", std::to_string(static_cast<uint8_t>(out[2])));
+        SetProperty("vendor.sensors.als_correction.updated", "1");
+        outBuffer->unlock();
     }
-    uint32_t max = 255 * resultWidth * resultHeight;
-    SetProperty("vendor.sensors.als_correction.r", std::to_string(rsum * 0x7FFFFFFFuLL / max));
-    SetProperty("vendor.sensors.als_correction.g", std::to_string(gsum * 0x7FFFFFFFuLL / max));
-    SetProperty("vendor.sensors.als_correction.b", std::to_string(bsum * 0x7FFFFFFFuLL / max));
-    outBuffer->unlock();
 }
 
 int main() {
