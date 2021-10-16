@@ -12,7 +12,7 @@ $(call inherit-product, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Interfaces
-$(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
+$(call inherit-product, $(LOCAL_PATH)/interfaces-vndk.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -356,9 +356,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5 \
-    android.hardware.radio.config@1.2 \
-    android.hardware.radio.deprecated@1.0 \
     libprotobuf-cpp-full \
     libril_shim \
     librmnetctl \
