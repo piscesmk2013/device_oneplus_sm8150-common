@@ -27,6 +27,9 @@ vendor.camera.aux.packagelist=com.oneplus.factorymode,com.oneplus.camera,com.oem
 # Charger
 ro.charger.enable_suspend=true
 
+# Dexopt
+dalvik.vm.dex2oat64.enabled=true
+
 # CNE
 persist.vendor.cne.feature=1
 
