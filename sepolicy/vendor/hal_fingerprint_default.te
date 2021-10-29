@@ -37,3 +37,5 @@ get_prop(hal_fingerprint_default, vendor_adsprpc_prop)
 
 # Allow hal_fingerprint_default to read files in vendor_sysfs_battery_supply
 r_dir_file(hal_fingerprint_default, vendor_sysfs_battery_supply)
+
+allow hal_fingerprint_default sysfs_fpc:file r_file_perms;
