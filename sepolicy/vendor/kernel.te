@@ -16,3 +16,5 @@ allow kernel kernel:capability { kill };
 
 allow kernel self:qipcrtr_socket create;
 allow kernel vendor_debugfs_ipc:dir search;
+
+allow kernel persist_wlan_file:file r_file_perms;
