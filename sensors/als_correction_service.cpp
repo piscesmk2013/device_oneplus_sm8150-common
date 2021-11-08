@@ -104,8 +104,8 @@ class AlsCorrectionListener : public FrameworkListener {
 };
 
 int main() {
-    ProcessState::self()->setThreadPoolMaxThreadCount(0);
-    ProcessState::self()->startThreadPool();
+    android::ProcessState::self()->setThreadPoolMaxThreadCount(0);
+    android::ProcessState::self()->startThreadPool();
 
     auto listener = new AlsCorrectionListener();
     listener->startListener();
