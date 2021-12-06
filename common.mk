@@ -88,6 +88,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/task_profiles/cgroups_31.json:$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles/cgroups_31.json \
     $(LOCAL_PATH)/task_profiles/task_profiles_31.json:$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles/task_profiles_31.json
 
+# Adaptive charging
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/adaptivecharging.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/adaptivecharging.xml
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
