@@ -1,2 +1,5 @@
 # Audio
 af.fast_track_multiplier=1
+
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
