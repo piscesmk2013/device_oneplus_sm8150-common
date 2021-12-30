@@ -314,6 +314,9 @@ PRODUCT_PACKAGES += \
     Tag \
     android.hardware.nfc@1.2-service
 
+# OnePlus apps
+$(call inherit-product, vendor/oneplus/apps/config.mk)
+
 # OMX
 PRODUCT_PACKAGES += \
     libavservices_minijail \
