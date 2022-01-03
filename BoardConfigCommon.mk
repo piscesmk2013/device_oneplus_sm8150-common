@@ -91,6 +91,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth/include
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 TARGET_USE_QTI_BT_STACK := true
 
 # Camera
@@ -155,7 +156,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 VENDOR_SECURITY_PATCH := 2021-12-01
 
 # SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom-LA.UM.10.3.r1-xxxxx-sdm845.0/sepolicy_vndr/SEPolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/public
