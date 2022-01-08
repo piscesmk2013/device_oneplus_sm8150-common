@@ -339,6 +339,13 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libstagefright_softomx.vendor
 
+# OnePlus
+PRODUCT_PACKAGES += \
+    oneplus-fwk
+
+PRODUCT_BOOT_JARS += \
+    oneplus-fwk
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.sys.oneplus.support=11.13.1
 
