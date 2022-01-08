@@ -27,9 +27,6 @@ ro.vendor.nfc.notify_tp      u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.              u:object_r:vendor_nfc_prop:s0
 persist.vendor.nfc.delayese  u:object_r:vendor_nfc_prop:s0
 
-# Panel color mode
-persist.vendor.display.color_mode  u:object_r:powerctl_prop:s0
-
 # Param
 ro.boot.prmec    u:object_r:exported_default_prop:s0
 ro.boot.prmfc    u:object_r:vendor_param_prop:s0

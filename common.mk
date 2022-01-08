@@ -170,6 +170,7 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.oem.rc \
     init.opcamera.rc \
+    init.oplus_chg.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.factory.rc \
