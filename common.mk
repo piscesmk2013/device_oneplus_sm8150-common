@@ -375,8 +375,16 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libstagefrighthw
 
+# OnePlus
+PRODUCT_PACKAGES += \
+    oneplus-fwk
+
+PRODUCT_BOOT_JARS += \
+    oneplus-fwk
+
 # OnePlus apps
 $(call inherit-product, vendor/oneplus/apps/config.mk)
+
 # Perf
 PRODUCT_PACKAGES += \
     libqti-perfd-client
