@@ -480,6 +480,11 @@ vendor/lib64/vendor.oneplus.hardware.hdcpkey@1.0.so
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
+# IFAA
+-system_ext/priv-app/IFAAService/IFAAService.apk
+vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
+vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
+
 # IMS - from LA.QSSI.12.0.r1-05100-qssi.0
 system_ext/lib64/lib-imsvideocodec.so|5aed0217e9735d15e44ea6b9f397075a9b569614
 system_ext/lib64/lib-imsvt.so|784d1165217430ec9850baa1d9be706eb0d9d92d
