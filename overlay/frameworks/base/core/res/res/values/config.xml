@@ -370,9 +370,6 @@
 
     <integer name="config_defaultRingVibrationIntensity">3</integer>
 
-    <!-- Boolean indicating if current platform supports BLE peripheral mode -->
-    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-
     <!-- Max number of scan filters supported by blutooth controller. 0 if the
          device does not support hardware scan filters-->
     <integer translatable="false" name="config_bluetooth_max_scan_filters">1</integer>
