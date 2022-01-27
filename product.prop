@@ -7,6 +7,3 @@ audio.sys.offload.pstimeout.secs=3
 
 # Camera
 ro.com.google.lens.oem_camera_package=com.oneplus.camera
-
-# FUSE passthrough
-persist.sys.fuse.passthrough.enable=true
