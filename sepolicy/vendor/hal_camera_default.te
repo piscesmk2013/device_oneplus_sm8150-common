@@ -23,5 +23,3 @@ allow hal_camera_default input_device:chr_file { ioctl read open };
 
 # Allow camera to read over /dev/adsprpc-smd-secure 
 allow hal_camera_default vendor_xdsp_device:chr_file { ioctl read write open };
-
-get_prop(hal_camera_default, vendor_camera_prop)
