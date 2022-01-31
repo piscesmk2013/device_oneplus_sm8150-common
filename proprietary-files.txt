@@ -197,6 +197,7 @@ vendor/lib64/libsysmon_cdsp_skel.so
 
 # Charger
 vendor/bin/dashd
+vendor/bin/hvdcp_opti
 vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc
 
 # Certificate Authority - from LA.UM.9.1.r1-10200-SMxxx0.0
@@ -1082,3 +1083,4 @@ vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/libwfdutils_proprietary.so
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+vendor/lib/libwfdaac_vendor.so
