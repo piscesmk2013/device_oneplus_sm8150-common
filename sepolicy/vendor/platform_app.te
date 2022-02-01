@@ -1,2 +1,5 @@
+allow platform_app sysfs_graphics:file r_file_perms;
+
 allow platform_app hal_ifaa_hwservice:hwservice_manager find;
 binder_call(platform_app, hal_ifaa_default)
+allow platform_app zygote:unix_stream_socket { getopt }; 

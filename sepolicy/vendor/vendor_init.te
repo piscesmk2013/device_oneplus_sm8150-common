@@ -26,3 +26,13 @@ get_prop(vendor_init, vendor_tee_listener_prop)
 
 # Allow vendor_init to set vendor_nfc_prop
 set_prop(vendor_init, vendor_nfc_prop)
+
+# Allow vendor_init to set attribute of block_device
+allow vendor_init block_device:lnk_file setattr;
+
+allow vendor_init debugfs:file { getattr };
+
+allow vendor_init tmpfs:chr_file { read open };
+allow vendor_init tmpfs:dir { create_dir_perms mounton };
+
+allow vendor_init persist_debug_prop:file read;

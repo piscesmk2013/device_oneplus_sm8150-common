@@ -27,3 +27,12 @@ allow hal_param_default init:unix_stream_socket connectto;
 
 get_prop(hal_param_default, vendor_param_prop)
 set_prop(hal_param_default, vendor_param_prop)
+
+allow hal_param_default sysfs_project_info:dir { search };
+allow hal_param_default sysfs_project_info:file { read };
+allow hal_param_default sysfs_project_info:file { open };
+
+allow hal_fingerprint_default sysfs_fpc:file { read };
+allow hal_fingerprint_default sysfs_fpc:file { open };
+allow hal_fingerprint_default sysfs_fpc:file { getattr };
+allow hal_fingerprint_default default_prop:file { map }; 

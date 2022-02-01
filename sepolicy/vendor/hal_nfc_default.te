@@ -16,3 +16,6 @@ hal_client_domain(hal_nfc_default, hal_secure_element)
 
 # Allow hal_nfc_default to find hal_secure_element_hwservice
 allow hal_nfc_default hal_secure_element_hwservice:hwservice_manager find;
+
+allow hal_nfc_default vendor_nfc_vendor_data_file:dir { write };
+allow hal_nfc_default vendor_nfc_vendor_data_file:dir { add_name };

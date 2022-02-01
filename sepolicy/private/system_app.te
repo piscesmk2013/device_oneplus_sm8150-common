@@ -1,1 +1,2 @@
+allow system_app self:netlink_kobject_uevent_socket { read bind setopt create };
 allow system_app sysfs_dm:file rw_file_perms;

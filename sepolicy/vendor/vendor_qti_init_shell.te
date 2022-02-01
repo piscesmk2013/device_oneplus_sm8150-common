@@ -11,6 +11,21 @@ set_prop(vendor_qti_init_shell, vendor_memplus_prop)
 # Allow vendor_qti_init_shell to get vendor_oem_dump_prop
 set_prop(vendor_qti_init_shell, vendor_oem_dump_prop)
 
-allow vendor_qti_init_shell kmsg_device:chr_file { open write };
+# Allow vendor_qti_init_shell to write to sysfs_devices_block
+allow vendor_qti_init_shell sysfs_devices_block:file w_file_perms;
+
+allow vendor_qti_init_shell sysfs:file { write };
+allow vendor_qti_init_shell sysfs_loop:file { write };
+
+allow vendor_qti_init_shell default_prop:file { map };
+allow vendor_qti_init_shell proc_dirty:file { write };
+
+allow vendor_qti_init_shell kmsg_device:chr_file { write };
+allow vendor_qti_init_shell kmsg_device:chr_file { open };
+allow vendor_qti_init_shell proc_dirty:file { open };
+allow vendor_qti_init_shell proc_page_cluster:file { write };
+allow vendor_qti_init_shell proc_page_cluster:file { open };
+allow vendor_qti_init_shell sysfs_dm_verity:file { write };
 
 set_prop(vendor_qti_init_shell, ctl_stop_prop)
+

@@ -23,3 +23,5 @@ allow hal_audio_default ultrasound_device:chr_file rw_file_perms;
 r_dir_file(hal_audio_default, mnt_vendor_file)
 
 allow hal_audio_default vendor_diag_device:chr_file { ioctl read write getattr open };
+
+allow hal_audio_default telephony_config_prop:file { getattr map open read }; 

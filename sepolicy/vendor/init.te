@@ -2,10 +2,14 @@
 allow init vl53l1_socket:sock_file create_file_perms;
 
 # Allow init to mount /op1, /op2 with op1_file, op2_file context
-allow init { op1_file op2_file }:filesystem { mount relabelfrom relabelto };
+allow init op1_file:dir { relabelto mounton };
+allow init op1_file:filesystem { mount relabelfrom relabelto };
 
-# Allow init to mount on op1_file, op2_file
-allow init { op1_file op2_file }:dir mounton;
+allow init op2_file:filesystem { mount relabelfrom relabelto };
+allow init op2_file:dir { ioctl read write getattr lock relabelto mounton open watch watch_reads add_name remove_name search };
+allow init op2_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
 
-# Allow init to contextmount op1_file
-allow op1_file self:filesystem associate;
+allow init vendor_nfc_prop:file { map read relabelto write };
+allow init vendor_qcom_wlan_prop:file { map read relabelto write };
+
+allow init vendor_param_prop:file { map read relabelto write }; 

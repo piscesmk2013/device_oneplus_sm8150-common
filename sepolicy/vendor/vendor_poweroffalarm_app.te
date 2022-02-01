@@ -1,1 +1,5 @@
 allow vendor_poweroffalarm_app mnt_vendor_file:dir search;
+
+allow vendor_poweroffalarm_app zygote:unix_stream_socket { getopt };
+
+allow vendor_poweroffalarm_app mnt_vendor_file:dir search; 

@@ -1,0 +1,1 @@
+allow vendor_hal_rcsservice telephony_config_prop:file { getattr map open read }; 
