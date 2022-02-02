@@ -1,4 +1,5 @@
 # Allow vendor_qti_init_shell to write to sysfs_fsc
+allow vendor_qti_init_shell sysfs:file w_file_perms;
 allow vendor_qti_init_shell sysfs_fsc:file w_file_perms;
 
 # Allow vendor_qti_init_shell to write to vendor_sysfs_scsi_host
@@ -14,7 +15,6 @@ set_prop(vendor_qti_init_shell, vendor_oem_dump_prop)
 # Allow vendor_qti_init_shell to write to sysfs_devices_block
 allow vendor_qti_init_shell sysfs_devices_block:file w_file_perms;
 
-allow vendor_qti_init_shell sysfs:file { write };
 allow vendor_qti_init_shell sysfs_loop:file { write };
 
 allow vendor_qti_init_shell default_prop:file { map };

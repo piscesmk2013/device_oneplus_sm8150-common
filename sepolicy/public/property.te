@@ -1,1 +1,3 @@
-type op_hdr_prop, property_type;
+system_internal_prop(fastbootd_available_prop)
+
+system_public_prop(op_hdr_prop)
