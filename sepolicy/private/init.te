@@ -2,6 +2,3 @@ allow init debugfs_tracing_debug:dir mounton;
 
 allow init ophdr_detect_exec:file { execute read open getattr map };
 allow init ophdr_detect:process { siginh rlimitinh };
-
-allow init property_type:file { append create getattr map open read relabelto rename setattr unlink write };
-
