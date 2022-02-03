@@ -85,6 +85,9 @@ ro.vendor.product.device.db=OP_DEVICE
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
+# Processor Model
+ro.processor.model=SM8150
+
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
