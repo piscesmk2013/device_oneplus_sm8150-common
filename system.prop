@@ -5,20 +5,6 @@ arm64.memtag.process.system_server=off
 persist.vendor.audio.hac.enable=false
 ro.audio.monitorRotation=true
 
-# Bluetooth
-bt.max.hfpclient.connections=1
-vendor.bluetooth.soc=cherokee
-
-# Bluetooth
-bluetooth.device.class_of_device=90,2,12
-bluetooth.profile.asha.central.enabled=false
-persist.vendor.btstack.enable.lpa=true
-persist.vendor.btstack.enable.twsplus=true
-persist.vendor.bt.a2dp.aac_whitelist=false
-persist.vendor.bt.a2dp.hal.implementation=true
-persist.vendor.btstack.enable.twsplussho=true
-ro.bluetooth.library_name=libbluetooth_qti.so
-
 # Blur
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
