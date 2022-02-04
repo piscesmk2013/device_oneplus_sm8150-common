@@ -26,10 +26,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
-# Nfc
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2.vendor
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor
@@ -42,6 +38,7 @@ PRODUCT_PACKAGES += \
 
 # Secure Element
 PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.2.vendor
 
 # Sensor
@@ -52,3 +49,4 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.5.vendor
+

@@ -380,7 +380,7 @@
                 <!-- <route type="mix" sink="primary input"
                        sources="Wired Headset Mic,BT SCO Headset Mic,FM Tuner,USB Device In,USB Headset In,Telephony Rx"/> -->
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Telephony Rx"/>
+                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic,FM Tuner,USB Device In,USB Headset In,Telephony Rx"/>
 <!-- add end -->
 <!-- zhanglei@MM.Audio, 2019.9.5, [PATCH] config: add wired headset mic support for voip_tx  -->
                 <!--route type="mix" sink="voip_tx"

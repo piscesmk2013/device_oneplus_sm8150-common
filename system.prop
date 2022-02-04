@@ -1,6 +1,8 @@
 # Async MTE on system_server
 arm64.memtag.process.system_server=off
 
+ro.apk_verity.mode=2
+
 # Audio
 persist.vendor.audio.hac.enable=false
 ro.audio.monitorRotation=true
@@ -19,6 +21,13 @@ ro.bluetooth.library_name=libbluetooth_qti.so
 # Blur
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
+
+# Camera
+persist.camera.assert.panic=true
+persist.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
+persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
+ro.opcamera.support=true
+vendor.camera.aux.packagelist=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
 
 # Charger
 ro.charger.enable_suspend=true
@@ -66,7 +75,7 @@ media.aac_51_output_enabled=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 persist.mm.enable.prefetch=true
-ro.media.recorder-max-base-layer-fps = 60
+ro.media.recorder-max-base-layer-fps=60
 persist.mm.enable.prefetch=true
 vendor.mm.enable.qcom_parser=16711679
 
@@ -84,6 +93,9 @@ ro.vendor.product.device.db=OP_DEVICE
 
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
+
+# Priv-app permissions whitelist
+ro.control_privapp_permissions=enforce
 
 # Processor Model
 ro.processor.model=SM8150

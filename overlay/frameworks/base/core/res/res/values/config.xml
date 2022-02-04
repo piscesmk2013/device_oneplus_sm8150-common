@@ -430,9 +430,6 @@
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
     </string-array>
-
-    <!-- Should the pinner service pin the Camera application? -->
-    <bool name="config_pinnerCameraApp">true</bool>
     
     <!-- SQLite -->
     <string name="db_default_journal_mode">MEMORY</string>

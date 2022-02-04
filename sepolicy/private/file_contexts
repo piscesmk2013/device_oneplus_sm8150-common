@@ -5,4 +5,4 @@
 /(system_ext|system/system_ext)/bin/notify_hdr_change.sh                  u:object_r:ophdr_detect_exec:s0
 
 # Data files
-/data/misc/aosp/client_package_name                u:object_r:aosp_data_file:s0
+/data/misc/aosp(/.*)?                 u:object_r:aosp_data_file:s0
