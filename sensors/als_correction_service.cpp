@@ -59,7 +59,7 @@ class TakeScreenshotCommand : public FrameworkCommand {
                 GraphicBuffer::USAGE_SW_READ_OFTEN | GraphicBuffer::USAGE_SW_WRITE_OFTEN);
 
         sp<SyncScreenCaptureListener> captureListener = new SyncScreenCaptureListener();
-        gui::ScreenCaptureResults captureResults;
+        android::gui::ScreenCaptureResults captureResults;
 
         DisplayCaptureArgs captureArgs;
         captureArgs.displayToken = SurfaceComposerClient::getInternalDisplayToken();
