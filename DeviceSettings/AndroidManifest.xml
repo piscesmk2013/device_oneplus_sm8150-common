@@ -26,6 +26,7 @@
 
     <protected-broadcast android:name="org.aosp.device.DeviceSettings.UPDATE_SETTINGS" />
     <protected-broadcast android:name="android.intent.action.SCREEN_CAMERA_GESTURE" />
+    <protected-broadcast android:name="org.aosp.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
     <uses-sdk
         android:minSdkVersion="29"
