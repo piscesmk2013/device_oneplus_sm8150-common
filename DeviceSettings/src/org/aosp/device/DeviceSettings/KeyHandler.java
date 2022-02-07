@@ -18,11 +18,15 @@ package org.aosp.device.DeviceSettings;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.media.AudioManager;
+import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.SparseIntArray;
+import android.util.Log;
 import android.view.KeyEvent;
 
 import com.android.internal.os.DeviceKeyHandler;
@@ -116,8 +120,42 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }
 
+        int position = scanCode == 601 ? 2 : scanCode == 602 ? 1 : 0;
         mPrevKeyCode = keyCodeValue;
+        int positionValue = 0;
+        int key = sSupportedSliderRingModes.keyAt(
+                sSupportedSliderRingModes.indexOfKey(keyCodeValue));
+        switch (key) {
+            case Constants.KEY_VALUE_TOTAL_SILENCE: // DND - no int'
+                positionValue = Constants.MODE_TOTAL_SILENCE;
+                break;
+            case Constants.KEY_VALUE_SILENT: // Ringer silent
+                positionValue = Constants.MODE_SILENT;
+                break;
+            case Constants.KEY_VALUE_PRIORTY_ONLY: // DND - priority
+                positionValue = Constants.MODE_PRIORITY_ONLY;
+                break;
+            case Constants.KEY_VALUE_VIBRATE: // Ringer vibrate
+                positionValue = Constants.MODE_VIBRATE;
+                break;
+            default:
+            case Constants.KEY_VALUE_NORMAL: // Ringer normal DND off
+                positionValue = Constants.MODE_RING;
+                break;
+        }
+
+        sendUpdateBroadcast(position, positionValue);
         return null;
+    }
+    
+    private void sendUpdateBroadcast(int position, int position_value) {
+        Intent intent = new Intent(Constants.ACTION_UPDATE_SLIDER_POSITION);
+        intent.putExtra(Constants.EXTRA_SLIDER_POSITION, position);
+        intent.putExtra(Constants.EXTRA_SLIDER_POSITION_VALUE, position_value);
+        mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+        intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
+        Log.d(TAG, "slider change to positon " + position
+                            + " with value " + position_value);
     }
 
     private void doHapticFeedback(int effect) {
