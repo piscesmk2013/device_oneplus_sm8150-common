@@ -1,1 +1,3 @@
 allow vendor_adpl vendor_diag_device:chr_file { ioctl read write open };
+
+allow vendor_adpl telephony_config_prop:file read; 

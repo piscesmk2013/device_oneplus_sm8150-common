@@ -27,3 +27,6 @@ allow als_correction_service same_process_hal_file:file r_file_perms;
 allow als_correction_service ion_device:chr_file rw_file_perms;
 
 binder_call(surfaceflinger, als_correction_service)
+
+allow als_correction_service property_socket:sock_file write;
+allow als_correction_service init:unix_stream_socket connectto; 
