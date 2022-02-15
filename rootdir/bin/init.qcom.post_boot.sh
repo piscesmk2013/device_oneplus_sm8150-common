@@ -4343,6 +4343,10 @@ case "$target" in
             # Turn off scheduler boost at the end
             echo 0 > /proc/sys/kernel/sched_boost
 
+	    echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled
+	    echo N > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled
+	    echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled
+            echo N > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled
             # Turn on sleep modes
             echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 
@@ -5370,9 +5374,9 @@ case "$target" in
 				echo 0 > $npubw/bw_hwmon/idle_mbps
 		                echo 40 > $npubw/polling_interval
 				echo 0 > /sys/devices/virtual/npu/msm_npu/pwr
-	    done
-	done
-
+	                      done
+	           done
+	fi
 	# memlat specific settings are moved to seperate file under
 	# device/target specific folder
 	setprop vendor.dcvs.prop 1
@@ -5419,7 +5423,6 @@ case "$target" in
 			configure_automotive_sku_parameters
 		   fi
 		fi
-	fi
     ;;
 esac
 
