@@ -368,6 +368,9 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# SoC
+PROCESSOR_MODEL := SM8150
+
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
