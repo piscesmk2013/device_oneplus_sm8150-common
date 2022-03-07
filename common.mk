@@ -397,6 +397,10 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Call recording for Google Dialer
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/com.google.android.apps.dialer.call_recording_audio.features.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.apps.dialer.call_recording_audio.features.xml
+
 # SoC
 PROCESSOR_MODEL := SM8150
 
