@@ -22,7 +22,6 @@ import android.media.AudioManager;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
-import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
 

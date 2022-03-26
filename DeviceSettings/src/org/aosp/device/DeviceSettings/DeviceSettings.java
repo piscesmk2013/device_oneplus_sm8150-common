@@ -126,6 +126,12 @@ public class DeviceSettings extends PreferenceFragment
         mAutoHBMSwitch = (TwoStatePreference) findPreference(KEY_AUTO_HBM_SWITCH);
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
         mAutoHBMSwitch.setOnPreferenceChangeListener(this);
+
+        // Registering observers
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(HBMModeSwitch.ACTION_HBM_SERVICE_CHANGED);
+        filter.addAction(DCModeSwitch.ACTION_DCMODE_CHANGED);
+        getContext().registerReceiver(mServiceStateReceiver, filter);
     }
 
     @Override
