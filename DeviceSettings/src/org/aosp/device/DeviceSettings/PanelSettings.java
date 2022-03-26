@@ -1,230 +1,265 @@
 /*
-* Copyright (C) 2018 The OmniROM Project
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 2 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
-*
-*/
+ * Copyright (C) 2022 PixelExperience Project
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 package org.aosp.device.DeviceSettings;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.res.Resources;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.util.Log;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import android.os.SystemProperties;
+import android.widget.TextView;
+
 import androidx.preference.PreferenceFragment;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.TwoStatePreference;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.aosp.device.DeviceSettings.FileUtils;
+import org.aosp.device.DeviceSettings.ModeSwitch.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 
 public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCheckedChangeListener {
-    private RadioGroup mRadioGroup;
-    ViewPager viewPager;
-    LinearLayout sliderDotspanel;
-    private int dotscount;
-    private ImageView[] dots;
+    private static final int DOT_INDICATOR_SIZE = 12;
+    private static final int DOT_INDICATOR_LEFT_PADDING = 6;
+    private static final int DOT_INDICATOR_RIGHT_PADDING = 6;
+    private static final String PAGE_VIEWER_SELECTION_INDEX = "page_viewer_selection_index";
+
+    private View mViewArrowPrevious;
+    private View mViewArrowNext;
+    private ViewPager mViewPager;
+
+    private ArrayList<View> mPageList;
+    private ImageView[] mDotIndicators;
+    private View[] mViewPagerImages;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRadioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
+        RadioGroup mRadioGroup = view.findViewById(R.id.radio_group);
         int checkedButtonId = R.id.off_mode;
-        if (NightModeSwitch.isCurrentlyEnabled(getContext())) {
+        if (NightModeSwitch.isCurrentlyEnabled()) {
             checkedButtonId = R.id.night_mode;
-        } else if (NaturalModeSwitch.isCurrentlyEnabled(getContext())) {
+        } else if (NaturalModeSwitch.isCurrentlyEnabled()) {
             checkedButtonId = R.id.natural_mode;
-        } else if (VividModeSwitch.isCurrentlyEnabled(getContext())) {
+        } else if (VividModeSwitch.isCurrentlyEnabled()) {
             checkedButtonId = R.id.vivid_mode;
-        } else if (DCIModeSwitch.isCurrentlyEnabled(getContext())) {
+        } else if (DCIModeSwitch.isCurrentlyEnabled()) {
             checkedButtonId = R.id.dci_mode;
-        } else if (SRGBModeSwitch.isCurrentlyEnabled(getContext())) {
+        } else if (SRGBModeSwitch.isCurrentlyEnabled()) {
             checkedButtonId = R.id.srgb_mode;
-        } else if (WideColorModeSwitch.isCurrentlyEnabled(getContext())) {
+        } else if (WideColorModeSwitch.isCurrentlyEnabled()) {
             checkedButtonId = R.id.wide_color_mode;
         }
         mRadioGroup.check(checkedButtonId);
         mRadioGroup.setOnCheckedChangeListener(this);
+
+        if (savedInstanceState != null) {
+            final int selectedPosition = savedInstanceState.getInt(PAGE_VIEWER_SELECTION_INDEX);
+            mViewPager.setCurrentItem(selectedPosition);
+            updateIndicator(selectedPosition);
+        }
     }
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    public void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putInt(PAGE_VIEWER_SELECTION_INDEX, mViewPager.getCurrentItem());
     }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-	final View rootView = inflater.inflate(R.layout.panel_modes, container, false);
-
-	viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
-        sliderDotspanel = (LinearLayout) rootView.findViewById(R.id.SliderDots);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity());
-        viewPager.setAdapter(viewPagerAdapter);
-
-        dotscount = viewPagerAdapter.getCount();
-        dots = new ImageView[dotscount];
-
-        for(int i = 0; i < dotscount; i++){
-            dots[i] = new ImageView(getActivity());
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.inactive_dot));
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(8, 0, 8, 0);
-            sliderDotspanel.addView(dots[i], params);
-        }
-        dots[0].setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.active_dot));
-
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-                for(int i = 0; i< dotscount; i++){
-                    dots[i].setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.inactive_dot));
-                }
-                dots[position].setImageDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.active_dot));
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
-	return rootView;
+        final View rootView = inflater.inflate(R.layout.panel_modes, container, false);
+        addViewPager(rootView);
+        return rootView;
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor edit = sharedPrefs.edit();
-        if (checkedId == R.id.srgb_mode) {
-            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
-            Utils.writeValue(VividModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, true);
-        } else if (checkedId == R.id.dci_mode) {
-            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
-            Utils.writeValue(VividModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, true);
-        } else if (checkedId == R.id.natural_mode) {
-            Utils.writeValue(VividModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(NaturalModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, true);
-        } else if (checkedId == R.id.vivid_mode) {
-            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(VividModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, true);
-        } else if (checkedId == R.id.wide_color_mode) {
-            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
-            Utils.writeValue(VividModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, true);
-        } else if (checkedId == R.id.night_mode) {
-            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
-            Utils.writeValue(VividModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, true);
-        } else if (checkedId == R.id.off_mode) {
-            Utils.writeValue(NaturalModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false);
-            Utils.writeValue(VividModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(WideColorModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, true);
+
+        boolean natural = checkedId == R.id.natural_mode;
+        Utils.writeValue(NaturalModeSwitch.getFile(), natural ? "1" : "0");
+        edit.putBoolean(DeviceSettings.KEY_NATURAL_SWITCH, natural);
+
+        boolean vivid = checkedId == R.id.vivid_mode;
+        Utils.writeValue(VividModeSwitch.getFile(), vivid ? "1" : "0");
+        edit.putBoolean(DeviceSettings.KEY_VIVID_SWITCH, vivid);
+
+        boolean dci = checkedId == R.id.dci_mode;
+        Utils.writeValue(DCIModeSwitch.getFile(), dci ? "1" : "0");
+        edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, dci);
+
+        boolean wide = checkedId == R.id.wide_color_mode;
+        Utils.writeValue(WideColorModeSwitch.getFile(), wide ? "1" : "0");
+        edit.putBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, wide);
+
+        boolean srgb = checkedId == R.id.srgb_mode;
+        Utils.writeValue(SRGBModeSwitch.getFile(), srgb ? "1" : "0");
+        edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, srgb);
+
+        boolean night = checkedId == R.id.night_mode;
+        Utils.writeValue(NightModeSwitch.getFile(), night ? "1" : "0");
+        edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, night);
+
+        edit.apply();
+    }
+
+    private ArrayList<Integer> getViewPagerResource() {
+        return new ArrayList<>(
+                Arrays.asList(
+                        R.layout.color_mode_view1,
+                        R.layout.color_mode_view2,
+                        R.layout.color_mode_view3));
+    }
+
+    private void addViewPager(View rootView) {
+        final ArrayList<Integer> tmpviewPagerList = getViewPagerResource();
+        mViewPager = rootView.findViewById(R.id.viewpager);
+
+        mViewPagerImages = new View[3];
+        for (int idx = 0; idx < tmpviewPagerList.size(); idx++) {
+            mViewPagerImages[idx] =
+                    getLayoutInflater().inflate(tmpviewPagerList.get(idx), null /* root */);
         }
-        edit.commit();
+
+        mPageList = new ArrayList<>();
+        mPageList.add(mViewPagerImages[0]);
+        mPageList.add(mViewPagerImages[1]);
+        mPageList.add(mViewPagerImages[2]);
+
+        mViewPager.setAdapter(new ColorPagerAdapter(mPageList));
+
+        mViewArrowPrevious = rootView.findViewById(R.id.arrow_previous);
+        mViewArrowPrevious.setOnClickListener(v -> {
+            final int previousPos = mViewPager.getCurrentItem() - 1;
+            mViewPager.setCurrentItem(previousPos, true);
+        });
+
+        mViewArrowNext = rootView.findViewById(R.id.arrow_next);
+        mViewArrowNext.setOnClickListener(v -> {
+            final int nextPos = mViewPager.getCurrentItem() + 1;
+            mViewPager.setCurrentItem(nextPos, true);
+        });
+
+        mViewPager.addOnPageChangeListener(createPageListener());
+
+        final ViewGroup viewGroup = rootView.findViewById(R.id.viewGroup);
+        mDotIndicators = new ImageView[mPageList.size()];
+        for (int i = 0; i < mPageList.size(); i++) {
+            final ImageView imageView = new ImageView(getContext());
+            final ViewGroup.MarginLayoutParams lp =
+                    new ViewGroup.MarginLayoutParams(DOT_INDICATOR_SIZE, DOT_INDICATOR_SIZE);
+            lp.setMargins(DOT_INDICATOR_LEFT_PADDING, 0, DOT_INDICATOR_RIGHT_PADDING, 0);
+            imageView.setLayoutParams(lp);
+            mDotIndicators[i] = imageView;
+
+            viewGroup.addView(mDotIndicators[i]);
+        }
+
+        updateIndicator(mViewPager.getCurrentItem());
+    }
+
+    private ViewPager.OnPageChangeListener createPageListener() {
+        return new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(
+                    int position, float positionOffset, int positionOffsetPixels) {
+                if (positionOffset != 0) {
+                    for (int idx = 0; idx < mPageList.size(); idx++)
+                        mViewPagerImages[idx].setVisibility(View.VISIBLE);
+                } else {
+                    updateIndicator(position);
+                }
+            }
+
+            @Override
+            public void onPageSelected(int position) {}
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        };
+    }
+
+    private void updateIndicator(int position) {
+        for (int i = 0; i < mPageList.size(); i++) {
+            if (position == i) {
+                mDotIndicators[i].setBackgroundResource(
+                        R.drawable.ic_color_page_indicator_focused);
+
+                mViewPagerImages[i].setVisibility(View.VISIBLE);
+            } else {
+                mDotIndicators[i].setBackgroundResource(
+                        R.drawable.ic_color_page_indicator_unfocused);
+
+                mViewPagerImages[i].setVisibility(View.INVISIBLE);
+            }
+        }
+
+        if (position == 0) {
+            mViewArrowPrevious.setVisibility(View.INVISIBLE);
+            mViewArrowNext.setVisibility(View.VISIBLE);
+        } else if (position == (mPageList.size() - 1)) {
+            mViewArrowPrevious.setVisibility(View.VISIBLE);
+            mViewArrowNext.setVisibility(View.INVISIBLE);
+        } else {
+            mViewArrowPrevious.setVisibility(View.VISIBLE);
+            mViewArrowNext.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private static class ColorPagerAdapter extends PagerAdapter {
+        private final ArrayList<View> mPageViewList;
+
+        ColorPagerAdapter(ArrayList<View> pageViewList) {
+            mPageViewList = pageViewList;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            if (mPageViewList.get(position) != null) {
+                container.removeView(mPageViewList.get(position));
+            }
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            container.addView(mPageViewList.get(position));
+            return mPageViewList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mPageViewList.size();
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return object == view;
+        }
     }
 }

@@ -1,24 +1,26 @@
 /*
-* Copyright (C) 2013 The OmniROM Project
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 2 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
-*
-*/
+ * Copyright (C) 2022 PixelExperience Project
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 package org.aosp.device.DeviceSettings;
 
 import android.content.Intent;
 import android.os.UserHandle;
+import android.content.res.Resources;
+import android.util.Log;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -34,6 +36,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class Utils {
+
+    private static final String TAG = Utils.class.getSimpleName();
 
     private static boolean mServiceEnabled = false;
 
@@ -67,7 +71,7 @@ public class Utils {
             return;
         }
         try {
-            FileOutputStream fos = new FileOutputStream(new File(filename));
+            FileOutputStream fos = new FileOutputStream(filename);
             fos.write(value.getBytes());
             fos.flush();
             fos.close();
@@ -99,7 +103,7 @@ public class Utils {
             return null;
         }
         BufferedReader br = null;
-        String line = null;
+        String line;
         try {
             br = new BufferedReader(new FileReader(filename), 1024);
             line = br.readLine();
@@ -120,7 +124,7 @@ public class Utils {
     public static boolean getFileValueAsBoolean(String filename, boolean defValue) {
         String fileValue = readLine(filename);
         if(fileValue!=null){
-            return (fileValue.equals("0")?false:true);
+            return (!fileValue.equals("0"));
         }
         return defValue;
     }
@@ -131,6 +135,26 @@ public class Utils {
             return fileValue;
         }
         return defValue;
+    }
+
+    public static String getLocalizedString(final Resources res,
+                                            final String stringName,
+                                            final String stringFormat) {
+        final String name = stringName.toLowerCase().replace(" ", "_");
+        final String nameRes = String.format(stringFormat, name);
+        return getStringForResourceName(res, nameRes, stringName);
+    }
+
+    public static String getStringForResourceName(final Resources res,
+                                                  final String resourceName,
+                                                  final String defaultValue) {
+        final int resId = res.getIdentifier(resourceName, "string", "com.yaap.device.DeviceSettings");
+        if (resId <= 0) {
+            Log.e(TAG, "No resource found for " + resourceName);
+            return defaultValue;
+        } else {
+            return res.getString(resId);
+        }
     }
 
     public static boolean isAppInstalled(Context context, String appUri) {

@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2015-2016 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2022 PixelExperience Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +16,14 @@
 
 package org.aosp.device.DeviceSettings;
 
-import android.Manifest;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Resources;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.media.AudioManager;
-import android.media.session.MediaSessionLegacyHelper;
 import android.os.FileObserver;
-import android.os.Handler;
-import android.os.Message;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.os.RemoteException;
-import android.os.SystemClock;
-import android.os.SystemProperties;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
@@ -46,16 +32,12 @@ import android.util.SparseIntArray;
 import android.view.KeyEvent;
 
 import com.android.internal.os.DeviceKeyHandler;
-import com.android.internal.util.ArrayUtils;
-
-import org.aosp.device.DeviceSettings.Constants;
 
 import vendor.oneplus.hardware.camera.V1_0.IOnePlusCameraProvider;
 
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = KeyHandler.class.getSimpleName();
-    private static final int GESTURE_REQUEST = 1;
     private static final boolean DEBUG = false;
 
     private static final SparseIntArray sSupportedSliderZenModes = new SparseIntArray();
@@ -74,10 +56,10 @@ public class KeyHandler implements DeviceKeyHandler {
         sSupportedSliderRingModes.put(Constants.KEY_VALUE_VIBRATE, AudioManager.RINGER_MODE_VIBRATE);
         sSupportedSliderRingModes.put(Constants.KEY_VALUE_NORMAL, AudioManager.RINGER_MODE_NORMAL);
 
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_TOTAL_SILENCE, VibrationEffect.EFFECT_HEAVY_CLICK);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_TOTAL_SILENCE, VibrationEffect.EFFECT_THUD);
         sSupportedSliderHaptics.put(Constants.KEY_VALUE_SILENT, VibrationEffect.EFFECT_DOUBLE_CLICK);
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_PRIORTY_ONLY, VibrationEffect.EFFECT_HEAVY_CLICK);
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_VIBRATE, VibrationEffect.EFFECT_TICK);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_PRIORTY_ONLY, VibrationEffect.EFFECT_POP);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_VIBRATE, VibrationEffect.EFFECT_HEAVY_CLICK);
         sSupportedSliderHaptics.put(Constants.KEY_VALUE_NORMAL, -1);
     }
 
@@ -85,17 +67,10 @@ public class KeyHandler implements DeviceKeyHandler {
     public static final String CLIENT_PACKAGE_PATH = "/data/misc/aosp/client_package_name";
 
     private final Context mContext;
-    private final PowerManager mPowerManager;
     private final NotificationManager mNotificationManager;
     private final AudioManager mAudioManager;
-    private SensorManager mSensorManager;
-    private Sensor mProximitySensor;
     private Vibrator mVibrator;
-    WakeLock mProximityWakeLock;
-    WakeLock mGestureWakeLock;
-    private int mProximityTimeOut;
     private int mPrevKeyCode = 0;
-    private boolean mProximityWakeSupported;
     private boolean mDispOn;
     private ClientPackageNameObserver mClientObserver;
     private IOnePlusCameraProvider mProvider;
@@ -116,21 +91,13 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyHandler(Context context) {
         mContext = context;
-        mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        mNotificationManager
-                = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                "GestureWakeLock");
 
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
             mVibrator = null;
         }
-
-        IntentFilter systemStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-        systemStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        mContext.registerReceiver(mSystemStateReceiver, systemStateFilter);
 
         isOPCameraAvail = Utils.isAvailableApp("com.oneplus.camera", context);
         if (isOPCameraAvail) {
@@ -145,14 +112,14 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     public KeyEvent handleKeyEvent(KeyEvent event) {
-        int scanCode = event.getScanCode();
-        String keyCode = Constants.sKeyMap.get(scanCode);
-        int keyCodeValue = 0;
+        final int scanCode = event.getScanCode();
+        final String keyCode = Constants.sKeyMap.get(scanCode);
+        int keyCodeValue;
 
         try {
             keyCodeValue = Constants.getPreferenceInt(mContext, keyCode);
         } catch (Exception e) {
-             return event;
+            return event;
         }
 
         if (!hasSetupCompleted()) {
@@ -169,6 +136,21 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mPrevKeyCode == Constants.KEY_VALUE_TOTAL_SILENCE)
             doHapticFeedback(sSupportedSliderHaptics.get(keyCodeValue));
         mNotificationManager.setZenMode(sSupportedSliderZenModes.get(keyCodeValue), null, TAG);
+
+        if (Constants.getIsMuteMediaEnabled(mContext)) {
+            final int max = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+            if (keyCodeValue == Constants.KEY_VALUE_SILENT) {
+                final int curr = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+                Constants.setLastMediaLevel(mContext, Math.round((float)curr * 100f / (float)max));
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+                        0, AudioManager.FLAG_SHOW_UI);
+            } else if (mPrevKeyCode == Constants.KEY_VALUE_SILENT) {
+                final int last = Constants.getLastMediaLevel(mContext);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+                        Math.round((float)max * (float)last / 100f), AudioManager.FLAG_SHOW_UI);
+            }
+        }
+
         mPrevKeyCode = keyCodeValue;
         return null;
     }
@@ -179,15 +161,7 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
-    public void handleNavbarToggle(boolean enabled) {
-        // do nothing
-    }
-
-    public boolean canHandleKeyEvent(KeyEvent event) {
-        return false;
-    }
-
-        private void onDisplayOff() {
+	private void onDisplayOff() {
         if (DEBUG) Log.i(TAG, "Display off");
         if (mClientObserver != null) {
             mClientObserver.stopWatching();

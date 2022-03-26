@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2016 The OmniROM Project
+ * Copyright (C) 2022 PixelExperience Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,14 +15,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package org.aosp.device.DeviceSettings;
+package org.aosp.device.DeviceSettings.ModeSwitch;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.SystemProperties;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceManager;
+
+import org.aosp.device.DeviceSettings.Utils;
 
 public class SRGBModeSwitch implements OnPreferenceChangeListener {
 
@@ -39,7 +37,7 @@ public class SRGBModeSwitch implements OnPreferenceChangeListener {
         return Utils.fileWritable(getFile());
     }
 
-    public static boolean isCurrentlyEnabled(Context context) {
+    public static boolean isCurrentlyEnabled() {
         return Utils.getFileValueAsBoolean(getFile(), false);
     }
 

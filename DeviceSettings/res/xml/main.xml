@@ -10,46 +10,40 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:key="graphics"
-        android:title="@string/display_title">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@strings/device_title">
 
-        <SwitchPreference
-            android:key="dc"
-            android:icon="@drawable/ic_dc_mode_icon"
-            android:summary="@string/dc_mode_summary"
-            android:title="@string/dc_mode_title" />
+    <SwitchPreference
+        android:key="dc"
+        android:summary="@string/dc_mode_summary"
+        android:title="@string/dc_mode_title" />
 
-        <SwitchPreference
-            android:key="hbm"
-            android:icon="@drawable/ic_hbm_mode_icon"
-            android:summary="@string/hbm_mode_summary"
-            android:title="@string/hbm_mode_title"
-            android:defaultValue="false" />
+    <SwitchPreference
+        android:key="hbm"
+        android:summary="@string/hbm_mode_summary"
+        android:title="@string/hbm_mode_title"
+        android:defaultValue="false" />
 
-        <SwitchPreference
-            android:key="auto_hbm"
-            android:icon="@drawable/ic_hbm_mode_icon"
-            android:summary="@string/auto_hbm_summary"
-            android:title="@string/auto_hbm_title" />
+    <SwitchPreference
+        android:key="auto_hbm"
+        android:summary="@string/auto_hbm_summary"
+        android:title="@string/auto_hbm_title" />
 
-        <org.aosp.device.DeviceSettings.AutoHBMThresholdPreference
-            android:key="auto_hbm_threshold"
-            android:title="@string/auto_hbm_threshold_title"
-            android:summary="@string/auto_hbm_threshold_summary" />
+    <org.aosp.device.DeviceSettings.AutoHBMThresholdPreference
+        android:key="auto_hbm_threshold"
+        android:title="@string/auto_hbm_threshold_title"
+        android:summary="@string/auto_hbm_threshold_summary" />
 
-        <Preference
-            android:key="panel_category"
-            android:icon="@drawable/ic_panel_modes_icon"
-            android:title="@string/panel_category_title"
-            android:summary="@string/panel_category_summary"
-            android:persistent="false" >
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.aosp.device.DeviceSettings"
-                    android:targetClass="org.aosp.device.DeviceSettings.PanelSettingsActivity" />
-        </Preference>
-    </PreferenceCategory>
+    <Preference
+        android:key="panel_category"
+        android:title="@string/panel_category_title"
+        android:summary="@string/panel_category_summary"
+        android:persistent="false" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.aosp.device.DeviceSettings"
+                android:targetClass="org.aosp.device.DeviceSettings.PanelSettingsActivity" />
+    </Preference>
 
     <PreferenceCategory
         android:key="slider"
@@ -57,7 +51,6 @@
 
         <ListPreference
             android:key="keycode_top_position"
-            android:icon="@drawable/ic_up_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_top_position"
             android:summary="%s"
@@ -66,7 +59,6 @@
 
         <ListPreference
             android:key="keycode_middle_position"
-            android:icon="@drawable/ic_middle_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_middle_position"
             android:summary="%s"
@@ -74,12 +66,18 @@
             android:entryValues="@array/notification_slider_action_entry_values" />
 
         <ListPreference
-          android:key="keycode_bottom_position"
-          android:icon="@drawable/ic_down_icon"
-          android:dialogTitle="@string/notification_slider_selection_dialog_title"
-          android:title="@string/notification_slider_bottom_position"
-          android:summary="%s"
-          android:entries="@array/notification_slider_action_entries"
-          android:entryValues="@array/notification_slider_action_entry_values" />
+            android:key="keycode_bottom_position"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_bottom_position"
+            android:summary="%s"
+            android:entries="@array/notification_slider_action_entries"
+            android:entryValues="@array/notification_slider_action_entry_values" />
+
+        <SwitchPreference
+            android:key="slider_mute_media"
+            android:title="@string/slider_mute_media_title"
+            android:summary="@string/slider_mute_media_summary"
+            android:defaultValue="false"
+            android:persistent="false" />
     </PreferenceCategory>
 </PreferenceScreen>
