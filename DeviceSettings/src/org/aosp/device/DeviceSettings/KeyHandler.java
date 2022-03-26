@@ -17,13 +17,8 @@
 package org.aosp.device.DeviceSettings;
 
 import android.app.NotificationManager;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.media.AudioManager;
-import android.os.FileObserver;
-import android.os.RemoteException;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
@@ -33,12 +28,9 @@ import android.view.KeyEvent;
 
 import com.android.internal.os.DeviceKeyHandler;
 
-import vendor.oneplus.hardware.camera.V1_0.IOnePlusCameraProvider;
-
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = KeyHandler.class.getSimpleName();
-    private static final boolean DEBUG = false;
 
     private static final SparseIntArray sSupportedSliderZenModes = new SparseIntArray();
     private static final SparseIntArray sSupportedSliderRingModes = new SparseIntArray();
@@ -63,31 +55,11 @@ public class KeyHandler implements DeviceKeyHandler {
         sSupportedSliderHaptics.put(Constants.KEY_VALUE_NORMAL, -1);
     }
 
-    public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
-    public static final String CLIENT_PACKAGE_PATH = "/data/misc/aosp/client_package_name";
-
     private final Context mContext;
     private final NotificationManager mNotificationManager;
     private final AudioManager mAudioManager;
     private Vibrator mVibrator;
     private int mPrevKeyCode = 0;
-    private boolean mDispOn;
-    private ClientPackageNameObserver mClientObserver;
-    private IOnePlusCameraProvider mProvider;
-    private boolean isOPCameraAvail;
-
-    private BroadcastReceiver mSystemStateReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                mDispOn = true;
-                onDisplayOn();
-            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                mDispOn = false;
-                onDisplayOff();
-            }
-        }
-    };
 
     public KeyHandler(Context context) {
         mContext = context;
@@ -97,12 +69,6 @@ public class KeyHandler implements DeviceKeyHandler {
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
             mVibrator = null;
-        }
-
-        isOPCameraAvail = Utils.isAvailableApp("com.oneplus.camera", context);
-        if (isOPCameraAvail) {
-            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
-            mClientObserver.startWatching();
         }
     }
 
@@ -158,43 +124,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private void doHapticFeedback(int effect) {
         if (mVibrator != null && mVibrator.hasVibrator() && effect != -1) {
             mVibrator.vibrate(VibrationEffect.get(effect));
-        }
-    }
-
-	private void onDisplayOff() {
-        if (DEBUG) Log.i(TAG, "Display off");
-        if (mClientObserver != null) {
-            mClientObserver.stopWatching();
-            mClientObserver = null;
-        }
-    }
-
-    private void onDisplayOn() {
-        if (DEBUG) Log.i(TAG, "Display on");
-        if ((mClientObserver == null) && (isOPCameraAvail)) {
-            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
-            mClientObserver.startWatching();
-        }
-    }
-
-    private class ClientPackageNameObserver extends FileObserver {
-
-        public ClientPackageNameObserver(String file) {
-            super(CLIENT_PACKAGE_PATH, MODIFY);
-        }
-
-        @Override
-        public void onEvent(int event, String file) {
-            String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
-            if (event == FileObserver.MODIFY) {
-                try {
-                    Log.d(TAG, "client_package" + file + " and " + pkgName);
-                    mProvider = IOnePlusCameraProvider.getService();
-                    mProvider.setPackageName(pkgName);
-                } catch (RemoteException e) {
-                    Log.e(TAG, "setPackageName error", e);
-                }
-            }
         }
     }
 }
