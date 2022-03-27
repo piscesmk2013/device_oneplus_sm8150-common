@@ -175,6 +175,10 @@ ro.surface_flinger.use_content_detection_for_refresh_rate=true
 # Incremental FS
 ro.incremental.enable=yes
 
+# IO Prefetcher
+vendor.iop.enable_prefetch_ofr=1
+vendor.iop.enable_uxe=1
+
 # Media
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
