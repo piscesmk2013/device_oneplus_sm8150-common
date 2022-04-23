@@ -33,3 +33,7 @@ binder_call(system_app, hal_cameraHIDL_default)
 allow system_app sysfs_motor:dir r_dir_perms;
 allow system_app sysfs_motor:file { read write getattr open };
 allow system_app self:netlink_kobject_uevent_socket { read bind create setopt };
+
+# Battery Health
+r_dir_file(system_app, sysfs_battery_supply);
+dontaudit system_app default_android_hwservice:hwservice_manager { find }; 
