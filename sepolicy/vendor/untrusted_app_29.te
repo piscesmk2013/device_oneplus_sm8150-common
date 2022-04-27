@@ -1,6 +1,4 @@
 dontaudit untrusted_app_29 default_android_service:service_manager find;
 
 get_prop(untrusted_app_29, vendor_persist_camera_prop)
-allow untrusted_app_29 zygote:unix_stream_socket getopt;
-
-allow untrusted_app_29 vendor_xdsp_device:chr_file r_file_perms; 
+allow untrusted_app_29 zygote:unix_stream_socket getopt; 
