@@ -37,4 +37,6 @@ allow vendor_init tmpfs:dir { create_dir_perms mounton };
 
 allow vendor_init persist_debug_prop:file read;
 
-allow vendor_sensors_qti telephony_config_prop:file { read open getattr }; 
+allow vendor_sensors_qti telephony_config_prop:file { read open getattr };
+
+dontaudit vendor_init default_prop:file read; 

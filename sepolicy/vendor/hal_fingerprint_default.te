@@ -41,3 +41,5 @@ r_dir_file(hal_fingerprint_default, vendor_sysfs_battery_supply)
 allow hal_fingerprint_default sysfs_fpc:file r_file_perms;
 
 allow hal_fingerprint_default public_adsprpcd_file:file r_file_perms;
+
+dontaudit hal_fingerprint_default default_prop:file read;

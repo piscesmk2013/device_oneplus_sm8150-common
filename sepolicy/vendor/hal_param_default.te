@@ -36,3 +36,5 @@ allow hal_fingerprint_default sysfs_fpc:file { read };
 allow hal_fingerprint_default sysfs_fpc:file { open };
 allow hal_fingerprint_default sysfs_fpc:file { getattr };
 allow hal_fingerprint_default default_prop:file { map }; 
+
+dontaudit hal_param_default bootloader_prop:property_service set;
