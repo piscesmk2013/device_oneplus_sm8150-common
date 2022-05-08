@@ -1,2 +1,5 @@
+# Charge Control
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.chgctrl@1\.0-service\.oneplus_msmnile                             u:object_r:hal_chargecontrol_default_exec:s0
+
 # IFAA
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.ifaa@2\.0-service                                       u:object_r:hal_ifaa_default_exec:s0
