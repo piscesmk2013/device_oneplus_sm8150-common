@@ -184,6 +184,10 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.camera@1.0.vendor:64 \
     vendor.qti.hardware.camera.device@1.0.vendor:64
 
+# Charge control
+PRODUCT_PACKAGES += \
+    vendor.oneplus.chgctrl@1.0-service.oneplus_msmnile
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.class_main.sh \
