@@ -148,8 +148,6 @@ ro.camera.notify_nfc=1
 
 # OnePlus
 vendor.product.manufacturer=OPD
-ro.vendor.build.real.device=true
-ro.vendor.build.release_type=release
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
