@@ -21,3 +21,6 @@ allow camera_helper_app mnt_vendor_file:dir search;
 
 # Allow camera_helper_app to read persist_engineer_file
 r_dir_file(camera_helper_app, persist_engineer_file)
+
+dontaudit camera_helper_app system_data_file:dir search;
+dontaudit camera_helper_app user_profile_root_file:dir search;
