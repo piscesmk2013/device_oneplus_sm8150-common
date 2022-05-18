@@ -482,4 +482,13 @@
         <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
     </string-array>
+    
+    <!-- add some package to indicator exemptions -->
+    <string-array name="config_locationExtraPackageNames">
+        <item>com.android.phone</item>
+        <item>com.android.bluetooth</item>
+        <item>com.android.systemui</item>
+        <item>com.android.networkstack.tethering</item>
+        <item>com.google.android.settings.intelligence</item>
+    </string-array>
 </resources>
