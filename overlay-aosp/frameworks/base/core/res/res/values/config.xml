@@ -77,7 +77,7 @@
     <bool name="config_hasNotificationLed">false</bool>
 
     <!-- Defines custom Vendor sensor for pocket detection. -->
-    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
+    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.proximity</string>
     
     <!-- Whether device has physical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
