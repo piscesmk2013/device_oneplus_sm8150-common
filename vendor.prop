@@ -195,5 +195,3 @@ sys.fflag.override.settings_seamless_transfer=true
 # Google Assistant
 ro.opa.eligible_device=true
 
-# Refresh Rate
-ro.surface_flinger.use_content_detection_for_refresh_rate=true
