@@ -50,9 +50,6 @@
         <!--DOLBY GAME-->
         <library name="gamedap" path="libswgamedap.so"/>
         <!--DOLBY END-->
-        <!--DOLBY VQE-->
-        <library name="vqe" path="libswvqe.so"/>
-        <!--DOLBY END-->
 	<!-- END-->
         <library name="haptic_generator" path="libhapticgenerator.so"/>
     </libraries>
@@ -113,30 +110,9 @@
         <!--DOLBY GAME-->
         <effect name="gamedap" library="gamedap" uuid="3783c334-d3a0-4d13-874f-0032e5fb80e2"/>
         <!--DOLBY END-->
-        <!--DOLBY VQE-->
-        <effect name="vqe" library="vqe" uuid="64a0f614-7fa4-48b8-b081-d59dc954616f"/>
-        <!--DOLBY END-->
 	<!-- END-->
         <effect name="haptic_generator" library="haptic_generator" uuid="97c4acd1-8b82-4f2f-832e-c2fe5d7a9931"/>
     </effects>
-    <postprocess>
-        <stream type="music">
-            <apply effect="music_helper"/>
-        </stream>
-        <!-- #ifdef VENDOR_EDIT heilay.he@media, 2019/09/09, [HD-13502] disable volume listener for ring-->
-        <!--stream type="ring">
-            <apply effect="ring_helper"/>
-        </stream-->
-        <stream type="alarm">
-            <apply effect="alarm_helper"/>
-        </stream>
-        <stream type="voice_call">
-            <apply effect="voice_helper"/>
-        </stream>
-        <stream type="notification">
-            <apply effect="notification_helper"/>
-        </stream>
-    </postprocess>
     <preprocess>
         <stream type="voice_communication">
             <apply effect="aec"/>
