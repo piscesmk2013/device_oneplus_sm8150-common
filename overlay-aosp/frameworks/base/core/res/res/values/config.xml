@@ -86,4 +86,7 @@
          0: Left side
          1: Right side -->
     <integer name="config_alertSliderLocation">1</integer>
+
+    <!-- Whether to force show vibrate icon on status bar -->
+    <bool name="config_forceShowVibrateIconOnStatusBar">true</bool>
 </resources>
