@@ -34,6 +34,9 @@ allow system_app sysfs_motor:dir r_dir_perms;
 allow system_app sysfs_motor:file { read write getattr open };
 allow system_app self:netlink_kobject_uevent_socket { read bind create setopt };
 
+# Allow KProfiles to be adjusted by a system app
+allow system_app sysfs_kprofiles:file rw_file_perms;
+
 # Battery Health
 r_dir_file(system_app, sysfs_battery_supply);
-dontaudit system_app default_android_hwservice:hwservice_manager { find }; 
+dontaudit system_app default_android_hwservice:hwservice_manager { find };
