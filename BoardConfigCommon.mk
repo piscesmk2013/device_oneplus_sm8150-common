@@ -109,9 +109,6 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
 
-# Graphics
-TARGET_USES_VULKAN := true
-
 # HIDL
 DEVICE_MATRIX_FILE += $(VENDOR_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest.xml
