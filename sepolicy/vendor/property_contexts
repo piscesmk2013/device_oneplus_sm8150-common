@@ -2,13 +2,24 @@
 persist.vendor.audio.hac.enable    u:object_r:vendor_audio_prop:s0
 
 # Camera
-vendor.camera.        u:object_r:vendor_camera_prop:s0
+persist.camera.                                 u:object_r:vendor_camera_prop:s0
+vendor.oneplus.gallery.debugStory               u:object_r:vendor_camera_prop:s0
+persist.vendor.camera                           u:object_r:vendor_camera_prop:s0
+vendor.camera.                                  u:object_r:vendor_camera_prop:s0
+vendor.camera.boot_complete                     u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.                           u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.                               u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.res.fmq.size                   u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.req.fmq.size                   u:object_r:vendor_camera_prop:s0
 
 # Display
 persist.vendor.color.matrix    u:object_r:vendor_display_prop:s0
 
 # FTM mode
 ro.boot.ftm_mode    u:object_r:exported_default_prop:s0
+
+# Memplus
+vendor.sys.memplus.          u:object_r:vendor_memplus_prop:s0
 
 # NFC
 persist.vendor.ese.          u:object_r:vendor_nfc_prop:s0

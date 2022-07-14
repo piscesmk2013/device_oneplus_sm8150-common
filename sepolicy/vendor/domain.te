@@ -1,1 +1,4 @@
 allow domain opf_file:file r_file_perms;
+
+# Allow apps to get aux camera prop
+get_prop(domain, vendor_persist_camera_prop)

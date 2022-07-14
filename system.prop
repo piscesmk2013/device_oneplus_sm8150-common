@@ -12,8 +12,9 @@ persist.vendor.btstack.enable.twsplus=true
 persist.vendor.bt.a2dp.aac_whitelist=false
 
 # Camera
-persist.vendor.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oppo.engineermode,com.oplus.camera
+persist.camera.assert.panic=true
 persist.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oppo.engineermode,com.oplus.camera
+ro.opcamera.support=true
 vendor.camera.algo.jpeghwencode=0
 
 # Charger
