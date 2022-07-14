@@ -26,7 +26,7 @@ persist.vendor.color.matrix    u:object_r:vendor_display_prop:s0
 ro.boot.ftm_mode    u:object_r:exported_default_prop:s0
 
 # Memplus
-vendor.sys.memplus.postboot           u:object_r:vendor_memplus_prop:s0
+vendor.sys.memplus.          u:object_r:vendor_memplus_prop:s0
 
 # NFC
 persist.vendor.ese.          u:object_r:vendor_nfc_prop:s0
