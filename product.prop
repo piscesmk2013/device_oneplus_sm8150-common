@@ -5,6 +5,12 @@ audio.sys.routing.latency=0
 audio.offload.min.duration.secs=30
 audio.sys.offload.pstimeout.secs=3
 
+# Bluetooth
+bluetooth.hardware.power.idle_cur_ma=36
+bluetooth.hardware.power.operating_voltage_mv=3300
+bluetooth.hardware.power.rx_cur_ma=20
+bluetooth.hardware.power.tx_cur_ma=3
+
 # Camera
 ro.com.google.lens.oem_camera_package=com.oneplus.camera
 
