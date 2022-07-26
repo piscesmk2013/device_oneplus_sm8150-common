@@ -31,9 +31,6 @@ vendor/lib/rfsa/adsp/libVC1DecDsp_skel.so
 # ANT+ - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so|0f8f5c3081d0ef745e0896b1fceea15f52fe3b21
 
-# Audio firmware
-vendor/firmware/tfa98xx.cnt
-
 # Audio libraries
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libhaptic_effect.so
@@ -415,10 +412,7 @@ vendor/firmware/a630_gmu.bin
 vendor/firmware/a630_sqe.fw
 vendor/firmware/a640_gmu.bin
 vendor/firmware/a640_zap.b00
-vendor/firmware/a640_zap.b01
 vendor/firmware/a640_zap.b02
-vendor/firmware/a640_zap.elf
-vendor/firmware/a640_zap.mdt
 
 # Graphics (Vulkan) - from LA.UM.9.14.r1-18900-LAHAINA.QSSI12.0
 vendor/lib/hw/vulkan.adreno.so|b15e251e90f16cd64ed6446998c2e0c88ffb1472
@@ -551,17 +545,11 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|cfb8cc03e6aa405694b47bc9cb1d41b
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
 vendor/firmware/ipa_fws.b00
-vendor/firmware/ipa_fws.b01
 vendor/firmware/ipa_fws.b02
 vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
-vendor/firmware/ipa_fws.elf
-vendor/firmware/ipa_fws.mdt
 vendor/firmware/ipa_uc.b00
-vendor/firmware/ipa_uc.b01
 vendor/firmware/ipa_uc.b02
-vendor/firmware/ipa_uc.elf
-vendor/firmware/ipa_uc.mdt
 
 # Keymaster - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
 vendor/bin/hw/android.hardware.keymaster@4.1-service-qti|f2dfed2111ada63ddc5283e12b6cb051bd9f9736
@@ -941,6 +929,11 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|938262f1c75299523dc8e5c4e6a7937
 
 # Vibrator firmware
 vendor/firmware/aw8697_haptic.bin
+vendor/firmware/aw8697_haptic_166.bin
+vendor/firmware/aw8697_haptic_168.bin
+vendor/firmware/aw8697_haptic_170.bin
+vendor/firmware/aw8697_haptic_172.bin
+vendor/firmware/aw8697_haptic_174.bin
 vendor/firmware/aw8697_rtp.bin
 vendor/firmware/aw8697_rtp_lighthouse.bin
 vendor/firmware/aw8697_rtp_silk.bin
