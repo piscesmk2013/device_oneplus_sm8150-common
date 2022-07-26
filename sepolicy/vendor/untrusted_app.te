@@ -1,4 +1,5 @@
 allow untrusted_app virtual_ab_prop:file { getattr map open read };
 
 get_prop(untrusted_app, vendor_persist_camera_prop)
-allow untrusted_app zygote:unix_stream_socket getopt; 
+allow untrusted_app zygote:unix_stream_socket getopt;
+allow untrusted_app proc_zoneinfo:file read; 
