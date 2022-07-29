@@ -80,6 +80,13 @@ on init
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
 on post-fs
+    # Hyper Touch
+    chown system system /proc/touchpanel/game_switch_enable
+
+    # TP Edge Touch Limit
+    chown system system /proc/touchpanel/tpedge_limit_enable
+    write /proc/touchpanel/tpedge_limit_enable 0
+
     chmod 0755 /sys/kernel/debug/tracing
 
     # Vibrator
