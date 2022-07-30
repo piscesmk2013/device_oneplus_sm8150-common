@@ -204,6 +204,7 @@
             <name>IDms</name>
             <instance>default</instance>
         </interface>
+        <fqname>@2.0::IDms/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
