@@ -25,6 +25,8 @@ genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1
 genfscon sysfs /devices/platform/vendor/vendor:infrared_pl u:object_r:vendor_sysfs_sensors:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/name u:object_r:vendor_sysfs_graphics:s0
 
 # DC Dimming
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim u:object_r:sysfs_aod:s0
