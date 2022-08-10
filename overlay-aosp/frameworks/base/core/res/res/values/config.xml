@@ -89,4 +89,7 @@
 
     <!-- Whether to force show vibrate icon on status bar -->
     <bool name="config_forceShowVibrateIconOnStatusBar">true</bool>
+
+    <!-- Whether devices suports in-display fingerprint when screen is off -->
+    <bool name="config_supportsScreenOffUdfps">true</bool>
 </resources>
