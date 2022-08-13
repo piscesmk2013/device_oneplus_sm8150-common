@@ -56,6 +56,8 @@
                 android:value="com.android.settings.category.ia.homepage" />
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/device_summary" />
+            <meta-data android:name="com.android.settings.profile"
+                android:value="primary_profile_only" />
         </activity>
 
         <activity android:name=".DeviceSettings" />
