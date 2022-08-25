@@ -944,19 +944,11 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e157937
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|938262f1c75299523dc8e5c4e6a793753b209c40
 
 # Vibrator firmware
-vendor/firmware/aw8697_haptic.bin
-vendor/firmware/aw8697_haptic_166.bin
-vendor/firmware/aw8697_haptic_168.bin
-vendor/firmware/aw8697_haptic_170.bin
-vendor/firmware/aw8697_haptic_172.bin
-vendor/firmware/aw8697_haptic_174.bin
 vendor/firmware/aw8697_rtp.bin
 vendor/firmware/aw8697_rtp_lighthouse.bin
 vendor/firmware/aw8697_rtp_silk.bin
 vendor/firmware/awinic_haptic_gun_params.bin
 vendor/firmware/awinic_haptic_params.bin
-vendor/firmware/shuntai24k_rtp.bin
-vendor/firmware/wentai24k_rtp.bin
 
 # VPP - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
 vendor/bin/vppservice|0f77fd06c6438ded5e5704769db6cb1154d96cbe
