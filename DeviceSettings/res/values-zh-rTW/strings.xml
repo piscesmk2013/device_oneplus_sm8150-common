@@ -62,4 +62,9 @@
     <string name="always_on_camera_dialog_title">前置攝像頭開啟時詢問</string>
     <string name="always_on_camera_dialog_summary_on">每次開啟都詢問</string>
     <string name="always_on_camera_dialog_summary_off">只在螢幕關閉時詢問</string>
+
+    <!-- Dolby -->
+    <string name="audio_title">音效</string>
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_summary">Dolby Atmos 增強您的音效體驗</string>
 </resources>
