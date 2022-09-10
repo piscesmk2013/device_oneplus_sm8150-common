@@ -39,4 +39,7 @@ allow vendor_init persist_debug_prop:file read;
 
 allow vendor_sensors_qti telephony_config_prop:file { read open getattr };
 
-dontaudit vendor_init default_prop:file read; 
+dontaudit vendor_init default_prop:file read;
+
+# Allow vendor init to set SSR property
+set_prop(vendor_init, vendor_ssr_prop) 
