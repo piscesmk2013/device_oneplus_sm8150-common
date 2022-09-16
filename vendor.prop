@@ -104,6 +104,7 @@ persist.vendor.dpmhalservice.enable=1
 
 # DRM
 drm.service.enabled=true
+media.mediadrmservice.enable=true
 
 # fastbootd
 ro.fastbootd.available=true
