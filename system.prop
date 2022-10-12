@@ -13,7 +13,6 @@ vendor.bluetooth.soc=cherokee
 persist.vendor.btstack.enable.lpa=true
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.bt.a2dp.aac_whitelist=false
-persist.vendor.btstack.enable.twsplussho=true
 
 # Blur
 ro.surface_flinger.supports_background_blur=1
