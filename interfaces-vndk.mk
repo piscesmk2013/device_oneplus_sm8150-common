@@ -1,6 +1,5 @@
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth@1.1.vendor
 
 # DRM
@@ -53,7 +52,7 @@ PRODUCT_PACKAGES += \
 
 # Sensor
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0.vendor:64 \
+    android.hardware.audio@4.0.vendor \
     android.frameworks.sensorservice@1.0.vendor
 
 # Wifi
