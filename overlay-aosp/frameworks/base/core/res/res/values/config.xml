@@ -95,4 +95,7 @@
     
     <!-- Whether key handler sends intent when changing slider position -->
     <string name="config_alertSliderIntent">org.aosp.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
+    
+    <!-- Whether or not to enable the lock screen entry point for the QR code scanner. -->
+    <bool name="config_enableQrCodeScannerOnLockScreen">true</bool>
 </resources>
