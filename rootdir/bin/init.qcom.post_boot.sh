@@ -859,23 +859,10 @@ function configure_zram_parameters() {
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
     fi
-    echo 0 > /proc/sys/vm/page-cluster
-    echo 100 > /proc/sys/vm/swappiness
 }
 
 function configure_vbswap() {
     echo 4294967296 > /sys/devices/virtual/block/vbswap0/disksize
-    # Set swappiness reflecting the device's RAM size
-    RamStr=$(cat /proc/meminfo | grep MemTotal)
-    RamMB=$((${RamStr:16:8} / 1024))
-    if [ $RamMB -le 6144 ]; then
-        echo 190 > /proc/sys/vm/rswappiness
-    elif [ $RamMB -le 8192 ]; then
-        echo 160 > /proc/sys/vm/rswappiness
-    else
-        echo 130 > /proc/sys/vm/rswappiness
-    fi
-    echo 0 > /proc/sys/vm/page-cluster
     mkswap /dev/block/vbswap0
     swapon /dev/block/vbswap0
 }
@@ -940,14 +927,13 @@ function configure_memory_parameters() {
 ProductName=`getprop ro.product.name`
 low_ram=`getprop ro.config.low_ram`
 
-if  [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ] || [ "$ProductName" == "OnePlus7" ] || [ "$ProductName" == "OnePlus7Pro" ] || [ "$ProductName" == "OnePlus7T" ] ||[ "$ProductName" == "OnePlus7TPro" ]; then
+configure_vbswap
 
-      # Enable vbswap
-      configure_vbswap
-      
+if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
       # Enable ZRAM
-      configure_zram_parameters
-      
+      #configure_zram_parameters
+      echo 0 > /proc/sys/vm/page-cluster
+      echo 100 > /proc/sys/vm/swappiness
 else
     arch_type=`uname -m`
 
