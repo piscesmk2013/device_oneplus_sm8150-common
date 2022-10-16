@@ -861,12 +861,6 @@ function configure_zram_parameters() {
     fi
 }
 
-function configure_vbswap() {
-    echo 4294967296 > /sys/devices/virtual/block/vbswap0/disksize
-    mkswap /dev/block/vbswap0
-    swapon /dev/block/vbswap0
-}
-
 function disable_core_ctl() {
     if [ -f /sys/devices/system/cpu/cpu0/core_ctl/enable ]; then
         echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
@@ -927,11 +921,9 @@ function configure_memory_parameters() {
 ProductName=`getprop ro.product.name`
 low_ram=`getprop ro.config.low_ram`
 
-configure_vbswap
-
 if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
       # Enable ZRAM
-      #configure_zram_parameters
+      configure_zram_parameters
       echo 0 > /proc/sys/vm/page-cluster
       echo 100 > /proc/sys/vm/swappiness
 else
