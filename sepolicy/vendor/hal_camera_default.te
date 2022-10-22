@@ -29,3 +29,7 @@ allow hal_camera_default aac_drc_prop:file { map getattr open };
 allow hal_camera_default ab_update_gki_prop:file { map getattr open };
 
 dontaudit hal_camera_default default_prop:file read;
+
+# Laser AF
+allow hal_camera_default input_device:chr_file {ioctl read open};
+allow hal_camera_default input_device:dir {read open search}; 
