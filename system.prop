@@ -3,7 +3,6 @@ arm64.memtag.process.system_server=off
 
 # Audio
 persist.vendor.audio.hac.enable=false
-ro.audio.monitorRotation=true
 
 # Blur
 ro.surface_flinger.supports_background_blur=1
