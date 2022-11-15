@@ -12,6 +12,6 @@ allow kernel oem_block_device:blk_file rw_file_perms;
 # Allow kernel to read and write to param_block_device
 allow kernel param_block_device:blk_file rw_file_perms;
 
-allow kernel kernel:capability { kill };
+allow kernel self:capability kill;
 
 allow kernel persist_wlan_file:file r_file_perms; 
