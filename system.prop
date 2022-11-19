@@ -13,6 +13,7 @@ ro.sf.blurs_are_expensive=1
 persist.camera.assert.panic=true
 ro.opcamera.support=true
 persist.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
+persist.vendor.camera.sceneclassify.enable=0
 
 # Charger
 ro.charger.enable_suspend=true
