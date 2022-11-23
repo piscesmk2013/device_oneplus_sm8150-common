@@ -158,9 +158,6 @@ ro.netflix.bsp_rev=Q855-16947-1
 # NFC
 ro.camera.notify_nfc=1
 
-# OnePlus
-vendor.product.manufacturer=OPD
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
