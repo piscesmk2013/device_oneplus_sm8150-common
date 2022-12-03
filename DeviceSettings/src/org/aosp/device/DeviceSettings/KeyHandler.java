@@ -80,6 +80,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 Settings.Secure.USER_SETUP_COMPLETE, 0) != 0;
     }
 
+    @Override
     public KeyEvent handleKeyEvent(KeyEvent event) {
         final int scanCode = event.getScanCode();
         final String keyCode = Constants.sKeyMap.get(scanCode);
@@ -97,7 +98,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
         // We only want ACTION_UP event
         if (event.getAction() != KeyEvent.ACTION_UP) {
-            return null;
+            return event;
         }
 
         doHapticFeedback(sSupportedSliderHaptics.get(keyCodeValue));
