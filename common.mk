@@ -532,3 +532,16 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.early.app.duration=16500000 \
     debug.sf.earlyGl.sf.duration=13500000 \
     debug.sf.earlyGl.app.duration=21000000
+
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    persist.vendor.audio.fluence.voicerec=false \
+    persist.vendor.audio.fluence.audiorec=false \
+    persist.vendor.audio.fluence.voicecall=false \
+    persist.vendor.audio.fluence.speaker=false \
+    persist.vendor.audio.fluence.voicecomm=false \
+    persist.vendor.audio.hac.enable=false \
+    ro.audio.monitorRotation=true \
+    ro.config.media_vol_steps=30 \
+    ro.config.vc_call_vol_steps=6 \
+    vendor.audio.hal.output.suspend.supported=false
