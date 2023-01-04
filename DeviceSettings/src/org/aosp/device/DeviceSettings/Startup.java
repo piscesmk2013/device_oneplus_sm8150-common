@@ -37,12 +37,13 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        restore(SRGBModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false));
-        restore(HBMModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false));
+        // DC Dimming
         restore(DCModeSwitch.getFile(),
                 sharedPrefs.getBoolean(DCModeSwitch.KEY_DC_SWITCH, false));
+
+        // Panel modes
+        restore(SRGBModeSwitch.getFile(),
+                sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false));
         restore(DCIModeSwitch.getFile(),
                 sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false));
         restore(WideColorModeSwitch.getFile(),
