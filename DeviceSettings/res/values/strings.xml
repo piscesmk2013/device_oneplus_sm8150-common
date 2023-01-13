@@ -55,4 +55,13 @@
     <string name="edge_touch_title">Edge anti-accidental touch</string>
     <string name="edge_touch_summary">Enable the anti-accidental touch mode provided by OnePlus to improve the touch experience at the edge of the screen</string>
     <string name="edge_touch_warning">May affect the touch experience at the edges of the screen for some apps</string>
+
+    <!-- Spoofing -->
+    <string name="spoofing_category">Spoofing</string>
+    <!-- Unlimited google photos storage -->
+    <string name="use_photos_spoof_title">Unlimited Photos storage</string>
+    <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
+    <!-- Unlock FPS for specific games -->
+    <string name="use_games_spoof_title">Unlock higher FPS in games</string>
+    <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
 </resources>

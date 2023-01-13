@@ -60,4 +60,9 @@
     <string name="edge_touch_title">边缘防误触</string>
     <string name="edge_touch_summary">启用一加提供的防误触模式, 改善屏幕边缘触控体验</string>
     <string name="edge_touch_warning">可能会影响某些应用屏幕边缘的触控体验</string>
+    <string name="spoofing_category">伪装</string>
+    <string name="use_photos_spoof_title">无限照片存储</string>
+    <string name="use_photos_spoof_summary">为 GPhotos 伪装 Pixel XL机型，以提供无限备份存储空间</string>
+    <string name="use_games_spoof_title">解锁游戏高帧率</string>
+    <string name="use_games_spoof_summary">为游戏伪装特定的机型，以解锁更高的 FPS</string>
 </resources>

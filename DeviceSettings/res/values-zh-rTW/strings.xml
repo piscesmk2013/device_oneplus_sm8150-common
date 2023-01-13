@@ -51,4 +51,9 @@
     <string name="always_on_camera_dialog_title">使用前置攝像頭時打開對話框</string>
     <string name="always_on_camera_dialog_summary_on">打開前詢問</string>
     <string name="always_on_camera_dialog_summary_off">僅屏幕關閉時詢問</string>
+    <string name="spoofing_category">偽裝</string>
+    <string name="use_photos_spoof_title">無限照片存儲</string>
+    <string name="use_photos_spoof_summary">為 GPhotos 偽裝 Pixel XL機型，以提供無限備份儲存空間</string>
+    <string name="use_games_spoof_title">解鎖遊戲高幀率</string>
+    <string name="use_games_spoof_summary">為遊戲偽裝特定的機型，以解鎖更高的 FPS</string>
 </resources>
