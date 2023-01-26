@@ -11,9 +11,8 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Panel modes -->
     <string name="device_title">一加設置</string>
-    <string name="device_summary">調整一加特定設備設置</string>
+    <string name="device_summary">調整一加設備的特定設置</string>
     <string name="display_title">顯示</string>
     <string name="srgb_mode_summary"></string>
     <string name="srgb_mode_title">sRGB</string>
@@ -23,48 +22,40 @@
     <string name="auto_hbm_title">自動高亮度模式</string>
     <string name="auto_hbm_threshold_title">自動高亮度模式閾值 (lux)</string>
     <string name="auto_hbm_threshold_summary"></string>
-    <string name="wide_color_mode_title">AMOLED 廣色域模式</string>
+    <string name="wide_color_mode_title">AMOLED 廣色域</string>
     <string name="natural_mode_title">自然</string>
     <string name="vivid_mode_title">生動</string>
     <string name="dci_mode_summary"></string>
-    <string name="dci_mode_title">DCI-P3 廣色域模式</string>
+    <string name="dci_mode_title">DCI-P3</string>
     <string name="night_mode_summary"></string>
     <string name="night_mode_title">夜間模式</string>
-    <string name="panel_category_title">面板模式</string>
-    <string name="panel_category_summary">面板顏色校正模式</string>
+    <string name="panel_category_title">顏色模式</string>
+    <string name="panel_category_summary">校正顯示面板顏色</string>
     <string name="off_mode_title">關</string>
     <string name="tile_panel_mode">面板模式</string>
     <string name="dc_mode_summary"></string>
-    <string name="dc_mode_title">DC調光</string>
+    <string name="dc_mode_title">DC 調光</string>
     <string name="tile_hbm_mode">高亮度模式</string>
-    <string name="tile_dc_mode">DC-調光</string>
-    <string name="panel_mode_info">禁用面板模式需要重新啟動。</string>
-    <!-- Notification slider -->
-    <string name="notification_slider_category_title">通知滑塊</string>
-    <string name="notification_slider_selection_dialog_title">操作</string>
+    <string name="tile_dc_mode">DC 調光</string>
+    <string name="panel_mode_info">關閉面板顏色模式需要重新啟動</string>
+    <string name="notification_slider_category_title">三段式開關</string>
+    <string name="notification_slider_selection_dialog_title">動作</string>
     <string name="notification_slider_top_position">頂部位置</string>
     <string name="notification_slider_middle_position">中間位置</string>
     <string name="notification_slider_bottom_position">底部位置</string>
-    <string name="notification_slider_mode_total_silence">完全阻止</string>
-    <string name="notification_slider_mode_priority_only">絕對優先打擾</string>
+    <string name="notification_slider_mode_total_silence">完全靜音</string>
+    <string name="notification_slider_mode_priority_only">僅優先</string>
     <string name="notification_slider_mode_silent">靜音</string>
     <string name="notification_slider_mode_vibrate">振動</string>
-    <string name="notification_slider_mode_none">正常</string>
+    <string name="notification_slider_mode_none">響鈴</string>
     <string name="buttons_dashboard_summary">三段式開關設置</string>
     <string name="slider_mute_media_title">媒體靜音</string>
     <string name="slider_mute_media_summary">靜音時將媒體音量也關閉(僅靜音)\n取消後恢復之前的音量</string>
-    <!-- Vibration slider -->
-    <string name="category_vibrator">振動</string>
-    <string name="vib_strength_title_head">強度</string>
-    <string name="vib_strength_summary_head">自定義振動強度</string>
-    <string name="vibration_warning">將強度設置得太高可能會導致永久性硬件損壞</string>
     <string name="camera_title">相機</string>
     <string name="always_on_camera_dialog_title">使用前置攝像頭時打開對話框</string>
-    <string name="always_on_camera_dialog_summary_on">打開前置攝像頭前一定會詢問</string>
-    <string name="always_on_camera_dialog_summary_off">僅在屏幕關閉時詢問</string>
-
-    <!-- Dolby -->
+    <string name="always_on_camera_dialog_summary_on">打開前詢問</string>
+    <string name="always_on_camera_dialog_summary_off">僅屏幕關閉時詢問</string>
     <string name="audio_title">音效</string>
     <string name="dolby_title">Dolby Atmos</string>
-    <string name="dolby_summary">Dolby Atmos 增強您的音效體驗</string>
+    <string name="dolby_summary">通過 Dolby Atmos 增強您的音效體驗</string>
 </resources>
