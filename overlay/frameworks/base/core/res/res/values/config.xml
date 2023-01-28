@@ -440,22 +440,9 @@
         <item>"/system/lib64/libhwui.so"</item>
         <item>"/system/lib64/libui.so"</item>
         <item>"/system/lib64/libvulkan.so"</item>
-        <item>"/system/system_ext/lib/libcomposerextn.qti.so"</item>
-        <item>"/system/system_ext/lib/libdolphin.so"</item>
-        <item>"/system/system_ext/lib/liblayerext.qti.so"</item>
-        <item>"/system/system_ext/lib/libpenguin.so"</item>
-        <item>"/system/system_ext/lib/libpenguin_impl.so"</item>
-        <item>"/system/system_ext/lib64/libcomposerextn.qti.so"</item>
-        <item>"/system/system_ext/lib64/libdolphin.so"</item>
-        <item>"/system/system_ext/lib64/liblayerext.qti.so"</item>
-        <item>"/system/system_ext/lib64/libpenguin.so"</item>
-        <item>"/system/system_ext/lib64/libpenguin_impl.so"</item>
         <item>"/system/system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk"</item>
         <item>"/system/system_ext/priv-app/DaxUI/DaxUI.apk"</item>
         <item>"/system/system_ext/priv-app/daxService/daxService.apk"</item>
-        <item>"/vendor/lib/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib/libipebpsstriping170.so"</item>
-        <item>"/vendor/lib/libipebpsstriping.so"</item>
         <item>"/vendor/lib/egl/eglSubDriverAndroid.so"</item>
         <item>"/vendor/lib/egl/libEGL_adreno.so"</item>
         <item>"/vendor/lib/egl/libGLESv1_CM_adreno.so"</item>
@@ -471,10 +458,6 @@
         <item>"/vendor/lib/libkernelmanager.so"</item>
         <item>"/vendor/lib/libllvm-glnext.so"</item>
         <item>"/vendor/lib/libllvm-qcom.so"</item>
-        <item>"/vendor/lib/libllvm-qgl.so"</item>
-        <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib64/libipebpsstriping170.so"</item>
-        <item>"/vendor/lib64/libipebpsstriping.so"</item>
         <item>"/vendor/lib64/egl/eglSubDriverAndroid.so"</item>
         <item>"/vendor/lib64/egl/libEGL_adreno.so"</item>
         <item>"/vendor/lib64/egl/libGLESv1_CM_adreno.so"</item>
@@ -490,7 +473,6 @@
         <item>"/vendor/lib64/libkernelmanager.so"</item>
         <item>"/vendor/lib64/libllvm-glnext.so"</item>
         <item>"/vendor/lib64/libllvm-qcom.so"</item>
-        <item>"/vendor/lib64/libllvm-qgl.so"</item>
         <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
     </string-array>
