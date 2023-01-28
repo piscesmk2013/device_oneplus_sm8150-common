@@ -79,7 +79,6 @@ vendor.display.disable_scaler=0
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.disable_ui_3d_tonemap=1
-debug.force_no_blanking=true
 
 # Dolby
 vendor.audio.dolby.ds2.enabled=true
