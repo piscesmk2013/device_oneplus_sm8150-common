@@ -387,7 +387,6 @@ TARGET_SUPPORTS_QUICK_TAP := true
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libril_shim \
-    libshim_imsvidecoder \
     librmnetctl \
     libxml2
 
