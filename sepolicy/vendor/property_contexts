@@ -47,6 +47,8 @@ ro.boot.msz      u:object_r:vendor_param_prop:s0
 ro.boot.rf_version    u:object_r:exported_default_prop:s0
 
 # RIL
+ro.vendor.ril.svlte1x           u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.svdo              u:object_r:vendor_radio_prop:s0
 vendor.oem.bt.addr              u:object_r:vendor_radio_prop:s0
 vendor.oem.device.imeicache1    u:object_r:vendor_radio_prop:s0
 vendor.oem.device.imeicache2    u:object_r:vendor_radio_prop:s0
