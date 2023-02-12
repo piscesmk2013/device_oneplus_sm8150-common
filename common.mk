@@ -100,7 +100,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.soundtrigger@2.1-impl \
-    android.hardware.bluetooth.audio-impl \
     audio.primary.default \
     audio.primary.msmnile \
     audio.bluetooth.default \
@@ -158,7 +157,9 @@ PRODUCT_PACKAGES_DEBUG += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     liba2dpoffload \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
+    libbthost_if \
+    android.hardware.bluetooth.audio-impl \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
@@ -242,8 +243,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.oneplus \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor:64 \
-    vendor.oneplus.hardware.display@1.0.vendor:64 \
-    vendor.oneplus.fingerprint.extension@1.0.vendor
+    vendor.oneplus.hardware.display@1.0.vendor:64
 
 # GPS
 PRODUCT_COPY_FILES += \
