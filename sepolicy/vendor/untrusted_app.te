@@ -1,5 +1,8 @@
 allow untrusted_app virtual_ab_prop:file { getattr map open read };
 
 get_prop(untrusted_app, vendor_persist_camera_prop)
+
+dontaudit untrusted_app proc:file r_file_perms;
+allow untrusted_app sysfs_zram:dir { search };
 allow untrusted_app zygote:unix_stream_socket getopt;
-allow untrusted_app proc_zoneinfo:file read; 
+allow untrusted_app proc_zoneinfo:file r_file_perms;
