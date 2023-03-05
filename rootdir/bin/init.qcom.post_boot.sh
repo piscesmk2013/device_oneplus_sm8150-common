@@ -5282,33 +5282,26 @@ case "$target" in
 		echo 10 > /proc/sys/kernel/sched_group_downmigrate
 		echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
-		echo 0-3 > /dev/cpuset/background/cpus
-		echo 0-3 > /dev/cpuset/system-background/cpus
-
-
 		# Turn off scheduler boost at the end
 		echo 0 > /proc/sys/kernel/sched_boost
 
 		# configure governor settings for silver cluster
 		echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-		echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-		echo 1209600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-		echo 576000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+		echo 403000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+		echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+        	echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 		echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
 		# configure governor settings for gold cluster
 		echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-		echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-	        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-		echo 1612800 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
+		echo 500 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+	        echo 20000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
 		echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 		# configure governor settings for gold+ cluster
 		echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
-		echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
-	        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-		echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
+		echo 2000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
+	        echo 10000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
 		echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
 		# configure input boost settings
