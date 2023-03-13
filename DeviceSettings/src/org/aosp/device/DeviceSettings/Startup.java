@@ -62,24 +62,23 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent intent) {
         final SharedPreferences dePrefs = Constants.getDESharedPrefs(context);
 
-        if (intent.getAction().equals(ACTION_BOOT_COMPLETED)) {
-            if (!dePrefs.getBoolean(KEY_MIGRATION_DONE, false)) {
-                // migration of old user encrypted preferences
-                final SharedPreferences oldPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-                final SharedPreferences.Editor oldPrefsEditor = oldPrefs.edit();
-                final SharedPreferences.Editor dePrefsEditor = dePrefs.edit();
+        final boolean migrationDone = dePrefs.getBoolean(KEY_MIGRATION_DONE, false);
+        if (!migrationDone && intent.getAction().equals(ACTION_BOOT_COMPLETED)) {
+            // migration of old user encrypted preferences
+            final SharedPreferences oldPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+            final SharedPreferences.Editor oldPrefsEditor = oldPrefs.edit();
+            final SharedPreferences.Editor dePrefsEditor = dePrefs.edit();
 
-                for (String prefKey : sKeyFileMap.keySet()) {
-                    if (!oldPrefs.contains(prefKey)) continue;
-                    dePrefsEditor.putBoolean(prefKey, oldPrefs.getBoolean(prefKey, false));
-                    oldPrefsEditor.remove(prefKey);
-                }
-
-                dePrefsEditor.putBoolean(KEY_MIGRATION_DONE, true);
-                // must use commit (and not apply) because of what follows!
-                dePrefsEditor.commit();
-                oldPrefsEditor.commit();
+            for (String prefKey : sKeyFileMap.keySet()) {
+                if (!oldPrefs.contains(prefKey)) continue;
+                dePrefsEditor.putBoolean(prefKey, oldPrefs.getBoolean(prefKey, false));
+                oldPrefsEditor.remove(prefKey);
             }
+
+            dePrefsEditor.putBoolean(KEY_MIGRATION_DONE, true);
+            // must use commit (and not apply) because of what follows!
+            dePrefsEditor.commit();
+            oldPrefsEditor.commit();
         }
 
         // restoring state from DE shared preferences
