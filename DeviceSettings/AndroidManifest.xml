@@ -36,7 +36,8 @@
         android:icon="@drawable/ic_settings_device"
         android:label="@string/device_title"
         android:theme="@style/Theme.SubSettingsBase"
-        android:defaultToDeviceProtectedStorage="true">
+        android:defaultToDeviceProtectedStorage="true"
+        android:directBootAware="true">
 
         <!-- Device Settings -->
         <activity
@@ -76,10 +77,10 @@
 
         <receiver
             android:name="org.aosp.device.DeviceSettings.Startup"
-            android:directBootAware="true" >
+            android:exported="false" >
             <intent-filter android:priority="100" >
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
