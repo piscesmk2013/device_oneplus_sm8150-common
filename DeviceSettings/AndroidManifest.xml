@@ -15,8 +15,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.system"
           package="org.aosp.device.DeviceSettings"
-          android:versionCode="11"
-          android:versionName="eleven" >
+          android:versionCode="1"
+          android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -28,10 +28,6 @@
     <protected-broadcast android:name="android.intent.action.SCREEN_CAMERA_GESTURE" />
     <protected-broadcast android:name="org.aosp.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
-    <uses-sdk
-        android:minSdkVersion="29"
-        android:targetSdkVersion="30" />
-
     <application
         android:icon="@drawable/ic_settings_device"
         android:label="@string/device_title"
@@ -42,11 +38,10 @@
         <!-- Device Settings -->
         <activity
             android:name=".DeviceSettingsActivity"
-            android:label="@string/device_title">
+            android:label="@string/device_title"
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
-            </intent-filter>
-            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
             <meta-data
@@ -61,12 +56,11 @@
                 android:value="primary_profile_only" />
         </activity>
 
-        <activity android:name=".DeviceSettings" />
-        <activity android:name=".KeyHandler" />
+        <activity android:name=".KeyHandler" android:exported="false" />
 
         <activity
             android:name="org.aosp.device.DeviceSettings.PanelSettingsActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/panel_category_title"
             android:launchMode="singleTask" >
             <intent-filter>
@@ -89,7 +83,8 @@
             android:name="org.aosp.device.DeviceSettings.DCModeTileService"
             android:icon="@drawable/ic_dimming_off"
             android:label="@string/tile_dc_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -99,7 +94,8 @@
             android:name="org.aosp.device.DeviceSettings.PanelModeTileService"
             android:icon="@drawable/ic_panel_tile"
             android:label="@string/tile_panel_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -109,7 +105,8 @@
             android:name="org.aosp.device.DeviceSettings.HBMModeTileService"
             android:icon="@drawable/ic_hbm_tile"
             android:label="@string/tile_hbm_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -127,7 +124,7 @@
 
         <!-- Search indexing -->
         <provider
-            android:name=".ConfigPanelSearchIndexablesProvider"
+            android:name=".SettingsSearchIndexablesProvider"
             android:authorities="org.aosp.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
