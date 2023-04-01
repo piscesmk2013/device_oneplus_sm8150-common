@@ -5287,7 +5287,7 @@ case "$target" in
 
 		# configure governor settings for silver cluster
 		echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-		echo 403000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+		echo 300000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 		echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
         	echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 		echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
