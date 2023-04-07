@@ -501,9 +501,6 @@
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
-     <!-- How long it takes for the HW to start illuminating after the illumination is requested. -->
-     <integer name="config_udfps_illumination_transition_ms">10</integer>
-
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
 
