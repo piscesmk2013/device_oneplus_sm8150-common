@@ -17,6 +17,9 @@ ro.com.google.lens.oem_camera_package=com.oneplus.camera
 # Declare use of spatial audio
 ro.audio.spatializer_enabled=true
 
+# Optimize spatializer effect
+audio.spatializer.effect.util_clamp_min=300
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
