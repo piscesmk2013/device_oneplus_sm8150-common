@@ -14,6 +14,9 @@ bluetooth.hardware.power.tx_cur_ma=3
 # Camera
 ro.com.google.lens.oem_camera_package=com.oneplus.camera
 
+# Declare use of spatial audio
+ro.audio.spatializer_enabled=true
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 

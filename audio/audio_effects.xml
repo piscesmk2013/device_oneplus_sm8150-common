@@ -44,6 +44,7 @@
         <library name="volume_listener" path="libvolumelistener.so"/>
         <library name="audiosphere" path="libasphere.so"/>
         <library name="shoebox" path="libshoebox.so"/>
+        <library name="spatializer" path="libspatialaudio.so"/>
         <!--AW VIBRATOR START-->
         <library name="haptic_effect" path="libhaptic_effect.so"/>
         <!--AW VIBRATOR END-->
@@ -104,6 +105,7 @@
         <effect name="notification_helper" library="volume_listener" uuid="0b776dde-0590-11e5-81ba-0025b32654a0"/>
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
+        <effect name="spatializer" library="spatializer" uuid="cc4677de-ff72-11eb-9a03-0242ac130003"/>
         <!--AW VIBRATOR START-->
         <effect name="haptic" library="haptic_effect" uuid="17852d51-161e-11e2-892e-0800200c9a66"/>
         <!--AW VIBRATOR END-->
