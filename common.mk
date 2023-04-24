@@ -189,6 +189,10 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.CameraMDMHIDL@1.0.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
+# CaptivePortalUrl
+PRODUCT_PACKAGES += \
+    CaptivePortalUrlOverlay
+
 # Charge control
 PRODUCT_PACKAGES += \
     vendor.oneplus.chgctrl@1.0-service.oneplus_msmnile
