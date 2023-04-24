@@ -194,6 +194,10 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.CameraMDMHIDL@1.0.vendor:64 \
     vendor.qti.hardware.camera.device@1.0.vendor:64
 
+# CaptivePortalUrl
+PRODUCT_PACKAGES += \
+    CaptivePortalUrlOverlay
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.class_main.sh \
