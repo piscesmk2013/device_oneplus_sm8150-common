@@ -562,14 +562,6 @@
     <!-- Auto-brightness sensor type string -->
     <string name="config_displayLightSensorType">"android.sensor.light"</string>
 
-    <!-- The behavior when the system detects it has abusive current drains, whether or not to
-         move the app to the restricted standby bucket level.
-         True - we'll move the app to restricted standby bucket as long as its bg battery usage
-         goes beyond the threshold, False - we'll not move it.
-         Note: This should be only enabled on devices with high confidence on power measurement.
-    -->
-    <bool name="config_bg_current_drain_auto_restrict_abusive_apps">true</bool>
-
     <!-- Flag indicating whether notification and ringtone volumes
          are controlled together (aliasing is true) or not. -->
     <bool name="config_alias_ring_notif_stream_types">false</bool>
