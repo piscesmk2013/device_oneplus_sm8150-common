@@ -429,6 +429,7 @@ PRODUCT_COPY_FILES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
     TelephonyResOneplus
 
 PRODUCT_COPY_FILES += \
