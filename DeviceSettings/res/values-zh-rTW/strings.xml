@@ -18,10 +18,6 @@
     <string name="srgb_mode_title">sRGB</string>
     <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">高亮度模式</string>
-    <string name="auto_hbm_summary"></string>
-    <string name="auto_hbm_title">自動高亮度模式</string>
-    <string name="auto_hbm_threshold_title">自動高亮度模式閾值 (lux)</string>
-    <string name="auto_hbm_threshold_summary"></string>
     <string name="wide_color_mode_title">AMOLED 廣色域</string>
     <string name="natural_mode_title">自然</string>
     <string name="vivid_mode_title">生動</string>

@@ -54,7 +54,5 @@ public class Startup extends BroadcastReceiver {
                 sharedPrefs.getBoolean(DeviceSettings.KEY_VIVID_SWITCH, false));
         restore(NightModeSwitch.getFile(),
                 sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false));
-
-        Utils.enableService(context);
     }
 }

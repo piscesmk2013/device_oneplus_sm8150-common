@@ -117,11 +117,6 @@
             android:name="org.aosp.device.DeviceSettings.HBMModeService"
             android:exported="false" />
 
-        <!-- Auto HBM service -->
-        <service
-            android:name="org.aosp.device.DeviceSettings.AutoHBMService"
-            android:exported="false" />
-
         <!-- Search indexing -->
         <provider
             android:name=".SettingsSearchIndexablesProvider"

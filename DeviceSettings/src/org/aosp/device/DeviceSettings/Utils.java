@@ -37,28 +37,6 @@ public class Utils {
 
     private static final String TAG = Utils.class.getSimpleName();
 
-    private static boolean mServiceEnabled = false;
-
-    private static void startService(Context context) {
-        context.startServiceAsUser(new Intent(context, AutoHBMService.class),
-                UserHandle.CURRENT);
-        mServiceEnabled = true;
-    }
-
-    private static void stopService(Context context) {
-        mServiceEnabled = false;
-        context.stopServiceAsUser(new Intent(context, AutoHBMService.class),
-                UserHandle.CURRENT);
-    }
-
-    public static void enableService(Context context) {
-        if (DeviceSettings.isAUTOHBMEnabled(context) && !mServiceEnabled) {
-            startService(context);
-        } else if (!DeviceSettings.isAUTOHBMEnabled(context) && mServiceEnabled) {
-            stopService(context);
-        }
-    }
-
     /**
      * Write a string value to the specified file.
      * @param filename      The filename

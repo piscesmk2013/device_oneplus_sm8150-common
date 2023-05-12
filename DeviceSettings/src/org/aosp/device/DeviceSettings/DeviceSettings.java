@@ -50,8 +50,6 @@ public class DeviceSettings extends PreferenceFragment
     private static final String KEY_CATEGORY_CAMERA = "camera";
     private static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_SRGB_SWITCH = "srgb";
-    public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
-    public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_NIGHT_SWITCH = "night";
     public static final String KEY_WIDECOLOR_SWITCH = "widecolor";
@@ -66,7 +64,6 @@ public class DeviceSettings extends PreferenceFragment
 
     private TwoStatePreference mDCModeSwitch;
     private TwoStatePreference mHBMModeSwitch;
-    private static TwoStatePreference mAutoHBMSwitch;
     private SwitchPreference mAlwaysCameraSwitch;
     private SwitchPreference mMuteMediaSwitch;
 
@@ -129,10 +126,6 @@ public class DeviceSettings extends PreferenceFragment
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled());
         mHBMModeSwitch.setOnPreferenceChangeListener(this);
 
-        mAutoHBMSwitch = (TwoStatePreference) findPreference(KEY_AUTO_HBM_SWITCH);
-        mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
-        mAutoHBMSwitch.setOnPreferenceChangeListener(this);
-
         PreferenceCategory mCameraCategory = findPreference(KEY_CATEGORY_CAMERA);
         boolean hasPopup = Utils.isPackageInstalled(POPUP_HELPER_PKG_NAME, getContext());
         if (hasPopup) {
@@ -178,20 +171,11 @@ public class DeviceSettings extends PreferenceFragment
             mInternalDCStart = true;
             Boolean enabled = (Boolean) newValue;
             DCModeSwitch.setEnabled(enabled, getContext());
-        } else if (preference == mAutoHBMSwitch) {
-            Boolean enabled = (Boolean) newValue;
-            SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-            prefChange.putBoolean(KEY_AUTO_HBM_SWITCH, enabled).commit();
-            Utils.enableService(getContext());
         } else if (newValue instanceof String) {
             Constants.setPreferenceInt(getContext(), preference.getKey(),
                     Integer.parseInt((String) newValue));
         }
         return true;
-    }
-
-    public static boolean isAUTOHBMEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false);
     }
 
     @Override
