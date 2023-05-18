@@ -194,5 +194,10 @@ ro.opa.eligible_device=true
 # Verity
 ro.apk_verity.mode=2
 
+# Video Calling
+persist.vendor.radio.report_codec=1 
+persist.vendor.radio.vdp_on_ims_cap=1
+persist.vendor.qti.telephony.vt_cam_interface=2
+
 # Zygote
 zygote.critical_window.minute=10
