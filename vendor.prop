@@ -62,6 +62,9 @@ ro.vendor.camera.res.fmq.size=1048576
 ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
+# Camera
+persist.vendor.camera.perflock.enable=0
+
 # Display
 ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
