@@ -18,4 +18,5 @@ allow priv_app vendor_xdsp_device:chr_file { ioctl read getattr lock map open wa
 binder_call(priv_app, hal_cameraHIDL_default)
 
 allow platform_app hal_dms_hwservice:hwservice_manager find;
-binder_call(platform_app, hal_dms_default) 
+binder_call(platform_app, hal_dms_default)
+get_prop(platform_app, audio_config_prop) 
