@@ -263,9 +263,9 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Dolby
+system_ext/lib64/libaptX_encoder.so
+system_ext/lib64/libaptXHD_encoder.so
 odm/etc/dolby/dax-default.xml
-odm/etc/media_codecs_dolby_audio.xml
-odm/etc/media_codecs_dolby_audio.xml:vendor/etc/media_codecs_dolby_audio.xml
 system/lib64/vendor.dolby.hardware.dms@2.0.so
 -system_ext/priv-app/DaxUI/DaxUI.apk
 system_ext/etc/permissions/privapp-com.dolby.daxappui.xml
@@ -276,8 +276,8 @@ system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml
 -system_ext/priv-app/daxService/daxService.apk
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
+vendor/etc/media_codecs_dolby_audio.xml:vendor/etc/media_codecs_dolby_audio.xml
 vendor/lib/soundfx/libeffectproxy.so
-vendor/lib/soundfx/libhwdap.so
 vendor/lib/soundfx/libswdap.so
 vendor/lib/soundfx/libswgamedap.so
 vendor/lib/libdapparamstorage.so
@@ -288,7 +288,6 @@ vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/libstagefrightdolby.so
 vendor/lib/vendor.dolby.hardware.dms@2.0.so
 vendor/lib64/soundfx/libeffectproxy.so
-vendor/lib64/soundfx/libhwdap.so
 vendor/lib64/soundfx/libswdap.so
 vendor/lib64/soundfx/libswgamedap.so
 vendor/lib64/libdapparamstorage.so
@@ -300,6 +299,10 @@ vendor/lib64/libstagefright_soft_ddpdec.so
 vendor/lib64/libstagefrightdolby.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
+
+# DMS (libswvqe) - from OnePlus8Oxygen_15.I.20_GLO_020_2008080048
+vendor/lib/soundfx/libswvqe.so|076a2d0d002b2ab044b9879ff6b82f79ada5caed
+vendor/lib64/soundfx/libswvqe.so|fa4082e95c001742746d29c6f76442086e2c9880
 
 # DPM (system) - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
 system_ext/bin/dpmd|d8d958c1e3e3962903505bc4e5e74017ba9d3c3d

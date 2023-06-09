@@ -85,7 +85,7 @@ vendor.display.enable_optimize_refresh=1
 vendor.display.disable_ui_3d_tonemap=1
 
 # Dolby
-vendor.audio.dolby.ds2.enabled=true
+vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
 persist.vendor.audio_fx.current=dolby
 ro.audio.monitorRotation=true
