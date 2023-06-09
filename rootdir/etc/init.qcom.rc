@@ -103,10 +103,6 @@ on early-boot
     chown system system /mnt/vendor/persist/data/pfm/licenses/store_4
     chmod 0664 /mnt/vendor/persist/data/pfm/licenses/store_4
 
-    # Dolby
-    mkdir /data/vendor/dolby 0770 media media
-    mkdir /data/vendor/multimedia 0775 system system
-
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type

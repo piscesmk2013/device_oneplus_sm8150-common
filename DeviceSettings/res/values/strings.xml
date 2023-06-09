@@ -55,9 +55,4 @@
     <string name="always_on_camera_dialog_title">Front camera open dialog</string>
     <string name="always_on_camera_dialog_summary_on">Always ask before openning</string>
     <string name="always_on_camera_dialog_summary_off">Only ask when the screen is off</string>
-
-    <!-- Dolby -->
-    <string name="audio_title">Audio</string>
-    <string name="dolby_title">Dolby Atmos</string>
-    <string name="dolby_summary">Enhance your audio experience with dolby</string>
 </resources>
