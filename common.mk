@@ -8,10 +8,6 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
 
-# Get Perf aspects
-$(call inherit-product, device/qcom/common/system/perf/qti-perf.mk)
-$(call inherit-product, device/qcom/common/vendor/perf-legacy/qti-perf-legacy.mk)
-
 # Get Adreno aspects
 $(call inherit-product, device/qcom/common/vendor/adreno-6xx-legacy/qti-adreno-6xx-legacy.mk)
 
@@ -381,8 +377,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    vendor.qti.hardware.perf@2.2.vendor:64
+    android.hardware.power-service-qti
 
 # QMI
 PRODUCT_PACKAGES += \
