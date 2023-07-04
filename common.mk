@@ -37,10 +37,20 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    CaptivePortalUrlOverlay \
+    CarrierConfigOverlay \
+    ConnectivityOverlay \
+    FrameworksResOverlay \
+    HighRefreshRateBlackListOverlay \
+    OnePlusCameraOverlay \
+    OnePlusGalleryOverlay \
+    SystemUIResOverlay \
+    WifiOverlay
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -190,10 +200,6 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.CameraMDMHIDL@1.0.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
-# CaptivePortalUrl
-PRODUCT_PACKAGES += \
-    CaptivePortalUrlOverlay
-
 # Charge control
 PRODUCT_PACKAGES += \
     vendor.oneplus.chgctrl@1.0-service.oneplus_msmnile
@@ -285,10 +291,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# HighRefreshRateBlackList
-PRODUCT_PACKAGES += \
-    HighRefreshRateBlackListOverlay
-
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
@@ -373,11 +375,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.sys.oneplus.support=11.13.1
 
-# OnePlus Apps
-PRODUCT_PACKAGES += \
-    OnePlusCameraOverlay \
-    OnePlusGalleryOverlay
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
@@ -435,7 +432,6 @@ PRODUCT_COPY_FILES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -495,11 +491,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-# WiFi
-PRODUCT_PACKAGES += \
-    WifiOverlay \
-    ConnectivityOverlay
 
 # WiFi Display
 PRODUCT_PACKAGES += \
