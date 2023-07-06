@@ -32,4 +32,7 @@ dontaudit hal_camera_default default_prop:file read;
 
 # Laser AF
 allow hal_camera_default input_device:chr_file {ioctl read open};
-allow hal_camera_default input_device:dir {read open search}; 
+allow hal_camera_default input_device:dir {read open search};
+
+allow hal_camera_default public_adsprpcd_file:file r_file_perms;
+
