@@ -17,9 +17,6 @@ $(call inherit-product, $(LOCAL_PATH)/interfaces-vndk.mk)
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# USB
-$(call inherit-product, $(LOCAL_PATH)/usb/qti-usb.mk)
-
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -351,7 +348,8 @@ TARGET_USE_SM8150_HALS := true
 TARGET_COMMON_QTI_COMPONENTS += \
     adreno \
     av \
-    media
+    media \
+    usb
 
 # QMI
 PRODUCT_PACKAGES += \
