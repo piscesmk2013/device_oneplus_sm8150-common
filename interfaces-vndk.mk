@@ -12,10 +12,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.keymaster@4.1.vendor
 
-# Location
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1.vendor
-
 # Neural networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
