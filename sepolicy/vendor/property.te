@@ -1,8 +1,5 @@
 vendor_internal_prop(vendor_memplus_prop)
-vendor_internal_prop(vendor_nfc_prop)
 vendor_internal_prop(vendor_oem_dump_prop)
 vendor_internal_prop(vendor_param_prop)
-get_prop(vendor_hal_imsrtp, telephony_config_prop)
-get_prop(vendor_hal_rcsservice, telephony_config_prop)
 get_prop(hal_sensors_default, telephony_config_prop)
 
