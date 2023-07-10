@@ -393,11 +393,6 @@ vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so|c3f6b98fb88ce938d6141264e
 vendor/lib64/vendor.qti.esepowermanager@1.0.so|43257e4e68ea43c34a1acecda7fa524bf1ad53ad
 vendor/lib64/vendor.qti.esepowermanager@1.1.so|85224bd7e8b89f2b0e4370c14457a62cd99781c8
 
-# Gatekeeper - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|2e33e885b92e413440511049025497945d6b8484
-vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|7b0b612fe07a4e8520590e6941e2729227b1702e
-
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
 vendor/firmware/a630_sqe.fw
@@ -478,16 +473,6 @@ vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_uc.b00
 vendor/firmware/ipa_uc.b02
-
-# Keymaster - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
-vendor/bin/hw/android.hardware.keymaster@4.1-service-qti|f2dfed2111ada63ddc5283e12b6cb051bd9f9736
-vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc|f6907552961ba772c1ad5b493913a60d65abedb4
-vendor/lib64/libkeymasterdeviceutils.so|1fcd23548fbfa3290b17806517c6929c3a9f4b53
-vendor/lib64/libkeymasterprovision.so|7444f5945a6ac771b997edd5f7088283c6c8490f
-vendor/lib64/libkeymasterutils.so|7e42e00998259abfeaf6bca3ec82d37f54dd9ff9
-vendor/lib64/libqcbor.so|7da5294a577f5a71ede5b3804a026bf69bd025ee
-vendor/lib64/libqtikeymaster4.so|bb08331f9b36c273ed44bbe3956ef7bafca97d2c
-vendor/lib64/libspcom.so|7cc4390e7caf520586c22cdb7219842fa5d6ed2c
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msmnile.so

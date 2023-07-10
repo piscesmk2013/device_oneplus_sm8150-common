@@ -334,6 +334,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     adreno \
     av \
     gps \
+    keymaster \
     media \
     telephony \
     usb
