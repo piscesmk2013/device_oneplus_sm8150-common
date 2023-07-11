@@ -112,9 +112,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
-# GPS
-persist.backup.ntpServer=0.pool.ntp.org
-
 # Graphics
 debug.egl.hw=1
 debug.mdpcomp.logs=0
@@ -154,7 +151,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 persist.vendor.qcomsysd.enabled=1
 
 # Radio
-persist.radio.multisim.config=dsds
 persist.vendor.data.iwlan.enable=true
 persist.vendor.radio.5g_mode_pref=0
 persist.vendor.radio.arfcn_test_mode=3
@@ -169,9 +165,6 @@ persist.vendor.radio.uicc_se_enabled=true
 
 # SoC
 ro.soc.model=SM8150
-
-# Telephony
-telephony.active_modems.max_count=2
 
 # Shutdown
 sys.vendor.shutdown.waittime=500
