@@ -78,6 +78,7 @@
 
     <!-- Defines custom Vendor sensor for pocket detection. -->
     <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.proximity</string>
+    <string name="config_pocketJudgeVendorProximitySensorName">oneplus.sensor.infrared.proximity</string>
     
     <!-- Whether device has physical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
