@@ -60,12 +60,6 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.qti.chg_policy.sh",
-    src: "init.qti.chg_policy.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qcom.class_core.sh",
     src: "init.qcom.class_core.sh",
     vendor: true,

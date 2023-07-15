@@ -169,7 +169,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qti.chg_policy.sh \
     init.qti.dcvs.sh \
     init.qti.qcv.sh \
     init.recovery.qcom.rc \
@@ -222,11 +221,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.oneplus \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor:64 \
     vendor.oneplus.hardware.display@1.0.vendor:64
-
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -313,6 +307,7 @@ TARGET_USE_SM8150_HALS := true
 TARGET_COMMON_QTI_COMPONENTS += \
     adreno \
     av \
+    charging \
     gps \
     keymaster \
     media \
