@@ -281,6 +281,7 @@ TARGET_USE_SM8150_HALS := true
 
 TARGET_COMMON_QTI_COMPONENTS += \
     adreno \
+    alarm \
     av \
     charging \
     display \

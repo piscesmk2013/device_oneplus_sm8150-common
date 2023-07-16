@@ -542,16 +542,6 @@ vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 vendor/etc/powerhint.xml
 vendor/etc/msm_irqbalance.conf|0141a3e34175f62a3ae1f0f44cca94cf7043f2de
 
-# Power-off alarm - from LA.QSSI.12.0.r1-05600-qssi.0
--product/app/PowerOffAlarm/PowerOffAlarm.apk|6e3ba805cfbeb0db590f988891448345cc3698ba
-
-# Power-off alarm - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|23ab1405821bb30553f20ad5e785959008440f7f
-vendor/bin/power_off_alarm|dcab61bc1312941b506cb22b1236edee72080318
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|02a314f7dc19b06dfd9a45b0c0bcd0aca6e822bb
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|7c89039a1d670ff6f92ada82bd1ff2c2366dd145
-
 # QCC - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
 vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service|b60b09fa92e8b400129c021c6b51c0c63dbf1edd
 vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc|afeb332a4750a11587658fcc9a75a27f63bbccdd
