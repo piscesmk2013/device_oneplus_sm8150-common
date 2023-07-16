@@ -228,18 +228,6 @@ system_ext/bin/notify_hdr_change.sh
 system_ext/etc/init/hdr_trigger.rc
 vendor/etc/hdr_config.cfg
 vendor/etc/sdr_config.cfg
-vendor/lib64/libhdr_tm.so
-
-# Display (SDM) - from LA.UM.9.1.r1-11900.02-SMxxx0.QSSI12.0
-vendor/lib64/libdisplayqos.so|5548732c916e629f18f45ce257ce843b679a136a
-vendor/lib64/libqseed3.so|7f2a659fb9acd84d79c11dbd6901b816d5d1214f
-vendor/lib64/libsdedrm.so|5cf6147a8b33bb9ae4b99e6ba923d0be32295768
-vendor/lib64/libsdm-color.so|d0984c33dcbf84940676917e0c3584b0ccfeaf03
-vendor/lib64/libsdm-colormgr-algo.so|15f696a4575868e528360896f1e0098d531899c0
-vendor/lib64/libsdm-diag.so|341907510d377127adb98d07e7d9f30448d08def
-vendor/lib64/libsdm-disp-vndapis.so|60da199073d2b0881bf075190a644b332503f39c
-vendor/lib64/libsdmextension.so|e10d29f29b7a53b75369e58e8a165b2b86609f26
-vendor/lib64/libtinyxml2_1.so|ff32deb110acb02cb5def5f3404f9064c1276483
 
 # Display calibration data
 vendor/etc/qdcm_calib_data_samsung_dsc_cmd_mode_oneplus_dsi_panel.xml
@@ -251,12 +239,6 @@ vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/ppd
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/lib64/libdisp-aba.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.color@1.3.so
-vendor/lib64/vendor.display.color@1.4.so
-vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Dolby

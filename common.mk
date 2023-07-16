@@ -72,7 +72,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
@@ -180,30 +179,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
     $(LOCAL_PATH)/configs/sysconfig/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/component-overrides.xml
 
-# Display
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    gralloc.msmnile \
-    hwcomposer.msmnile \
-    libdisplayconfig.qti \
-    libdisplayconfig.system.qti \
-    libqdMetaData \
-    libqdMetaData.system \
-    libvulkan \
-    memtrack.msmnile \
-    vendor.display.config@1.0 \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor
-
 # Enable incrementalfs
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=yes
@@ -308,6 +283,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     adreno \
     av \
     charging \
+    display \
     gps \
     keymaster \
     media \
@@ -400,14 +376,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     dalvik.vm.image-dex2oat-threads=8
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.has_HDR_display=true \
-    ro.surface_flinger.has_wide_color_display=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.support_kernel_idle_timer=true \
-    ro.surface_flinger.use_color_management=true \
-    ro.surface_flinger.wcg_composition_dataspace=143261696
+    ro.surface_flinger.support_kernel_idle_timer=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.use_phase_offsets_as_durations=1 \
