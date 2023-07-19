@@ -798,6 +798,9 @@ vendor/lib64/liboemcrypto.so
 vendor/lib64/libtrustedapploader.so
 vendor/lib64/libwvhidl.so
 
+# WiFi
+vendor/bin/cnss-daemon
+
 # WiFi Display (system) - from LA.QSSI.12.0.r1-05800.02-qssi.0
 system_ext/bin/wfdservice|2d9bde189325b3faf4e1571543867c6a7e00762d
 system_ext/bin/wfdservice64|dfba81ff32b92652dfca237b590dd104dc7ced34
