@@ -201,7 +201,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qti.chg_policy.sh \
     init.qti.dcvs.sh \
-    init.qti.qcv.sh \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc

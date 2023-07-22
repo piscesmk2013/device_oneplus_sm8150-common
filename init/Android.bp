@@ -30,12 +30,6 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.qti.qcv.sh",
-    src: "init.qti.qcv.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qti.dcvs.sh",
     src: "init.class_main.sh",
     vendor: true,
