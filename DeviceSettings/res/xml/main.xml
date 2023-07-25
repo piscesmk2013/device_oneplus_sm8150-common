@@ -35,6 +35,16 @@
                 android:targetClass="org.aosp.device.DeviceSettings.PanelSettingsActivity" />
     </Preference>
 
+    <Preference
+        android:key="perapp_refreshrate"
+        android:title="@string/refresh_title"
+        android:summary="@string/refresh_summary"
+        android:persistent="false" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.aosp.device.DeviceSettings"
+                android:targetClass="org.aosp.device.DeviceSettings.RefreshRate.RefreshActivity" />
+    </Preference>
+
     <PreferenceCategory
         android:key="slider"
         android:title="@string/notification_slider_category_title">
