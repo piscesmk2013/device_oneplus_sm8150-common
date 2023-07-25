@@ -31,6 +31,7 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "org.pixelexperience.settings.resources",
+        "SettingsLib",
     ],
 
     resource_dirs: ["res"],

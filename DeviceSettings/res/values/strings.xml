@@ -55,4 +55,11 @@
     <string name="always_on_camera_dialog_title">Front camera open dialog</string>
     <string name="always_on_camera_dialog_summary_on">Always ask before openning</string>
     <string name="always_on_camera_dialog_summary_off">Only ask when the screen is off</string>
+
+    <!-- Per-app refresh rate -->
+    <string name="refresh_title">Per-app refresh rate</string>
+    <string name="refresh_summary">Set the maximum refresh rate for a specific application</string>
+    <string name="refresh_default">Default</string>
+    <string name="refresh_standard">60Hz</string>    
+    <string name="refresh_extreme">90Hz</string>  
 </resources>

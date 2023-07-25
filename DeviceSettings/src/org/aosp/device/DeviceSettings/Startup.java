@@ -25,6 +25,7 @@ import android.provider.Settings;
 import androidx.preference.PreferenceManager;
 
 import org.aosp.device.DeviceSettings.ModeSwitch.*;
+import org.aosp.device.DeviceSettings.RefreshRate.RefreshUtils;
 
 public class Startup extends BroadcastReceiver {
 
@@ -54,5 +55,8 @@ public class Startup extends BroadcastReceiver {
                 sharedPrefs.getBoolean(DeviceSettings.KEY_VIVID_SWITCH, false));
         restore(NightModeSwitch.getFile(),
                 sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false));
+
+        // Refresh Rate
+        RefreshUtils.startService(context);
     }
 }

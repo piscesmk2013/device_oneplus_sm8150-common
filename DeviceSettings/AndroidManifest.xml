@@ -31,9 +31,18 @@
     <application
         android:icon="@drawable/ic_settings_device"
         android:label="@string/device_title"
-        android:theme="@style/Theme.SubSettingsBase"
+        android:theme="@style/Theme.SubSettingsBase_v31"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true">
+
+        <receiver
+            android:name="org.aosp.device.DeviceSettings.Startup"
+            android:exported="false" >
+            <intent-filter android:priority="100" >
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
 
         <!-- Device Settings -->
         <activity
@@ -56,27 +65,30 @@
                 android:value="primary_profile_only" />
         </activity>
 
-        <activity android:name=".KeyHandler" android:exported="false" />
+        <activity
+            android:name=".KeyHandler"
+            android:exported="false" />
 
         <activity
             android:name="org.aosp.device.DeviceSettings.PanelSettingsActivity"
-            android:exported="false"
             android:label="@string/panel_category_title"
-            android:launchMode="singleTask" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:exported="false"
+            android:excludeFromRecents="true">
         </activity>
 
-        <receiver
-            android:name="org.aosp.device.DeviceSettings.Startup"
-            android:exported="false" >
-            <intent-filter android:priority="100" >
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
+        <!-- Per-app refresh rate -->
+        <activity
+            android:name="org.aosp.device.DeviceSettings.RefreshRate.RefreshActivity"
+            android:label="@string/refresh_title"
+            android:excludeFromRecents="true"
+            android:exported="false">
+        </activity>
+
+        <service
+            android:name="org.aosp.device.DeviceSettings.RefreshRate.RefreshService"
+            android:exported="true"
+            android:permission="RefreshService">
+        </service>
 
         <!-- Quick Settings Tiles -->
         <service
