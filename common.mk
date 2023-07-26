@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     ConnectivityOverlay \
     FrameworksResOverlay \
-    HighRefreshRateBlackListOverlay \
     OnePlusCameraOverlay \
     OnePlusGalleryOverlay \
     SystemUIResOverlay \
