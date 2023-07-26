@@ -282,10 +282,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# HighRefreshRateBlackList
-PRODUCT_PACKAGES += \
-    HighRefreshRateBlackListOverlay
-
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
