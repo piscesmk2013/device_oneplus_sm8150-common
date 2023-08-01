@@ -33,7 +33,8 @@
         android:label="@string/device_title"
         android:theme="@style/Theme.SubSettingsBase_v31"
         android:defaultToDeviceProtectedStorage="true"
-        android:directBootAware="true">
+        android:directBootAware="true"
+        android:persistent="true">
 
         <receiver
             android:name="org.aosp.device.DeviceSettings.Startup"

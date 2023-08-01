@@ -117,25 +117,19 @@ public final class RefreshUtils {
         float maxrate = defaultMaxRate;
         float minrate = defaultMinRate;
         isAppInList = false;
-
-            if (value != null) {
+        if (value != null) {
             modes = value.split(":");
-
             if (modes[0].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_STANDARD;
-                if ( minrate > maxrate){
-                minrate = maxrate;
-                }
-		isAppInList = true;
-           } else if (modes[1].contains(packageName + ",")) {
+                minrate = REFRESH_STATE_STANDARD;
+                isAppInList = true;
+            } else if (modes[1].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_EXTREME;
-                if ( minrate > maxrate){
-                minrate = maxrate;
-                }
-		isAppInList = true;
-           }
-          }
-	Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
+                minrate = REFRESH_STATE_EXTREME;
+                isAppInList = true;
+            }
+        }
+        Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
         Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxrate);
     }
 }
