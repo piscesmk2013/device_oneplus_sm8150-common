@@ -190,6 +190,8 @@ void vendor_load_properties() {
   property_override_dual("ro.odm.build.type", "ro.product.build.type", "user");
   property_override_dual("ro.system.build.type", "ro.system_ext.build.type", "user");
 
+  property_override("ro.boot.hardware.sku", "pn553");
+
   // dalvikvm props
   load_dalvikvm_properties();
 }
