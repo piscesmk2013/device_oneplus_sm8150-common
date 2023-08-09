@@ -106,4 +106,10 @@
     <!-- Delay in ms before invoking single tap gesture
          Should be set to dt2w max time / 2 when needed -->
     <integer name="config_singleTapDelay">250</integer>
+
+    <!-- The list of package IDs that are allowed to skip camera high frame rate checks. -->
+    <string-array name="config_cameraHFRPrivAppList" translatable="false">
+        <item>com.oneplus.camera</item>
+        <item>org.codeaurora.snapcam</item>
+    </string-array>
 </resources>
