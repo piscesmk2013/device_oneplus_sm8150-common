@@ -1,3 +1,5 @@
 allow vendor_dpmd vendor_diag_device:chr_file { ioctl read write getattr open };
 
 dontaudit vendor_dpmd vendor_default_prop:file read;
+
+dontaudit vendor_dpmd sysfs:file r_file_perms;
