@@ -499,7 +499,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    WifiOverlay
+    WifiResCommon
 
 # WiFi Display
 PRODUCT_PACKAGES += \
