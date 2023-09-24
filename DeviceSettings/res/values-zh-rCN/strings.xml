@@ -54,6 +54,13 @@
     <string name="refresh_title">分应用刷新率</string>
     <string name="refresh_summary">设置特定应用的最大刷新率</string>
     <string name="refresh_default">默认</string>
-    <string name="refresh_standard">60Hz</string>    
-    <string name="refresh_extreme">90Hz</string>  
+    <string name="refresh_standard">60Hz</string>
+    <string name="refresh_extreme">90Hz</string>
+    <string name="touchpanel_title">触控面板</string>
+    <string name="game_mode_title">高灵敏触控</string>
+    <string name="game_mode_summary">启用一加提供的游戏模式, 提升触摸响应和帧率稳定性</string>
+    <string name="game_mode_warning">可能增加功耗</string>
+    <string name="edge_touch_title">边缘防误触</string>
+    <string name="edge_touch_summary">启用一加提供的防误触模式, 改善屏幕边缘触控体验</string>
+    <string name="edge_touch_warning">可能会影响某些应用屏幕边缘的触控体验</string>
 </resources>

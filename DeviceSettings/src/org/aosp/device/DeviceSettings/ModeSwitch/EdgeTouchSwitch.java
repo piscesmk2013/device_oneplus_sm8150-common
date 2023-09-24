@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 PixelExperience Project
+ * Copyright (C) 2023 PixelExperience Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,20 +17,22 @@
  */
 package org.aosp.device.DeviceSettings.ModeSwitch;
 
+import android.content.SharedPreferences;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
 
+import androidx.preference.PreferenceManager;
+
 import org.aosp.device.DeviceSettings.Utils;
 
-public class HBMModeSwitch {
+public class EdgeTouchSwitch {
 
-    public static final String ACTION_HBM_SERVICE_CHANGED =
-            "org.aosp.device.DeviceSettings.ModeSwitch.HBM_SERVICE_CHANGED";
-    public static final String EXTRA_HBM_STATE = "running";
-    public static final String KEY_HBM_SWITCH = "hbm";
+    private static final String FILE = "/proc/touchpanel/tpedge_limit_enable";
     
-    private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm";
+    public static final String ACTION_EDGETOUCH_CHANGED = "org.aosp.device.DeviceSettings.ModeSwitch.EDGETOUCH_CHANGED";
+    public static final String EXTRA_EDGETOUCH_STATE = "enabled";
+    public static final String KEY_EDGE_SWITCH = "edge_touch";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -48,14 +50,12 @@ public class HBMModeSwitch {
     }
 
     public static void setEnabled(boolean enabled, Context context) {
-        Utils.writeValue(getFile(), enabled ? "5" : "0");
-        Intent hbmIntent = new Intent(context,
-                    org.aosp.device.DeviceSettings.HBMModeService.class);
-        if (enabled) context.startService(hbmIntent);
-        else context.stopService(hbmIntent);
-        Intent intent = new Intent(ACTION_HBM_SERVICE_CHANGED);
-        intent.putExtra(EXTRA_HBM_STATE, enabled);
+        Utils.writeValue(getFile(), enabled ? "1" : "0");
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.edit().putBoolean(KEY_EDGE_SWITCH, enabled).commit();
+        Intent intent = new Intent(ACTION_EDGETOUCH_CHANGED);
+        intent.putExtra(EXTRA_EDGETOUCH_STATE, enabled);
         intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
-        context.sendBroadcastAsUser(intent, UserHandle.CURRENT);;
+        context.sendBroadcastAsUser(intent, UserHandle.CURRENT);
     }
 }

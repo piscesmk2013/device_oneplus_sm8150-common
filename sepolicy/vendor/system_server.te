@@ -5,3 +5,5 @@ allow system_server app_zygote:process getpgid;
 
 allow system_server hal_cameraHIDL_hwservice:hwservice_manager { find };
 binder_call(system_server, hal_cameraHIDL_default)
+
+rw_dir_file(system_server, proc_touchpanel)
