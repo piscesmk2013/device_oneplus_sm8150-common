@@ -80,10 +80,6 @@ on init
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
 on post-fs
-    # Hyper Touch
-    chown system system /proc/touchpanel/game_switch_enable
-    write /proc/touchpanel/game_switch_enable 0
-
     # TP Edge Touch Limit
     chown system system /proc/touchpanel/tpedge_limit_enable
     write /proc/touchpanel/tpedge_limit_enable 0

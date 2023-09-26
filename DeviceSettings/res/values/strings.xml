@@ -65,9 +65,6 @@
 
     <!-- Touchpanel -->
     <string name="touchpanel_title">Touchpanel</string>
-    <string name="game_mode_title">Highly sensitive touch</string>
-    <string name="game_mode_summary">Enable the game mode provided by OnePlus to improve touch response and frame rate stability</string>
-    <string name="game_mode_warning">May increase power consumption</string>
     <string name="edge_touch_title">Edge anti-accidental touch</string>
     <string name="edge_touch_summary">Enable the anti-accidental touch mode provided by OnePlus to improve the touch experience at the edge of the screen</string>
     <string name="edge_touch_warning">May affect the touch experience at the edges of the screen for some apps</string>

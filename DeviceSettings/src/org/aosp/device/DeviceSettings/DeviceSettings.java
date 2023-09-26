@@ -44,7 +44,6 @@ import androidx.preference.TwoStatePreference;
 import org.aosp.device.DeviceSettings.ModeSwitch.DCModeSwitch;
 import org.aosp.device.DeviceSettings.ModeSwitch.HBMModeSwitch;
 
-import org.aosp.device.DeviceSettings.ModeSwitch.GameModeSwitch;
 import org.aosp.device.DeviceSettings.ModeSwitch.EdgeTouchSwitch;
 
 public class DeviceSettings extends PreferenceFragment
@@ -68,12 +67,10 @@ public class DeviceSettings extends PreferenceFragment
     private TwoStatePreference mHBMModeSwitch;
     private SwitchPreference mAlwaysCameraSwitch;
     private SwitchPreference mMuteMediaSwitch;
-    private TwoStatePreference mGameModeSwitch;
     private TwoStatePreference mEdgeTouchSwitch;
 
     private boolean mInternalHbmStart = false;
     private boolean mInternalDCStart = false;
-    private boolean mInternalGameStart = false;
     private boolean mInternalEdgeStart = false;
 
     private final BroadcastReceiver mServiceStateReceiver = new BroadcastReceiver() {
@@ -99,16 +96,6 @@ public class DeviceSettings extends PreferenceFragment
                     final boolean dcEnabled = intent.getBooleanExtra(
                             DCModeSwitch.EXTRA_DCMODE_STATE, false);
                     mDCModeSwitch.setChecked(dcEnabled);
-                    break;
-                case GameModeSwitch.ACTION_GAMEMODE_CHANGED:
-                    if (mInternalGameStart) {
-                        mInternalGameStart = false;
-                        return;
-                    }
-                    if (mGameModeSwitch == null) return;
-                    final boolean gameEnabled = intent.getBooleanExtra(
-                            GameModeSwitch.EXTRA_GAMEMODE_STATE, false);
-                    mGameModeSwitch.setChecked(gameEnabled);
                     break;
                 case EdgeTouchSwitch.ACTION_EDGETOUCH_CHANGED:
                     if (mInternalEdgeStart) {
@@ -166,15 +153,6 @@ public class DeviceSettings extends PreferenceFragment
             mCameraCategory.setVisible(false);
         }
 
-        mGameModeSwitch = findPreference(GameModeSwitch.KEY_GAME_SWITCH);
-        if(GameModeSwitch.isSupported()) {
-            mGameModeSwitch.setEnabled(true);
-            mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled());
-            mGameModeSwitch.setOnPreferenceChangeListener(this);
-        } else {
-            mGameModeSwitch.setEnabled(false);
-        }
-
         mEdgeTouchSwitch = findPreference(EdgeTouchSwitch.KEY_EDGE_SWITCH);
         if(EdgeTouchSwitch.isSupported()) {
             mEdgeTouchSwitch.setEnabled(true);
@@ -188,7 +166,6 @@ public class DeviceSettings extends PreferenceFragment
         IntentFilter filter = new IntentFilter();
         filter.addAction(HBMModeSwitch.ACTION_HBM_SERVICE_CHANGED);
         filter.addAction(DCModeSwitch.ACTION_DCMODE_CHANGED);
-        filter.addAction(GameModeSwitch.ACTION_GAMEMODE_CHANGED);
         filter.addAction(EdgeTouchSwitch.ACTION_EDGETOUCH_CHANGED);
         getContext().registerReceiver(mServiceStateReceiver, filter);
     }
@@ -219,10 +196,6 @@ public class DeviceSettings extends PreferenceFragment
             mInternalDCStart = true;
             Boolean enabled = (Boolean) newValue;
             DCModeSwitch.setEnabled(enabled, getContext());
-        } else if (preference == mGameModeSwitch) {
-            mInternalGameStart = true;
-            Boolean enabled = (Boolean) newValue;
-            GameModeSwitch.setEnabled(enabled, getContext());
         } else if (preference == mEdgeTouchSwitch) {
             mInternalEdgeStart = true;
             Boolean enabled = (Boolean) newValue;

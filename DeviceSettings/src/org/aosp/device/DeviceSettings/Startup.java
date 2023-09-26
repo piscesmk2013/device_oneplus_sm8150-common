@@ -57,8 +57,6 @@ public class Startup extends BroadcastReceiver {
                 sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false));
 
         // Touch Panel
-        restore(GameModeSwitch.getFile(),
-                sharedPrefs.getBoolean(GameModeSwitch.KEY_GAME_SWITCH, false));
         restore(EdgeTouchSwitch.getFile(),
                 sharedPrefs.getBoolean(EdgeTouchSwitch.KEY_EDGE_SWITCH, false));
 
