@@ -35,5 +35,4 @@
      low powered state yet. -->
     <bool name="doze_long_press_uses_prox">false</bool>
 
-    <integer name="config_udfpsEnrollProgressBar" translatable="false">115</integer>
 </resources>
