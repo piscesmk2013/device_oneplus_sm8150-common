@@ -24,18 +24,11 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get Qcom components
 TARGET_EXCLUDE_QCOM_SEPOLICY := true
-TARGET_ADRENO_COMPONENT_VARIANT := adreno-msmnile
-TARGET_MEDIA_COMPONENT_VARIANT := media-legacy
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     media \
     av
-
-$(call inherit-product, device/qcom/common/common.mk)
-$(call inherit-product, device/qcom/common/vendor/adreno-msmnile/qti-adreno-msmnile.mk)
-$(call inherit-product, device/qcom/common/vendor/media-legacy/qti-media-legacy.mk)
-$(call inherit-product, device/qcom/common/system/av/qti-av.mk)
 
 # USB
 $(call inherit-product, $(LOCAL_PATH)/usb/qti-usb.mk)
