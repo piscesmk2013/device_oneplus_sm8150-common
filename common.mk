@@ -13,13 +13,6 @@ OVERRIDE_TARGET_FLATTEN_APEX := true
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
 
-# Get Adreno aspects
-$(call inherit-product, device/qcom/common/vendor/adreno-6xx-legacy/qti-adreno-6xx-legacy.mk)
-
-# Get Media aspects
-$(call inherit-product, device/qcom/common/vendor/media-legacy/qti-media-legacy.mk)
-$(call inherit-product, device/qcom/common/system/av/qti-av.mk)
-
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -28,6 +21,21 @@ $(call inherit-product, $(LOCAL_PATH)/interfaces-vndk.mk)
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
+# Get Qcom components
+TARGET_EXCLUDE_QCOM_SEPOLICY := true
+TARGET_ADRENO_COMPONENT_VARIANT := adreno-r
+TARGET_MEDIA_COMPONENT_VARIANT := media-legacy
+TARGET_BOARD_PLATFORM := msmnile
+TARGET_COMMON_QTI_COMPONENTS := \
+    adreno \
+    media \
+    av
+
+$(call inherit-product, device/qcom/common/common.mk)
+$(call inherit-product, device/qcom/common/vendor/adreno-r/qti-adreno-r.mk)
+$(call inherit-product, device/qcom/common/vendor/media-legacy/qti-media-legacy.mk)
+$(call inherit-product, device/qcom/common/system/av/qti-av.mk)
 
 # USB
 $(call inherit-product, $(LOCAL_PATH)/usb/qti-usb.mk)
