@@ -567,4 +567,7 @@
     -->
     <bool name="config_bg_current_drain_auto_restrict_abusive_apps">true</bool>
 
+    <!-- Flag indicating whether we should enable the adaptive sleep.-->
+    <bool name="config_adaptive_sleep_available">true</bool>
+
 </resources>
