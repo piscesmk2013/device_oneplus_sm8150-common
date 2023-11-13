@@ -58,12 +58,19 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 void load_dalvikvm_properties() {
   struct sysinfo sys;
   sysinfo(&sys);
-  if(sys.totalram > 6144ull * 1024 * 1024) {
-    // from - phone-xhdpi-8192-dalvik-heap.mk
-    property_override("dalvik.vm.heapstartsize", "16m");
+  if (sys.totalram > 8192ull * 1024 * 1024) {
+    // from - phone-xhdpi-12288-dalvik-heap.mk
+    property_override("dalvik.vm.heapstartsize", "24m");
     property_override("dalvik.vm.heapgrowthlimit", "384m");
-    property_override("dalvik.vm.heaptargetutilization", "0.75");
-    property_override("dalvik.vm.heapmaxfree", "8m");
+    property_override("dalvik.vm.heaptargetutilization", "0.42");
+    property_override("dalvik.vm.heapmaxfree", "56m");
+    }
+  else if(sys.totalram > 6144ull * 1024 * 1024) {
+    // from - phone-xhdpi-8192-dalvik-heap.mk
+    property_override("dalvik.vm.heapstartsize", "24m");
+    property_override("dalvik.vm.heapgrowthlimit", "256m");
+    property_override("dalvik.vm.heaptargetutilization", "0.46");
+    property_override("dalvik.vm.heapmaxfree", "48m");
   }
 }
 
@@ -183,12 +190,12 @@ void vendor_load_properties() {
       property_override("ro.product.model", "HD1925");
       property_override("vendor.usb.product_string", "OnePlus 7T Pro 5G");
       break;
-  }
+    }
 
-  property_override("vendor.boot.prj_version", std::to_string(prj_version).c_str());
-  property_override_dual("vendor.rf.version", "vendor.boot.rf_version", std::to_string(rf_version).c_str());
-  property_override_dual("ro.odm.build.type", "ro.product.build.type", "user");
-  property_override_dual("ro.system.build.type", "ro.system_ext.build.type", "user");
+    property_override("vendor.boot.prj_version", std::to_string(prj_version).c_str());
+    property_override_dual("vendor.rf.version", "vendor.boot.rf_version", std::to_string(rf_version).c_str());
+    property_override_dual("ro.odm.build.type", "ro.product.build.type", "user");
+    property_override_dual("ro.system.build.type", "ro.system_ext.build.type", "user");
 
   property_override("ro.boot.hardware.sku", "pn553");
 
