@@ -314,6 +314,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     KProfiles
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # Media
 TARGET_SUPPORTS_OMX_SERVICE := true
 
