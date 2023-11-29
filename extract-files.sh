@@ -67,6 +67,9 @@ function blob_fixup() {
         vendor/bin/hw/qcrild )
             "${PATCHELF}" --add-needed libril_shim.so "${2}"
             ;;
+        odm/lib/libdlbdsservice_v3_6.so | odm/lib/libstagefright_soft_ddpdec.so | odm/lib/libstagefrightdolby.so | odm/lib64/libdlbdsservice_v3_6.so)
+            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            ;;
     esac
     case "${DEVICE}" in
         hotdog | hotdogb | hotdogg )
