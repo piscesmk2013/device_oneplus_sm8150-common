@@ -14,4 +14,7 @@ allow kernel param_block_device:blk_file rw_file_perms;
 
 allow kernel self:capability kill;
 
-allow kernel persist_wlan_file:file r_file_perms; 
+allow kernel persist_wlan_file:file r_file_perms;
+
+# KernelSU
+dontaudit kernel self:capability dac_read_search;
