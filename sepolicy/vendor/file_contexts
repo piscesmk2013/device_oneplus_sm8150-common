@@ -30,6 +30,11 @@
 /dev/silead_fp            u:object_r:fingerprintd_device:s0
 /dev/stmvl53l1_ranging    u:object_r:vl53l1_device:s0
 
+# Dolby
+/data/vendor/dolby(/.*)?                                                                                          u:object_r:vendor_data_file:s0
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                                          u:object_r:hal_dms_default_exec:s0
+/(vendor|system/vendor|odm)/bin/hw/vendor\.dolby_v3_6\.hardware\.dms360@2\.0-service                              u:object_r:hal_dms_default_exec:s0
+
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oneplus                   u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti                                 u:object_r:vendor_hal_neuralnetworks_default_exec:s0
