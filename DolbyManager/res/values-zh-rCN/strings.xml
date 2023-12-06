@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 The LineageOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="dolby_enable">使用 Dolby Atmos</string>
+    <string name="dolby_profile_title">选择配置文件</string>
+    <string name="dolby_preset">预设均衡器</string>
+    <string name="dolby_off">关闭</string>
+    <string name="dolby_on">开启</string>
+    <string name="dolby_low">低</string>
+    <string name="dolby_medium">中</string>
+    <string name="dolby_high">高</string>
+    <string name="dolby_max">最大</string>
+    <string name="dolby_unknown">未知</string>
+    <string name="dolby_on_with_profile">开启 (%1$s)</string>
+    <string name="dolby_category_settings">设置</string>
+    <string name="dolby_bass_enhancer">低音增强器</string>
+    <string name="dolby_dialogue_enhancer">人声增强器</string>
+    <string name="dolby_virtualizer">环绕声虚拟器</string>
+    <string name="dolby_volume_leveler">音量均衡器</string>
+    <string name="dolby_connect_headphones">请连接耳机</string>
+    <string name="dolby_reset_profile">恢复默认设置</string>
+    <string name="dolby_reset_profile_toast">已成功恢复 %1$s 的默认配置</string>
+    <string name="dolby_profile_dynamic">动态</string>
+    <string name="dolby_profile_movie">电影</string>
+    <string name="dolby_profile_music">音乐</string>
+    <string name="dolby_profile_game1">游戏1</string>
+    <string name="dolby_profile_game2">游戏2</string>
+    <string name="dolby_profile_voice">语音</string>
+</resources>
