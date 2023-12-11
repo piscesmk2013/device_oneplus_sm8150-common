@@ -50,12 +50,6 @@ public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_CATEGORY_CAMERA = "camera";
-    public static final String KEY_SRGB_SWITCH = "srgb";
-    public static final String KEY_DCI_SWITCH = "dci";
-    public static final String KEY_NIGHT_SWITCH = "night";
-    public static final String KEY_WIDECOLOR_SWITCH = "widecolor";
-    public static final String KEY_NATURAL_SWITCH = "natural";
-    public static final String KEY_VIVID_SWITCH = "vivid";
 
     private static final String KEY_ALWAYS_CAMERA_DIALOG = "always_on_camera_dialog";
 

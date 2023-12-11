@@ -42,20 +42,6 @@ public class Startup extends BroadcastReceiver {
         restore(DCModeSwitch.getFile(),
                 sharedPrefs.getBoolean(DCModeSwitch.KEY_DC_SWITCH, false));
 
-        // Panel modes
-        restore(SRGBModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false));
-        restore(DCIModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false));
-        restore(WideColorModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false));
-        restore(NaturalModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_NATURAL_SWITCH, false));
-        restore(VividModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_VIVID_SWITCH, false));
-        restore(NightModeSwitch.getFile(),
-                sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false));
-
         // Touch Panel
         restore(EdgeTouchSwitch.getFile(),
                 sharedPrefs.getBoolean(EdgeTouchSwitch.KEY_EDGE_SWITCH, false));

@@ -70,13 +70,6 @@
             android:name=".KeyHandler"
             android:exported="false" />
 
-        <activity
-            android:name="org.aosp.device.DeviceSettings.PanelSettingsActivity"
-            android:label="@string/panel_category_title"
-            android:exported="false"
-            android:excludeFromRecents="true">
-        </activity>
-
         <!-- Per-app refresh rate -->
         <activity
             android:name="org.aosp.device.DeviceSettings.RefreshRate.RefreshActivity"
@@ -96,17 +89,6 @@
             android:name="org.aosp.device.DeviceSettings.DCModeTileService"
             android:icon="@drawable/ic_dimming_off"
             android:label="@string/tile_dc_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="true">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-        <service
-            android:name="org.aosp.device.DeviceSettings.PanelModeTileService"
-            android:icon="@drawable/ic_panel_tile"
-            android:label="@string/tile_panel_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
             android:exported="true">
             <intent-filter>
