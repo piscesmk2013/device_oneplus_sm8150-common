@@ -568,6 +568,6 @@
     <bool name="config_adaptive_sleep_available">true</bool>
 
     <!-- Maximum strength, in percentage, supported by bright color reduction. -->
-    <integer name="config_reduceBrightColorsStrengthMax">120</integer>
+    <integer name="config_reduceBrightColorsStrengthMax">80</integer>
 
 </resources>
