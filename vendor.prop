@@ -124,7 +124,6 @@ debug.sf.latch_unsignaled=1
 debug.sf.auto_latch_unsignaled=0
 debug.sf.treat_170m_as_sRGB=1
 persist.demo.hdmirotationlock=false
-persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
 renderthread.skia.reduceopstasksplitting=true
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
@@ -132,7 +131,7 @@ ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.hwui.render_ahead=3
 ro.opengles.version=196610
-vendor.display.enable_default_color_mode=1
+vendor.display.enable_default_color_mode=0
 vendor.gralloc.disable_ubwc=0
 
 # IMS
