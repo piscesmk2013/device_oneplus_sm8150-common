@@ -22,6 +22,9 @@ $(call inherit-product, $(LOCAL_PATH)/interfaces-vndk.mk)
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# OFFICIAL
+IS_OFFICIAL := true
+
 # Get Qcom components
 TARGET_EXCLUDE_QCOM_SEPOLICY := true
 TARGET_BOARD_PLATFORM := msmnile
