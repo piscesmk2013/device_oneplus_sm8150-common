@@ -634,7 +634,6 @@ vendor/bin/pm-service|c3d1b2f6e7f731b1328afbcf8e344405744528e3
 vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 
 # Perf
-vendor/etc/powerhint.xml
 vendor/etc/msm_irqbalance.conf|0141a3e34175f62a3ae1f0f44cca94cf7043f2de
 
 # Power-off alarm - from LA.QSSI.12.0.r1-05600-qssi.0
