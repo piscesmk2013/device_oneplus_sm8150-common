@@ -38,7 +38,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.preference.TwoStatePreference;
 
 import org.aosp.device.DeviceSettings.ModeSwitch.DCModeSwitch;
@@ -59,8 +59,8 @@ public class DeviceSettings extends PreferenceFragment
 
     private TwoStatePreference mDCModeSwitch;
     private TwoStatePreference mHBMModeSwitch;
-    private SwitchPreference mAlwaysCameraSwitch;
-    private SwitchPreference mMuteMediaSwitch;
+    private SwitchPreferenceCompat mAlwaysCameraSwitch;
+    private SwitchPreferenceCompat mMuteMediaSwitch;
     private TwoStatePreference mEdgeTouchSwitch;
 
     private boolean mInternalHbmStart = false;

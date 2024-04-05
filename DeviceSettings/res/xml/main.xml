@@ -14,12 +14,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/device_title">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="dc"
         android:summary="@string/dc_mode_summary"
         android:title="@string/dc_mode_title" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="hbm"
         android:summary="@string/hbm_mode_summary"
         android:title="@string/hbm_mode_title"
@@ -63,7 +63,7 @@
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="slider_mute_media"
             android:title="@string/slider_mute_media_title"
             android:summary="@string/slider_mute_media_summary"
@@ -75,7 +75,7 @@
         android:key="touchpanel"
         android:title="@string/touchpanel_title">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="edge_touch"
             android:summary="@string/edge_touch_summary"
             android:title="@string/edge_touch_title" />
@@ -90,7 +90,7 @@
     <PreferenceCategory
         android:key="camera"
         android:title="@string/camera_title">
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="always_on_camera_dialog"
             android:title="@string/always_on_camera_dialog_title"
             android:summaryOff="@string/always_on_camera_dialog_summary_off"
