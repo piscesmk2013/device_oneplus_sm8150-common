@@ -63,4 +63,7 @@
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
 
+    <!-- Whether to display the "Enable wireless display" menu -->
+     <bool name="config_show_wifi_display_enable_menu">false</bool>
+
 </resources>
