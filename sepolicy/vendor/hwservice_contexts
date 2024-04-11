@@ -13,6 +13,3 @@ vendor.oneplus.hardware.param::IOneplusParam                          u:object_r
 # Dolby
 vendor.dolby.hardware.dms::IDms                                       u:object_r:hal_dms_hwservice:s0
 vendor.dolby_v3_6.hardware.dms360::IDms                               u:object_r:hal_dms_hwservice:s0
-
-# Turbo adapter
-vendor.google.google_battery::IGoogleBattery                          u:object_r:hal_turbo_adapter_hwservice:s0
