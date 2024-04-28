@@ -2,6 +2,9 @@
 type fpc_images_file, file_type, core_data_file_type, data_file_type;
 type wifi_nv_data_file, file_type, data_file_type;
 
+# Graphics
+type vendor_sysfs_sde_crtc, fs_type, sysfs_type;
+
 # KProfiles
 type sysfs_kprofiles, sysfs_type, fs_type;
 

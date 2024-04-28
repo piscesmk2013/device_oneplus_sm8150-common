@@ -1,3 +1,4 @@
 # Allow hal_power_default to write to proc_touchpanel
 allow hal_power_default proc_touchpanel:dir search;
 allow hal_power_default proc_touchpanel:file w_file_perms; 
+rw_dir_file(hal_power_default, vendor_sysfs_sde_crtc)

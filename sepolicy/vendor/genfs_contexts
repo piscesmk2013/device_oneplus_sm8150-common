@@ -45,3 +45,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/name  
 genfscon sysfs /devices/platform/soc/soc:tri_state_key/extcon/extcon3/cable.0/name                                                    u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/soc/soc:tri_state_key/extcon/extcon3/cable.1/name                                                    u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/soc/soc:tri_state_key/extcon/extcon3/cable.2/name                                                    u:object_r:sysfs_extcon:s0
+
+# Graphics
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-                                                        u:object_r:vendor_sysfs_sde_crtc:s0

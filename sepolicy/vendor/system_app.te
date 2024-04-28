@@ -38,5 +38,8 @@ allow system_app sysfs_kprofiles:file rw_file_perms;
 r_dir_file(system_app, sysfs_battery_supply);
 dontaudit system_app default_android_hwservice:hwservice_manager { find };
 
+# Gamespace
+r_dir_file(system_app, vendor_sysfs_sde_crtc)
+
 # Touchpanel
 rw_dir_file(system_app, proc_touchpanel);
