@@ -1,3 +1,5 @@
+allow priv_app hal_ifaa_hwservice:hwservice_manager find;
+binder_call(priv_app, hal_ifaa_default)
 allow priv_app proc_version:file { open };
 allow priv_app proc_version:file { getattr };
 allow priv_app zygote:unix_stream_socket { getopt };
@@ -15,3 +17,4 @@ allow priv_app adsprpcd_file:dir { open read getattr search };
 allow { appdomain -priv_app } adsprpcd_file:dir r_dir_perms;
 allow priv_app vendor_sysfs_battery_supply:dir { search };
 allow priv_app vendor_sysfs_battery_supply:file { read write getattr open }; 
+
