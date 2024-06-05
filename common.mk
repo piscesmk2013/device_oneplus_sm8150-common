@@ -5,6 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit some common Lineage stuff.
+TARGET_DISABLE_EPPE := true
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
 
