@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2024 The PixelOS AOSP
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -18,6 +19,12 @@ $(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Inherit some common Lineage stuff.
+TARGET_DISABLE_EPPE := true
+
+# OFFICIAL
+IS_OFFICIAL := true
+
 # Get Qcom components
 TARGET_EXCLUDE_QCOM_SEPOLICY := true
 TARGET_BOARD_PLATFORM := msmnile
@@ -33,7 +40,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-yaap
+    $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -106,10 +113,6 @@ PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
 
-# YAAP Device Settings
-PRODUCT_PACKAGES += \
-    DeviceSettings
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
@@ -174,9 +177,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor:32 \
     vendor.qti.hardware.btconfigstore@1.0.vendor:64 \
     vendor.qti.hardware.btconfigstore@2.0.vendor:64
-
-# Blur
-TARGET_ENABLE_BLUR := true
 
 # Camera
 PRODUCT_PACKAGES += \

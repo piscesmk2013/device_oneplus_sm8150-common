@@ -90,6 +90,7 @@ void vendor_load_properties() {
     case 18857:
       /* OnePlus 7 */
       property_override("bluetooth.device.default_name", "OnePlus 7");
+      property_override("vendor.usb.product_string", "OnePlus 7");
       switch (rf_version) {
         case 1:
           /* China */
@@ -112,6 +113,7 @@ void vendor_load_properties() {
     case 18821:
       /* OnePlus 7 Pro */
       property_override("bluetooth.device.default_name", "OnePlus 7 Pro");
+      property_override("vendor.usb.product_string", "OnePlus 7 Pro");
       switch (rf_version) {
         case 1:
           /* China */
@@ -135,10 +137,12 @@ void vendor_load_properties() {
       /* OnePlus 7 Pro T-Mobile */
       property_override("bluetooth.device.default_name", "OnePlus 7 Pro");
       property_override("ro.product.model", "GM1915");
+      property_override("vendor.usb.product_string", "OnePlus 7 Pro");
       break;
     case 18865:
       /* OnePlus 7T */
       property_override("bluetooth.device.default_name", "OnePlus 7T");
+      property_override("vendor.usb.product_string", "OnePlus 7T");
       switch (rf_version) {
         case 1:
           /* China */
@@ -162,10 +166,12 @@ void vendor_load_properties() {
       /* OnePlus 7T T-Mobile */
       property_override("bluetooth.device.default_name", "OnePlus 7T");
       property_override("ro.product.model", "HD1907");
+      property_override("vendor.usb.product_string", "OnePlus 7T");
       break;
     case 19801:
       /* OnePlus 7T Pro */
       property_override("bluetooth.device.default_name", "OnePlus 7T Pro");
+      property_override("vendor.usb.product_string", "OnePlus 7T Pro");
       switch (rf_version) {
         case 1:
           /* China */
@@ -189,6 +195,7 @@ void vendor_load_properties() {
     case 18825:
       /* OnePlus 7 Pro NR */
       property_override("bluetooth.device.default_name", "OnePlus 7 Pro 5G");
+      property_override("vendor.usb.product_string", "OnePlus 7T Pro 5G");
       switch (rf_version){
         case 1:
           /* Europe */
@@ -207,6 +214,7 @@ void vendor_load_properties() {
       property_override("bluetooth.device.default_name", "OnePlus 7T Pro 5G");
       property_override("persist.radio.multisim.config", "ssss");
       property_override("ro.product.model", "HD1925");
+      property_override("vendor.usb.product_string", "OnePlus 7T Pro 5G");
       break;
   }
 

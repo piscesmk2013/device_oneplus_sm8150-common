@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2024 The PixelOS AOSP
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -168,7 +169,6 @@ BOARD_AVB_KEY_PATH := .android-certs/releasekey.key
 else
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 endif
-
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
