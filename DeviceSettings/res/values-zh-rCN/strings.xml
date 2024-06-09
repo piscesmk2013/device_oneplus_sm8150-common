@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="device_title">一加设置</string>
+    <string name="device_summary">调整一加设备的特定设置</string>
+    <string name="display_title">显示</string>
+    <string name="srgb_mode_summary"></string>
+    <string name="srgb_mode_title">sRGB</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">高亮度模式</string>
+    <string name="wide_color_mode_title">AMOLED 广色域</string>
+    <string name="natural_mode_title">自然</string>
+    <string name="vivid_mode_title">生动</string>
+    <string name="dci_mode_summary"></string>
+    <string name="dci_mode_title">DCI-P3</string>
+    <string name="night_mode_summary"></string>
+    <string name="night_mode_title">夜间模式</string>
+    <string name="panel_category_title">颜色模式</string>
+    <string name="panel_category_summary">校正显示面板颜色</string>
+    <string name="off_mode_title">关闭</string>
+    <string name="tile_panel_mode">面板模式</string>
+    <string name="dc_mode_summary"></string>
+    <string name="dc_mode_title">DC 调光</string>
+    <string name="tile_hbm_mode">高亮度模式</string>
+    <string name="tile_dc_mode">DC 调光</string>
+    <string name="panel_mode_info">关闭面板颜色模式需要重新启动</string>
+    <string name="notification_slider_category_title">三段式开关</string>
+    <string name="notification_slider_selection_dialog_title">动作</string>
+    <string name="notification_slider_top_position">顶部位置</string>
+    <string name="notification_slider_middle_position">中间位置</string>
+    <string name="notification_slider_bottom_position">底部位置</string>
+    <string name="notification_slider_mode_total_silence">完全静音</string>
+    <string name="notification_slider_mode_priority_only">仅优先</string>
+    <string name="notification_slider_mode_silent">静音</string>
+    <string name="notification_slider_mode_vibrate">振动</string>
+    <string name="notification_slider_mode_none">响铃</string>
+    <string name="buttons_dashboard_summary">三段式开关设置</string>
+    <string name="slider_mute_media_title">媒体静音</string>
+    <string name="slider_mute_media_summary">静音时将媒体音量也关闭(仅静音)\n取消后恢复之前的音量</string>
+    <string name="camera_title">相机</string>
+    <string name="always_on_camera_dialog_title">前置摄像头打开时显示对话框</string>
+    <string name="always_on_camera_dialog_summary_on">打开前询问</string>
+    <string name="always_on_camera_dialog_summary_off">仅屏幕关闭时询问</string>
+    <string name="refresh_title">分应用刷新率</string>
+    <string name="refresh_summary">设置特定应用的最大刷新率</string>
+    <string name="refresh_default">默认</string>
+    <string name="refresh_standard">60Hz</string>
+    <string name="refresh_extreme">90Hz</string>
+    <string name="touchpanel_title">触控面板</string>
+    <string name="edge_touch_title">边缘防误触</string>
+    <string name="edge_touch_summary">启用一加提供的防误触模式, 改善屏幕边缘触控体验</string>
+    <string name="edge_touch_warning">可能会影响某些应用屏幕边缘的触控体验</string>
+</resources>

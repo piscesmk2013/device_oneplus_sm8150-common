@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Panel modes -->
+    <string name="device_title">OnePlus Settings</string>
+    <string name="device_summary">Adjust OnePlus specific device settings</string>
+    <string name="display_title">Display</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">High brightness mode</string>
+    <string name="off_mode_title">Off</string>
+    <string name="dc_mode_summary"></string>
+    <string name="dc_mode_title">DC-Dimming</string>
+    <string name="tile_hbm_mode">High brightness modes</string>
+    <string name="tile_dc_mode">DC-Dimming</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_category_title">Notification slider</string>
+    <string name="notification_slider_selection_dialog_title">Action</string>
+    <string name="notification_slider_top_position">Top position</string>
+    <string name="notification_slider_middle_position">Middle position</string>
+    <string name="notification_slider_bottom_position">Bottom position</string>
+    <string name="notification_slider_mode_total_silence">Total silence</string>
+    <string name="notification_slider_mode_priority_only">Priority only</string>
+    <string name="notification_slider_mode_silent">Silent</string>
+    <string name="notification_slider_mode_vibrate">Vibrate</string>
+    <string name="notification_slider_mode_none">Normal</string>
+    <string name="buttons_dashboard_summary">Alert Slider Settings</string>
+    <string name="slider_mute_media_title">Mute media</string>
+    <string name="slider_mute_media_summary">Mute media when ringer is set to silent\nWill restore previous volume when unset</string>
+
+    <string name="camera_title">Camera</string>
+    <string name="always_on_camera_dialog_title">Front camera open dialog</string>
+    <string name="always_on_camera_dialog_summary_on">Always ask before openning</string>
+    <string name="always_on_camera_dialog_summary_off">Only ask when the screen is off</string>
+
+    <!-- Per-app refresh rate -->
+    <string name="refresh_title">Per-app refresh rate</string>
+    <string name="refresh_summary">Set the maximum refresh rate for a specific application</string>
+    <string name="refresh_default">Default</string>
+    <string name="refresh_standard">60Hz</string>    
+    <string name="refresh_extreme">90Hz</string>  
+
+    <!-- Touchpanel -->
+    <string name="touchpanel_title">Touchpanel</string>
+    <string name="edge_touch_title">Edge anti-accidental touch</string>
+    <string name="edge_touch_summary">Enable the anti-accidental touch mode provided by OnePlus to improve the touch experience at the edge of the screen</string>
+    <string name="edge_touch_warning">May affect the touch experience at the edges of the screen for some apps</string>
+</resources>
