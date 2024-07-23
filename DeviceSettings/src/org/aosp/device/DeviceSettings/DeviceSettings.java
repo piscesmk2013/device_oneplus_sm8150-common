@@ -165,7 +165,7 @@ public class DeviceSettings extends PreferenceFragment
         }
 
         mGamesSpoof = (SwitchPreferenceCompat) findPreference(KEY_GAMES_SPOOF);
-        mGamesSpoof.setChecked(SystemProperties.getBoolean(SYS_GAMES_SPOOF, false));
+        mGamesSpoof.setChecked(SystemProperties.getBoolean(SYS_GAMES_SPOOF, true));
         mGamesSpoof.setOnPreferenceChangeListener(this);
 
         mPhotosSpoof = (SwitchPreferenceCompat) findPreference(KEY_PHOTOS_SPOOF);
@@ -182,7 +182,7 @@ public class DeviceSettings extends PreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        SystemProperties.set(SYS_GAMES_SPOOF, "false");
+        SystemProperties.set(SYS_GAMES_SPOOF, "true");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
     }
 
